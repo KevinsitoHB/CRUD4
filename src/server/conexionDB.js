@@ -5,5 +5,5 @@ mongoose
     console.log('Conectado a Mongoose');
   })
   .catch((error) => {
-    console.log('Fallo en la conexion'), error;
+    console.log('Fallo en la conexion: ' + error);
   });

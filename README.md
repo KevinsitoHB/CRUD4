@@ -2,8 +2,26 @@
 
 ## Proyecto numero 4 demostrando la funcionabilidad de express y mongoDB Atlas.
 
-## Se utulizaron diferentes tecnologias, incluyendo:
+## Se utulizaron diferentes tecnologias de dependencia, incluyendo:
 
-### Github, gitignore, .env , dependencies: node, express, mongoose, nodemon, morgan, dotenv, punto de entrada, servidor, conexion, enrutamiento , modelos, controladores, postman
+### Github
+
+### express
+
+### Node
+
+### Mongoose
+
+### Dotenv
+
+### Postman
+
+### Nodemon (No obligatoria)
+
+### Morgan (No obligatoria)
+
+### Archivo .gitignore y .env
+
+## Autor: Kevin Hernandez
 
 Básico (título, descripción, autor + lista de procedimiento + instrucciones de uso)

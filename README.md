@@ -6,21 +6,23 @@
 
 ### - Github
 
-### express
+### - express
 
-### Node
+### - Node
 
-### Mongoose
+### - Mongoose
 
-### Dotenv
+### - Dotenv
 
-### Postman
+### - Postman
 
-### Nodemon (No obligatoria)
+### - Nodemon (No obligatoria)
 
-### Morgan (No obligatoria)
+### - Morgan (No obligatoria)
 
-### Archivo .gitignore y .env
+### - Archivo .gitignore y .env
+
+###
 
 ## Autor: Kevin Hernandez
 

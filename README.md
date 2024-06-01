@@ -8,6 +8,8 @@
 
 ### - Github
 
+` npm`
+
 ### - express
 
 ### - Node
@@ -25,5 +27,3 @@
 ### - Archivo .gitignore y .env
 
 ## Autor: Kevin Hernandez
-
-Básico (título, descripción, autor + lista de procedimiento + instrucciones de uso)

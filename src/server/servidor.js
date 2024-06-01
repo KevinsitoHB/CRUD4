@@ -5,7 +5,7 @@ import ruta from '../routes/ruta.js';
 const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/', ruta);
+app.use('/empleos', ruta);
 //
 app.get('/', (req, res) => {
   res.json({

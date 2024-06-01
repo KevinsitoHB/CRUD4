@@ -5,7 +5,7 @@ const controlador = {
     try {
       const datosParaLeer = await modelo.findById(req.params.id);
       if (datosParaLeer._id) {
-        res.json({mensaje: 'Datos: ', datosParaLeer});
+        res.json({mensaje: 'Datos:', datosParaLeer});
       }
     } catch (error) {
       res.json({error});
@@ -14,9 +14,7 @@ const controlador = {
   leerTodos: async (req, res) => {
     try {
       const datosParaLeerTodos = await modelo.find();
-      // if (leer) {
-      res.json({mensaje: 'Datos: ', datosParaLeerTodos});
-      // }
+      res.json({mensaje: 'Datos en la coleccion:', datosParaLeerTodos});
     } catch (error) {
       res.json({error});
     }
@@ -42,7 +40,11 @@ const controlador = {
         req.body
       );
       if (datosParaActualizar._id) {
-        res.json({mensaje: 'Datos actualizados: ', datosParaActualizar});
+        const datosRefrescados = await modelo.findByIdAndUpdate(
+          req.params.id,
+          req.body
+        );
+        res.json({mensaje: 'Datos actualizados:', datosRefrescados});
       }
     } catch (error) {
       res.json({error});
@@ -52,7 +54,7 @@ const controlador = {
     try {
       const datosParaEliminar = await modelo.findOneAndDelete(req.params._id);
       if (datosParaEliminar) {
-        res.json({mensaje: 'Datos eliminados: ', datosParaEliminar});
+        res.json({mensaje: 'Datos previos eliminados:', datosParaEliminar});
       }
     } catch (error) {
       res.json({error});
@@ -60,9 +62,10 @@ const controlador = {
   },
   eliminarTodos: async (req, res) => {
     try {
+      console.log('aqui');
       const datosParaEliminarTodos = await modelo.deleteMany({});
       if (datosParaEliminarTodos) {
-        res.json({mensaje: 'Datos eliminados: ', datosParaEliminarTodos});
+        res.json({mensaje: 'Datos eliminados:', datosParaEliminarTodos});
       }
     } catch (error) {
       res.json({error});

@@ -8,21 +8,33 @@
 
 ### - Github
 
-` npm`
+` www.github.com`
 
 ### - express
 
+` npm i express`
+
 ### - Node
+
+` npm i node`
 
 ### - Mongoose
 
+` npm i mongoose`
+
 ### - Dotenv
+
+` npm i dotenv`
 
 ### - Postman
 
 ### - Nodemon (No obligatoria)
 
+` npm i nodemon -D`
+
 ### - Morgan (No obligatoria)
+
+` npm i morgan -D`
 
 ### - Archivo .gitignore y .env
 

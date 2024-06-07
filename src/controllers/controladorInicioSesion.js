@@ -5,10 +5,11 @@ const ControladorInicioSesion = {
       const password = req.body.password;
       console.log(username + ' ' + password);
       res.json({
-        message: 'Session',
+        message: 'Session iniciada',
       });
     } catch (error) {
       res.json({message: 'Error al iniciar sesión: ', error});
     }
   },
 };
+export default ControladorInicioSesion;

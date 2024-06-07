@@ -1,4 +1,5 @@
 import modelo from '../models/modelo.js';
+import esquemaUsuario from '../models/modeloUsuario.js';
 import bcrypt from 'bcryptjs';
 
 const controlador = {
@@ -22,8 +23,16 @@ const controlador = {
   },
   escribir: async (req, res) => {
     try {
-      const datosEsquema = modelo(req.body);
-      const datosParaGuardar = await datosEsquema.save();
+      const {usernameUsuario, emailUsuario, passwordUsuario} = req.body;
+      const protectedPassword = await bcrypt.hash(passwordUsuario, 10);
+      console.log(protectedPassword);
+      const datosNuevoEsquema = new esquemaUsuario({
+        usernameUsuario,
+        emailUsuario,
+        passwordUsuario: protectedPassword,
+      });
+      const datosParaGuardar = await datosNuevoEsquema.save();
+
       if (datosParaGuardar._id) {
         // console.log('Datos Guardados');
         res.json({mensaje: 'Datos Guardados:', datosParaGuardar});

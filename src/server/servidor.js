@@ -12,7 +12,7 @@ app.use('/inicio-sesion', enrutadorInicioSesion);
 
 app.get('/', (req, res) => {
   res.json({
-    mensaje: 'Servidor conectado',
+    mensaje: 'Servidor local conectado',
   });
 });
 export default app;

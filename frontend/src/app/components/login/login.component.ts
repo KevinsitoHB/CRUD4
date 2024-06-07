@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -18,9 +19,9 @@ export class LoginComponent {
     username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
+
   handleSubmit() {
     if (this.credentialsForm) {
-      console.log(this.credentialsForm);
       const username = this.credentialsForm.value.username;
       const password = this.credentialsForm.value.password;
 

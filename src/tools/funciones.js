@@ -12,3 +12,4 @@ function generateToken(payload) {
     });
   });
 }
+export default generateToken;

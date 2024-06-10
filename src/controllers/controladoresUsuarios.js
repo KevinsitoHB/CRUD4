@@ -1,11 +1,11 @@
-import modelo from '../models/modelo.js';
+// import modelo from '../models/modelo.js';
 import esquemaUsuario from '../models/modeloUsuario.js';
 import bcrypt from 'bcryptjs';
 
 const controlador = {
   leer: async (req, res) => {
     try {
-      const datosParaLeer = await modelo.findById(req.params.id);
+      const datosParaLeer = await esquemaUsuario.findById(req.params.id);
       if (datosParaLeer._id) {
         res.json({mensaje: 'Datos:', datosParaLeer});
       }
@@ -15,7 +15,7 @@ const controlador = {
   },
   leerTodos: async (req, res) => {
     try {
-      const datosParaLeerTodos = await modelo.find();
+      const datosParaLeerTodos = await esquemaUsuario.find();
       res.json({mensaje: 'Datos en la coleccion:', datosParaLeerTodos});
     } catch (error) {
       res.json({error});
@@ -23,12 +23,18 @@ const controlador = {
   },
   escribir: async (req, res) => {
     try {
-      const {usernameUsuario, emailUsuario, passwordUsuario} = req.body;
+      // const {usernameUsuario, emailUsuario, passwordUsuario} = req.body;
+
+      const {usernameUsuario, passwordUsuario} = req.body;
       const protectedPassword = await bcrypt.hash(passwordUsuario, 10);
       console.log(protectedPassword);
+      // const datosNuevoEsquema = new esquemaUsuario({
+      //   usernameUsuario,
+      //   emailUsuario,
+      //   passwordUsuario: protectedPassword,
+      // });
       const datosNuevoEsquema = new esquemaUsuario({
         usernameUsuario,
-        emailUsuario,
         passwordUsuario: protectedPassword,
       });
       const datosParaGuardar = await datosNuevoEsquema.save();
@@ -38,19 +44,19 @@ const controlador = {
         res.json({mensaje: 'Datos Guardados:', datosParaGuardar});
       }
     } catch (error) {
-      console.log('No guardados');
-      res.json({error});
+      console.log('No guardados USUARIOS');
+      res.json({mensaje: error});
     }
   },
 
   actualizar: async (req, res) => {
     try {
-      const datosParaActualizar = await modelo.findByIdAndUpdate(
+      const datosParaActualizar = await esquemaUsuario.findByIdAndUpdate(
         req.params.id,
         req.body
       );
       if (datosParaActualizar._id) {
-        const datosRefrescados = await modelo.findByIdAndUpdate(
+        const datosRefrescados = await esquemaUsuario.findByIdAndUpdate(
           req.params.id,
           req.body
         );
@@ -62,7 +68,9 @@ const controlador = {
   },
   eliminar: async (req, res) => {
     try {
-      const datosParaEliminar = await modelo.findOneAndDelete(req.params._id);
+      const datosParaEliminar = await esquemaUsuario.findOneAndDelete(
+        req.params._id
+      );
       if (datosParaEliminar) {
         res.json({mensaje: 'Datos previos eliminados:', datosParaEliminar});
       }
@@ -73,7 +81,7 @@ const controlador = {
   eliminarTodos: async (req, res) => {
     try {
       console.log('aqui');
-      const datosParaEliminarTodos = await modelo.deleteMany({});
+      const datosParaEliminarTodos = await esquemaUsuario.deleteMany({});
       if (datosParaEliminarTodos) {
         res.json({mensaje: 'Datos eliminados:', datosParaEliminarTodos});
       }

@@ -1,13 +1,13 @@
 import express from 'express';
 import morgan from 'morgan';
-import ruta from '../routes/ruta.js';
+import rutaUsuarios from '../routes/ruta.js';
 import enrutadorInicioSesion from '../routes/rutaInicioSesion.js';
 
 const app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/usuarios', ruta);
+app.use('/usuarios', rutaUsuarios);
 app.use('/inicio-sesion', enrutadorInicioSesion);
 
 app.get('/', (req, res) => {

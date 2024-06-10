@@ -12,4 +12,4 @@ const esquema = new Schema(
   },
   {strict: true}
 );
-export default model('collection_Datos', esquema);
+export default model('Datos_Trabajos', esquema);

@@ -1,6 +1,6 @@
 import ModeloUsuario from '../models/modeloUsuario.js';
 import bcryptjs from 'bcryptjs';
-import {generateToken} from '../tools/funciones.js';
+import generateToken from '../tools/funciones.js';
 
 const ControladorInicioSesion = {
   iniciarSesion: async (req, res) => {

@@ -1,6 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
-import rutaUsuarios from '../routes/ruta.js';
+import rutaUsuarios from '../routes/rutaUsuarios.js';
 import rutaInicioSesion from '../routes/rutaInicioSesion.js';
 import cors from 'cors';
 

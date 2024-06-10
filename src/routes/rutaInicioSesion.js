@@ -1,8 +1,8 @@
 import {Router} from 'express';
 import ControladorInicioSesion from '../controllers/controladorInicioSesion.js';
 
-const enrutadorInicioSesion = Router();
+const rutaInicioSesion = Router();
 
-enrutadorInicioSesion.post('/', ControladorInicioSesion.iniciarSesion);
+rutaInicioSesion.post('/', ControladorInicioSesion.iniciarSesion);
 
-export default enrutadorInicioSesion;
+export default rutaInicioSesion;

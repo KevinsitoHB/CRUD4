@@ -7,6 +7,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
+// import { Router } from 'express';
+// import { JwtHelperService } from '@auth0/angular-jwt';
+
+// const jwtHelperService = new JwtHelperService();
 
 @Component({
   selector: 'app-login',
@@ -16,6 +20,7 @@ import { LoginService } from '../../services/login.service';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
+  // router = inject(Router);
   loginService: LoginService = inject(LoginService);
   credentialsForm = new FormGroup({
     username: new FormControl('', Validators.required),
@@ -35,11 +40,11 @@ export class LoginComponent {
         this.loginService.login(credential).subscribe((response: any) => {
           console.log(response);
         });
-        console.log('credendials: ', credential);
+        // console.log('credendials: ', credential);
       } else {
       }
     } else {
-      console.log('Invalid');
+      console.log('Invalid Form');
     }
   }
 }

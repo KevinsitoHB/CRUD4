@@ -24,25 +24,27 @@ const controlador = {
   escribir: async (req, res) => {
     try {
       // const {usernameUsuario, emailUsuario, passwordUsuario} = req.body;
-
-      const {usernameUsuario, passwordUsuario} = req.body;
-      const protectedPassword = await bcrypt.hash(passwordUsuario, 10);
-      console.log(protectedPassword);
-      // const datosNuevoEsquema = new esquemaUsuario({
+      const {usernameUsuario, passwordUsuario} = esquemaUsuario(req.body);
+      // const protectedPassword = await bcrypt.hash(passwordUsuario, 10);
+      // console.log(protectedPassword);
+      // // const datosNuevoEsquema = new esquemaUsuario({
       //   usernameUsuario,
       //   emailUsuario,
       //   passwordUsuario: protectedPassword,
       // });
       const datosNuevoEsquema = new esquemaUsuario({
         usernameUsuario,
-        passwordUsuario: protectedPassword,
+        // passwordUsuario: protectedPassword,
+        passwordUsuario,
       });
-      const datosParaGuardar = await datosNuevoEsquema.save();
+      console.log('aqui');
 
-      if (datosParaGuardar._id) {
-        // console.log('Datos Guardados');
-        res.json({mensaje: 'Datos Guardados:', datosParaGuardar});
-      }
+      const datosParaGuardar = await datosNuevoEsquema.save();
+      res.json({datosParaGuardar: datosParaGuardar});
+      // if (datosParaGuardar._id) {
+      //   // console.log('Datos Guardados');
+      //   res.json({mensaje: 'Datos Guardados:', datosParaGuardar});
+      // }
     } catch (error) {
       console.log('No guardados USUARIOS');
       res.json({mensaje: error});
@@ -80,7 +82,6 @@ const controlador = {
   },
   eliminarTodos: async (req, res) => {
     try {
-      console.log('aqui');
       const datosParaEliminarTodos = await esquemaUsuario.deleteMany({});
       if (datosParaEliminarTodos) {
         res.json({mensaje: 'Datos eliminados:', datosParaEliminarTodos});

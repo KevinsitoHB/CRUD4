@@ -8,11 +8,11 @@ const ControladorInicioSesion = {
       const {username, password} = req.body;
       const usuarioEncontrado = await ModeloUsuario.findOne({
         usernameUsuario: username,
-        // passwordlUsuario: password,
+        // passwordUsuario: password,
       });
       const passwordEncontrado = await bcryptjs.compare(
         password,
-        usuarioEncontrado.passwordlUsuario
+        usuarioEncontrado.passwordUsuario
       );
       if (passwordEncontrado) {
         const token = await generateToken({

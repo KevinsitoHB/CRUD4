@@ -63,7 +63,6 @@ const controlador = {
   },
   eliminarTodos: async (req, res) => {
     try {
-      console.log('aqui');
       const datosParaEliminarTodos = await modelo.deleteMany({});
       if (datosParaEliminarTodos) {
         res.json({mensaje: 'Datos eliminados:', datosParaEliminarTodos});

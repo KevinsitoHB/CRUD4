@@ -7,7 +7,7 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/empleos', ruta);
+app.use('/usuarios', ruta);
 app.use('/inicio-sesion', enrutadorInicioSesion);
 
 app.get('/', (req, res) => {

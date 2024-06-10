@@ -15,12 +15,16 @@ const ControladorInicioSesion = {
         usuarioEncontrado.passwordlUsuario
       );
       if (passwordEncontrado) {
-        generateToken();
-      }
-      if (usuarioEncontrado) {
-        console.log('usuarioEncontrado', usuarioEncontrado);
+        const token = await generateToken({
+          id: usuarioEncontrado._id,
+          name: usuarioEncontrado.username,
+        });
         res.json({
-          message: 'Session iniciada',
+          message: 'Logued in!',
+        });
+      } else {
+        res.json({
+          message: 'Denied',
         });
       }
     } catch (error) {

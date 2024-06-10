@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Credentials } from '../../interfaces/credentials';
+import { Credential } from '../../interfaces/credentials';
 import {
   ReactiveFormsModule,
   FormControl,
@@ -21,20 +21,20 @@ export class LoginComponent {
   });
 
   handleSubmit() {
-    if (this.credentialsForm) {
+    if (this.credentialsForm.valid) {
       const username = this.credentialsForm.value.username;
       const password = this.credentialsForm.value.password;
 
       if (typeof username === 'string' && typeof password === 'string') {
-        const credential: Credentials = {
+        const credential: Credential = {
           username,
           password,
         };
-        console.log(credential);
+        console.log('credendials: ', credential);
       } else {
       }
     } else {
-      console.log('ERROR');
+      console.log('Invalid');
     }
   }
 }

@@ -23,30 +23,21 @@ const controlador = {
   },
   escribir: async (req, res) => {
     try {
-      // const {usernameUsuario, emailUsuario, passwordUsuario} = req.body;
-      const {usernameUsuario, passwordUsuario} = esquemaUsuario(req.body);
-      // const protectedPassword = await bcrypt.hash(passwordUsuario, 10);
-      // console.log(protectedPassword);
-      // // const datosNuevoEsquema = new esquemaUsuario({
-      //   usernameUsuario,
-      //   emailUsuario,
-      //   passwordUsuario: protectedPassword,
-      // });
+      const {usernameUsuario, emailUsuario, passwordUsuario} = esquemaUsuario(
+        req.body
+      );
+      const protectedPassword = await bcrypt.hash(passwordUsuario, 10);
       const datosNuevoEsquema = new esquemaUsuario({
         usernameUsuario,
-        // passwordUsuario: protectedPassword,
-        passwordUsuario,
+        emailUsuario,
+        passwordUsuario: protectedPassword,
       });
-      console.log('aqui');
-
       const datosParaGuardar = await datosNuevoEsquema.save();
-      res.json({datosParaGuardar: datosParaGuardar});
-      // if (datosParaGuardar._id) {
-      //   // console.log('Datos Guardados');
-      //   res.json({mensaje: 'Datos Guardados:', datosParaGuardar});
-      // }
+      if (datosParaGuardar._id) {
+        res.json({mensaje: 'Datos Guardados:', datosParaGuardar});
+      }
     } catch (error) {
-      console.log('No guardados USUARIOS');
+      console.log('Datos No guardados');
       res.json({mensaje: error});
     }
   },

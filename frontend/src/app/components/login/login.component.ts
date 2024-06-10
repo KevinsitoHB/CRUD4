@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Credential } from '../../interfaces/credentials';
 import {
   ReactiveFormsModule,
@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ import {
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
+  loginService: LoginService = inject(LoginService);
   credentialsForm = new FormGroup({
     username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
@@ -30,6 +32,9 @@ export class LoginComponent {
           username,
           password,
         };
+        this.loginService.login(credential).subscribe((response: any) => {
+          console.log(response);
+        });
         console.log('credendials: ', credential);
       } else {
       }

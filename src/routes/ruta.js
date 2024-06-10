@@ -1,12 +1,13 @@
 import {Router} from 'express';
-import controlador from '../controllers/controladoresUsuarios.js';
+import ControladorUsuarios from '../controllers/controladoresUsuarios.js';
 
 const rutaUsuarios = Router();
-rutaUsuarios.get('/:id', controlador.leer);
-rutaUsuarios.get('/', controlador.leerTodos);
-rutaUsuarios.post('/', controlador.escribir);
-rutaUsuarios.put('/:id', controlador.actualizar);
-rutaUsuarios.delete('/:id', controlador.eliminar);
-rutaUsuarios.delete('/', controlador.eliminarTodos);
+
+rutaUsuarios.get('/:id', ControladorUsuarios.leer);
+rutaUsuarios.get('/', ControladorUsuarios.leerTodos);
+rutaUsuarios.post('/', ControladorUsuarios.escribir);
+rutaUsuarios.put('/:id', ControladorUsuarios.actualizar);
+rutaUsuarios.delete('/:id', ControladorUsuarios.eliminar);
+rutaUsuarios.delete('/', ControladorUsuarios.eliminarTodos);
 
 export default rutaUsuarios;

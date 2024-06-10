@@ -1,26 +1,30 @@
 import ModeloUsuario from '../models/modeloUsuario.js';
-import bcryptjs from 'bcryptjs';
 import generateToken from '../tools/funciones.js';
+import bcryptjs from 'bcryptjs';
 
 const ControladorInicioSesion = {
   iniciarSesion: async (req, res) => {
     try {
-      const {username, password} = req.body;
+      console.log(req.body);
+      const {usernameUsuario, passwordUsuario} = req.body;
       const usuarioEncontrado = await ModeloUsuario.findOne({
-        usernameUsuario: username,
-        // passwordUsuario: password,
+        usernameUsuario: usernameUsuario,
+        // passwordUsuario: passwordReq,
       });
+
       const passwordEncontrado = await bcryptjs.compare(
-        password,
+        passwordUsuario,
         usuarioEncontrado.passwordUsuario
       );
+      console.log('AQUI');
       if (passwordEncontrado) {
         const token = await generateToken({
           id: usuarioEncontrado._id,
-          name: usuarioEncontrado.username,
+          name: usuarioEncontrado.usuarioEncontrado,
         });
         res.json({
           message: 'Logued in!',
+          token: token,
         });
       } else {
         res.json({

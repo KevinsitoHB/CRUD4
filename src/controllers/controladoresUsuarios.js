@@ -2,7 +2,7 @@
 import esquemaUsuario from '../models/modeloUsuario.js';
 import bcrypt from 'bcryptjs';
 
-const controlador = {
+const ControladorUsuarios = {
   leer: async (req, res) => {
     try {
       const datosParaLeer = await esquemaUsuario.findById(req.params.id);
@@ -82,4 +82,4 @@ const controlador = {
     }
   },
 };
-export default controlador;
+export default ControladorUsuarios;

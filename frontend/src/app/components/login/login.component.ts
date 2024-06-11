@@ -42,7 +42,7 @@ export class LoginComponent {
           const decoded = jwtHelperService.decodeToken(response.token);
           console.log('decoded :>> ', decoded);
           localStorage.setItem('token', response.token);
-          this.router.navigateByUrl('/jobs');
+          // this.router.navigateByUrl('/jobs');
         });
       } else {
       }

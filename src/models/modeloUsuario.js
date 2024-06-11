@@ -2,11 +2,11 @@ import {Schema, model} from 'mongoose';
 
 const esquemaUsuario = new Schema(
   {
-    usernameUsuario: {type: String, required: true},
-    emailUsuario: {type: String, required: true},
-    passwordUsuario: {type: String, required: true},
+    usernameUsuarioEsquema: {type: String, required: true},
+    passwordUsuarioEsquema: {type: String, required: true},
+    emailUsuarioEsquema: {type: String, required: false},
   },
 
-  {strict: true}
+  {strict: false}
 );
 export default model('Usuarios', esquemaUsuario);

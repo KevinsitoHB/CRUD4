@@ -6,19 +6,20 @@ const ControladorInicioSesion = {
   iniciarSesion: async (req, res) => {
     try {
       const {usernameUsuario, passwordUsuario} = req.body;
+      console.log('AQUI', req.body);
       const usuarioEncontrado = await ModeloUsuario.findOne({
-        usernameUsuario: usernameUsuario,
+        usernameUsuarioEsquema: usernameUsuario,
       });
-
+      console.log('AQUI2', usuarioEncontrado);
       const passwordEncontrado = await bcryptjs.compare(
         passwordUsuario,
-        usuarioEncontrado.passwordUsuario
+        usuarioEncontrado.passwordUsuarioEsquema
       );
 
       if (passwordEncontrado) {
         const token = await generateToken({
           id: usuarioEncontrado._id,
-          nombreDeUsuario: usuarioEncontrado.usernameUsuario,
+          nombreDeUsuario: usuarioEncontrado.usernameUsuarioEsquema,
         });
         res.json({
           message: 'Loggued in!',

@@ -23,14 +23,16 @@ const ControladorUsuarios = {
   },
   escribir: async (req, res) => {
     try {
-      const {usernameUsuario, emailUsuario, passwordUsuario} = esquemaUsuario(
-        req.body
-      );
-      const protectedPassword = await bcrypt.hash(passwordUsuario, 10);
+      const {
+        usernameUsuarioEsquema,
+        emailUsuarioEsquema,
+        passwordUsuarioEsquema,
+      } = esquemaUsuario(req.body);
+      const protectedPassword = await bcrypt.hash(passwordUsuarioEsquema, 10);
       const datosNuevoEsquema = new esquemaUsuario({
-        usernameUsuario,
-        emailUsuario,
-        passwordUsuario: protectedPassword,
+        usernameUsuarioEsquema,
+        emailUsuarioEsquema,
+        passwordUsuarioEsquema: protectedPassword,
       });
       const datosParaGuardar = await datosNuevoEsquema.save();
       if (datosParaGuardar._id) {

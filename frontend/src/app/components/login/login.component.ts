@@ -39,9 +39,10 @@ export class LoginComponent {
         };
         this.loginService.login(credential).subscribe((response: any) => {
           console.log(response);
-          const decoded = jwtHelperService.decodeToken(response.data);
+          const decoded = jwtHelperService.decodeToken(response.token);
           console.log('decoded :>> ', decoded);
-          //  this.router.navigateByUrl('/jobs');
+          localStorage.setItem('token', response.token);
+          this.router.navigateByUrl('/jobs');
         });
       } else {
       }

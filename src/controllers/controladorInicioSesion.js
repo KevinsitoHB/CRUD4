@@ -5,15 +5,17 @@ import bcryptjs from 'bcryptjs';
 const ControladorInicioSesion = {
   iniciarSesion: async (req, res) => {
     try {
-      const {usernameUsuario, passwordUsuario} = esquemaUsuario(req.body);
-      console.log('AQUI', usernameUsuario, passwordUsuario);
+      const {usernameUsuarioEsquema, passwordUsuarioEsquema} = esquemaUsuario(
+        req.body
+      );
       const usuarioEncontrado = await esquemaUsuario.findOne({
-        usernameUsuarioEsquema: usernameUsuario,
+        usernameUsuarioEsquema: usernameUsuarioEsquema,
       });
-      console.log('AQUI2', usuarioEncontrado);
+
+      console.log('AQUI', usuarioEncontrado);
 
       const passwordEncontrado = await bcryptjs.compare(
-        passwordUsuario,
+        passwordUsuarioEsquema,
         usuarioEncontrado.passwordUsuarioEsquema
       );
 

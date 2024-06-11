@@ -1,4 +1,3 @@
-// import modelo from '../models/modelo.js';
 import esquemaUsuario from '../models/modeloUsuario.js';
 import bcrypt from 'bcryptjs';
 

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { LoginService } from '../../services/login.service';
 
 const jwtHelperService = new JwtHelperService();
 
@@ -11,12 +12,22 @@ const jwtHelperService = new JwtHelperService();
   styleUrl: './jobs.component.css',
 })
 export class JobsComponent {
+  loginService = inject(LoginService);
   nombre: String = '';
   ngOnInit() {
     const token: any = localStorage.getItem('token');
-    console.log('El token es: ', token);
+    // console.log('El token es: ', token);
+
     const decoded = jwtHelperService.decodeToken(token);
-    console.log('Decoded :>> ', decoded);
+    console.log('Decoded :>> ', decoded.nombreDeUsuario);
     this.nombre = decoded.nombreDeUsuario;
+
+    if (token) {
+      this.loginService.validateToken(token).subscribe((response: any) => {
+        // console.log('response :>> ', response);
+        this.nombre = response.nombreDeUsuario;
+      });
+    } else {
+    }
   }
 }

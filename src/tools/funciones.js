@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-function generateToken(payload) {
+export function generateToken(payload) {
   console.log('generating token...');
   return new Promise((resolve, reject) => {
     jwt.sign(payload, 'SECURE KEY', {expiresIn: '1h'}, (error, token) => {
@@ -13,4 +13,15 @@ function generateToken(payload) {
     });
   });
 }
-export default generateToken;
+
+export function verificarToken(token) {
+  return new Promise((resolve, reject) => {
+    jwt.verify(token, 'SECURE KEY', (error, decodificado) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(decodificado);
+      }
+    });
+  });
+}

@@ -1,5 +1,5 @@
 import esquemaUsuario from '../models/modeloUsuario.js';
-import generateToken from '../tools/funciones.js';
+import {generateToken, verificarToken} from '../tools/funciones.js';
 import bcryptjs from 'bcryptjs';
 
 const ControladorInicioSesion = {
@@ -34,6 +34,27 @@ const ControladorInicioSesion = {
       }
     } catch (error) {
       res.json({message: 'Error al iniciar sesión, usuario no encontrado.'});
+    }
+  },
+  validarToken: async (req, res) => {
+    try {
+      const token = res.params.token;
+      const decoded = await verificarToken(token);
+      if (decoded.id) {
+        res.json({
+          mensaje: 'Token validado',
+          token: token,
+        });
+      } else {
+        res.json({
+          mensaje: 'Token No validado',
+        });
+      }
+    } catch (error) {
+      res.json({
+        mensaje: 'Token No validado',
+        error: error,
+      });
     }
   },
 };

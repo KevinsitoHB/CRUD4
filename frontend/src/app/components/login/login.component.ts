@@ -48,7 +48,7 @@ export class LoginComponent {
         console.log('Invalid Form 1');
       }
     } else {
-      console.log('Invalid Form 2');
+      console.log('Invalid Form: empty fields');
     }
   }
 }

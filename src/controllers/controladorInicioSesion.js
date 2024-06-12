@@ -45,6 +45,7 @@ const ControladorInicioSesion = {
       const decoded = await verificarToken(token);
       if (decoded.id) {
         res.json({
+          resultado: 'Working',
           mensaje: 'Token validado',
           token: token,
         });

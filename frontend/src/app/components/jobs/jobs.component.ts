@@ -17,14 +17,13 @@ export class JobsComponent {
   ngOnInit() {
     const token: any = localStorage.getItem('token');
     // console.log('El token es: ', token);
-
     const decoded = jwtHelperService.decodeToken(token);
-    console.log('Decoded :>> ', decoded.nombreDeUsuario);
-    this.nombre = decoded.nombreDeUsuario;
+    console.log('Decoded nombre usuario JOBS :>> ', decoded.nombreDeUsuario);
+    // this.nombre = decoded.nombreDeUsuario;
 
     if (token) {
       this.loginService.validateToken(token).subscribe((response: any) => {
-        // console.log('response :>> ', response);
+        console.log('response :>> ', response);
         this.nombre = response.nombreDeUsuario;
       });
     } else {

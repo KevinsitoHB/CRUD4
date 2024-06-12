@@ -12,7 +12,7 @@ const ControladorInicioSesion = {
         usernameUsuarioEsquema: usernameUsuarioEsquema,
       });
 
-      console.log('AQUI', usuarioEncontrado);
+      console.log('AQUI >> USUARIO', usuarioEncontrado);
 
       const passwordEncontrado = await bcryptjs.compare(
         passwordUsuarioEsquema,
@@ -27,10 +27,12 @@ const ControladorInicioSesion = {
           message: 'Loggued in!',
           token: token,
         });
+        console.log('Loggued in :>> ');
       } else {
         res.json({
           message: 'Wrong password.',
         });
+        console.log('Wrong password :>>');
       }
     } catch (error) {
       res.json({message: 'Error al iniciar sesión, usuario no encontrado.'});
@@ -38,7 +40,8 @@ const ControladorInicioSesion = {
   },
   validarToken: async (req, res) => {
     try {
-      const token = res.params.token;
+      const token = req.params.token;
+      console.log('AQUI validarToken :>>', token);
       const decoded = await verificarToken(token);
       if (decoded.id) {
         res.json({
@@ -47,13 +50,12 @@ const ControladorInicioSesion = {
         });
       } else {
         res.json({
-          mensaje: 'Token No validado',
+          mensaje: 'Token No validado 1',
         });
       }
     } catch (error) {
       res.json({
-        mensaje: 'Token No validado',
-        error: error,
+        mensaje: 'Token No validado 2',
       });
     }
   },

@@ -38,9 +38,9 @@ export class LoginComponent {
           passwordUsuarioEsquema: password1,
         };
         this.loginService.login(credential).subscribe((response: any) => {
-          console.log('response :>> ', response);
+          console.log('Response :>> ', response.message);
           const decoded = jwtHelperService.decodeToken(response.token.token);
-          console.log('decoded :>> ', decoded);
+          // console.log('decoded :>> ', decoded);
           localStorage.setItem('token', response.token.token);
           this.router.navigateByUrl('/jobs');
         });

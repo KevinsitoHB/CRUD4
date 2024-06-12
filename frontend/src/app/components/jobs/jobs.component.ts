@@ -16,7 +16,7 @@ export class JobsComponent {
     const token: any = localStorage.getItem('token');
     console.log('El token es: ', token);
     const decoded = jwtHelperService.decodeToken(token);
-    console.log('decoded :>> ', decoded);
+    console.log('Decoded :>> ', decoded);
     this.nombre = decoded.nombreDeUsuario;
   }
 }

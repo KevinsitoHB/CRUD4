@@ -8,6 +8,7 @@ function generateToken(payload) {
         reject({error});
       } else {
         resolve({token});
+        console.log('token :>> ', token);
       }
     });
   });

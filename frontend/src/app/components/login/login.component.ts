@@ -29,25 +29,26 @@ export class LoginComponent {
 
   handleSubmit() {
     if (this.credentialsForm.valid) {
-      const username = this.credentialsForm.value.username;
-      const password = this.credentialsForm.value.password;
+      const username1 = this.credentialsForm.value.username;
+      const password1 = this.credentialsForm.value.password;
 
-      if (typeof username === 'string' && typeof password === 'string') {
+      if (typeof username1 === 'string' && typeof password1 === 'string') {
         const credential: Credential = {
-          username,
-          password,
+          usernameUsuarioEsquema: username1,
+          passwordUsuarioEsquema: password1,
         };
         this.loginService.login(credential).subscribe((response: any) => {
-          console.log(response);
-          const decoded = jwtHelperService.decodeToken(response.token);
+          console.log('response :>> ', response);
+          const decoded = jwtHelperService.decodeToken(response.token.token);
           console.log('decoded :>> ', decoded);
-          localStorage.setItem('token', response.token);
-          // this.router.navigateByUrl('/jobs');
+          localStorage.setItem('token', response.token.token);
+          this.router.navigateByUrl('/jobs');
         });
       } else {
+        console.log('Invalid Form 1');
       }
     } else {
-      console.log('Invalid Form');
+      console.log('Invalid Form 2');
     }
   }
 }

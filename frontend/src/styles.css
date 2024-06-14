@@ -6,9 +6,15 @@
 }
 
 body {
-    background-color: #002324;
+    /* background-color: #74512D; */
+    background: url(./assets/images/mainBG.jpg);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+/* #F8F4E1 #AF8F6F #74512D #543310 */
 input {
     color: #000;
 }

@@ -40,22 +40,18 @@ export class LoginComponent {
           passwordUsuarioEsquema: password1,
         };
         this.loginService.login(credential).subscribe((response: any) => {
-          const decoded = jwtHelperService.decodeToken(response.token.token);
+          // const decoded = jwtHelperService.decodeToken(response.token.token);
           if (response.result === 'Working') {
             localStorage.setItem('token', response.token.token);
             this.router.navigateByUrl('/jobs');
+            this.toastrService.success('Welcome back!');
           } else {
-            console.log('Invalid Form 0', response);
-            this.toastrService.warning('Invalid form');
+            this.toastrService.warning('Invalid credentials.');
           }
         });
-      } else {
-        console.log('Invalid Form 1');
-        this.toastrService.warning('Invalid form');
       }
     } else {
-      console.log('Invalid Form: empty fields');
-      this.toastrService.warning('Empty form fields');
+      this.toastrService.error('Username and Password are required.');
     }
   }
 }

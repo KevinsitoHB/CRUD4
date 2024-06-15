@@ -30,7 +30,7 @@ const ControladorInicioSesion = {
         res.json({
           message: 'Wrong password.',
         });
-        console.log('Wrong password :>>');
+        console.log('Wrong password 1:>>');
       }
     } catch (error) {
       res.json({message: 'Error al iniciar sesión, usuario no encontrado.'});

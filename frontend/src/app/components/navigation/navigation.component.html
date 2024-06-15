@@ -18,7 +18,7 @@
                         <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
                     </li>
                     <li class="nav-item">
-                        @if (loginService.isLoggued()) {
+                        @if (loginService.isLogged()) {
                         <button type="button" class="btn btn-link" (click)="loginService.logout()">Logout
                         </button>
                         }@else{

@@ -22,7 +22,7 @@ const ControladorInicioSesion = {
           result: 'Working',
         });
         res.json({
-          message: 'Loggued in!',
+          message: 'Logged in!',
           token: token,
           result: 'Working',
         });

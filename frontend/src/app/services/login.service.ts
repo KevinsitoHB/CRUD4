@@ -20,11 +20,11 @@ export class LoginService {
     return this.httpClient.get(`${this.API_URL}/${token}`);
   }
 
-  isLoggued() {
+  isLogged() {
     if (localStorage.getItem('token')) {
       return true;
     } else {
-      console.log('Is not Loggued in :>> ');
+      console.log('Is not Logged in :>> ');
       return false;
     }
   }

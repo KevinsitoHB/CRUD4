@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@angular/animations": "^18.0.3",
     "@angular/cli": "^18.0.4",
     "@angular/forms": "^18.0.3",
     "@angular/router": "^18.0.3",

@@ -2,11 +2,27 @@
   "name": "proyecto-final-kevin-hernandez",
   "version": "1.0.0",
   "description": "## Proyecto demostrando la funcionabilidad de Express y MongoDB Atlas.",
-  "main": "index.js",
-  "devDependencies": {},
+  "main": "src/server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/server/index.js"
   },
+  "type": "module",
   "author": "Kevin Hernandez",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.1",
+    "ngx-toastr": "^19.0.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.3"
+  }
 }

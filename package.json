@@ -19,7 +19,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.7.0",
     "mongoose": "^8.4.1",
-    "ngx-toastr": "^19.0.0"
+    "ngx-toastr": "^19.0.0",
+    "node": "^22.3.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

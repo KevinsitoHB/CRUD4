@@ -25,7 +25,6 @@ const controlador = {
       const datosEsquema = modelo(req.body);
       const datosParaGuardar = await datosEsquema.save();
       if (datosParaGuardar._id) {
-        // console.log('Datos Guardados');
         res.json({mensaje: 'Datos Guardados:', datosParaGuardar});
       }
     } catch (error) {

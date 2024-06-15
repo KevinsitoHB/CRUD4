@@ -18,16 +18,13 @@ export class JobsComponent {
   ngOnInit() {
     const token: any = localStorage.getItem('token');
     const decoded = jwtHelperService.decodeToken(token);
-    console.log('Decoded nombre usuario JOBS :>> ', decoded.nombreDeUsuario);
-
     if (token) {
       this.loginService.validateToken(token).subscribe((response: any) => {
-        console.log('Response onInit :>> ', response);
-
-        if (response.resultado === 'Working') {
+        if (response.result === 'Working') {
           this.nombre = decoded.nombreDeUsuario;
         } else {
           console.log('Token no válido :>>');
+          this.loginService.logout();
         }
       });
     } else {

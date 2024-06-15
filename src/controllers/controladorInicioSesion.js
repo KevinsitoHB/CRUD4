@@ -11,9 +11,6 @@ const ControladorInicioSesion = {
       const usuarioEncontrado = await esquemaUsuario.findOne({
         usernameUsuarioEsquema: usernameUsuarioEsquema,
       });
-
-      console.log('AQUI >> USUARIO', usuarioEncontrado);
-
       const passwordEncontrado = await bcryptjs.compare(
         passwordUsuarioEsquema,
         usuarioEncontrado.passwordUsuarioEsquema
@@ -22,12 +19,12 @@ const ControladorInicioSesion = {
         const token = await generateToken({
           id: usuarioEncontrado._id,
           nombreDeUsuario: usuarioEncontrado.usernameUsuarioEsquema,
+          result: 'Working',
         });
         res.json({
           message: 'Loggued in!',
           token: token,
         });
-        console.log('Loggued in :>> ');
       } else {
         res.json({
           message: 'Wrong password.',
@@ -36,12 +33,12 @@ const ControladorInicioSesion = {
       }
     } catch (error) {
       res.json({message: 'Error al iniciar sesión, usuario no encontrado.'});
+      console.log('Wrong password :>>');
     }
   },
   validarToken: async (req, res) => {
     try {
       const token = req.params.token;
-      console.log('AQUI validarToken :>>', token);
       const decoded = await verificarToken(token);
       if (decoded.id) {
         res.json({

@@ -43,7 +43,7 @@ export class LoginComponent {
             localStorage.setItem('token', response.token.token);
             this.router.navigateByUrl('/jobs');
           } else {
-            console.log('Invalid Form 0');
+            console.log('Invalid Form 0', response);
           }
         });
       } else {

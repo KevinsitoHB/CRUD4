@@ -24,6 +24,7 @@ const ControladorInicioSesion = {
         res.json({
           message: 'Loggued in!',
           token: token,
+          result: 'Working',
         });
       } else {
         res.json({

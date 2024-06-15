@@ -20,7 +20,8 @@ export class JobsComponent {
     const decoded = jwtHelperService.decodeToken(token);
     if (token) {
       this.loginService.validateToken(token).subscribe((response: any) => {
-        if (response.result === 'Working') {
+        console.log('response :>> ', response);
+        if (response.resultado === 'Working') {
           this.nombre = decoded.nombreDeUsuario;
         } else {
           console.log('Token no válido :>>');

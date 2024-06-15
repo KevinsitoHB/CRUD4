@@ -7,7 +7,7 @@ export function generateToken(payload) {
         reject({error});
       } else {
         resolve({token});
-        console.log('generateToken(); Token :>> ', token);
+        console.log('generateToken(); Token :>> ');
       }
     });
   });

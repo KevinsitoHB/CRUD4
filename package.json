@@ -1,13 +1,12 @@
 {
   "name": "proyecto-final-kevin-hernandez",
   "version": "1.0.0",
-  "description": "## Proyecto número 4 demostrando la funcionabilidad de Express y MongoDB Atlas.",
+  "description": "## Proyecto demostrando la funcionabilidad de Express y MongoDB Atlas.",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "Kevin Hernandez",
   "license": "ISC"
 }

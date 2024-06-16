@@ -2,19 +2,23 @@
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    color: #FFF;
 }
 
 body {
     /* background-color: #74512D; */
-    background: url(./assets/images/mainBG.jpg);
+    background: url(./assets/images/mainBG.jpg) rgba(0, 0, 0, 0.4);
     background-blend-mode: multiply;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    /* backdrop-filter: blur(2px); */
 }
 
 /* #F8F4E1 #AF8F6F #74512D #543310 */
-input {
-    color: #000;
+@media (max-width:991px) {
+
+    .sidebar {
+        background-color: rgba(119, 123, 119, 0.508) !important;
+        backdrop-filter: blur(10px);
+    }
 }

@@ -44,7 +44,6 @@ export class LoginComponent {
           if (response.result === 'Working') {
             localStorage.setItem('token', response.token.token);
             this.router.navigateByUrl('/jobs');
-            this.toastrService.success('Welcome back!');
           } else {
             this.toastrService.warning('Invalid credentials.');
           }

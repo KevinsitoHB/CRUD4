@@ -12,5 +12,17 @@
 }
 
 .myColor {
-    background-color: #059212;
+    background-color: #3c00ff;
 }
+
+@media (max-width:991px) {
+
+    .sidebar {
+        background-color: rgba(119, 123, 119, 0.508) !important;
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* .sidebar {
+    backdrop-filter: blur(1px);
+} */

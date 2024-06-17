@@ -1,5 +1,5 @@
 * {
-    font-family: "Montserrat", sans-serif;
+    font-family: "DM Sans", "Montserrat", "sans-serif";
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 300;
@@ -14,13 +14,4 @@ body {
     background-repeat: no-repeat; */
     /* backdrop-filter: blur(2px); */
     color: #000;
-}
-
-/* #F8F4E1 #AF8F6F #74512D #543310 */
-@media (max-width:991px) {
-
-    .sidebar {
-        background-color: rgba(119, 123, 119, 0.508) !important;
-        backdrop-filter: blur(10px);
-    }
 }

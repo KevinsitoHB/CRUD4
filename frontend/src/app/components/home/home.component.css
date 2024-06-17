@@ -1,6 +1,5 @@
 .container-flex {
-    padding: 150px 0px 150px 0px;
-    background-color: gainsboro;
+    padding: 50px 0px 50px 0px;
 }
 
 .mainText {
@@ -17,4 +16,50 @@
 
 .myCity {
     padding-left: 15px;
+}
+
+/* Searchbar */
+body {
+
+    background: #d1d5db;
+}
+
+.form {
+
+    position: relative;
+}
+
+/* .form .bi-search {
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #9ca3af;
+
+} */
+
+.form i {
+
+    position: absolute;
+    right: 19px;
+    top: 13px;
+    padding: 2px 0 10px 2px;
+
+}
+
+/* 
+.left-pan {
+    padding-left: 7px;
+} */
+
+/* .left-pan i {
+
+    padding-left: 10px;
+} */
+
+.form-input {
+
+    height: 55px;
+    text-indent: 15px;
+    border-radius: 10px;
 }

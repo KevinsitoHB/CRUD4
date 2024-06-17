@@ -15,6 +15,16 @@
     background-color: #3c00ff;
 }
 
+.myNavButtons:hover {
+    background-color: #FFF;
+    color: #3c00ff;
+}
+
+.myNavButtons {
+    color: #FFF;
+    border-color: #FFF;
+}
+
 @media (max-width:991px) {
 
     .sidebar {

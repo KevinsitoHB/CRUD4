@@ -29,16 +29,17 @@
                 </ul>
                 <div class="d-flex justify-content-center align-items-center gap-3">
                     @if (loginService.isLogged()) {
-                    <button on type="button" class="btn btn-primary text-decoration-none "
+                    <button on type="button" class="myNavButtons btn btn-outline-primary"
                         (click)="loginService.logout()">Logout
                     </button>
                     }
                     @else {
-                    <button type="button" class="btn btn-primary text-decoration-none " routerLink="login">Login
+                    <button type="button" class="myNavButtons btn btn-outline-primary" routerLink="login">Login
                     </button>
                     }
                     <!-- SIGN UP -->
-                    <button type="button" class="btn btn-primary text-decoration-none " routerLink="login">Sign Up
+                    <button type="button" class="myNavButtons btn btn-outline-primary" routerLink="login">Sign
+                        Up
                     </button>
 
                 </div>

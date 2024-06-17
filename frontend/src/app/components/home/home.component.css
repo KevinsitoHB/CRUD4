@@ -1,3 +1,20 @@
-.container {
-    padding: 50px 0px 50px 0px;
+.container-flex {
+    padding: 150px 0px 150px 0px;
+    background-color: gainsboro;
+}
+
+.mainText {
+    padding: 0px 80px 0px 80px;
+}
+
+.lead {
+    padding: 20px 0 20px 0;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.myCity {
+    padding-left: 15px;
 }

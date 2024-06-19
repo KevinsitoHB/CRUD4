@@ -24,7 +24,7 @@ export class JobsComponent {
       this.loginService.validateToken(token).subscribe((response: any) => {
         if (response.resultado === 'Working') {
           this.nombre = decoded.nombreDeUsuario;
-          this.toastrService.success(`Welcome back ${this.nombre}!`);
+          // this.toastrService.success(`Welcome back ${this.nombre}!`);
         } else {
           console.log('Token no válido :>>');
           this.loginService.logout();

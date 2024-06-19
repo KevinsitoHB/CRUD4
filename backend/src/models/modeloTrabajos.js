@@ -11,7 +11,7 @@ const esquemaTrabajos = new Schema(
 		comisionTrabajo: { type: Boolean, required: true },
 		imagen: { type: Buffer, contentType: String, required: false },
 	},
-	{ strict: true, versionKey: false, timestamps: true }
+	{ strict: false, versionKey: false, timestamps: true }
 );
 
 export default model('TrabajosDB', esquemaTrabajos);

@@ -1,10 +1,13 @@
 import { Router } from 'express';
-import controladorTrabajos from '../controllers/controladorTrabajos';
+import ControladorTrabajos from '../controllers/controladorTrabajos.js';
+
 const rutaTrabajos = Router();
 
-rutaTrabajos.get('/', controladorTrabajos.leer);
-rutaTrabajos.post('/', controladorTrabajos.escribir);
-rutaTrabajos.put('/', controladorTrabajos.actualizar);
-rutaTrabajos.delete('/', controladorTrabajos.eliminar);
+rutaTrabajos.get('/:id', ControladorTrabajos.leer);
+rutaTrabajos.get('/', ControladorTrabajos.leerTodos);
+rutaTrabajos.post('/', ControladorTrabajos.escribir);
+rutaTrabajos.put('/:id', ControladorTrabajos.actualizar);
+rutaTrabajos.delete('/:id', ControladorTrabajos.eliminar);
+rutaTrabajos.delete('/', ControladorTrabajos.eliminarTodos);
 
 export default rutaTrabajos;

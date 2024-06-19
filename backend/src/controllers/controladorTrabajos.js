@@ -1,10 +1,9 @@
-import esquemaTrabajos from '../models//modeloTrabajos.js';
-import bcrypt from 'bcryptjs';
+import esquemaTrabajos from '../models/modeloTrabajos.js';
 
-const controladorTrabajos = {
+const ControladorTrabajos = {
 	leer: async (req, res) => {
 		try {
-			const datosParaLeer = await modelo.findById(req.params.id);
+			const datosParaLeer = await esquemaTrabajos.findById(req.params.id);
 			if (datosParaLeer._id) {
 				res.json({ mensaje: 'Datos:', datosParaLeer });
 			}
@@ -14,7 +13,7 @@ const controladorTrabajos = {
 	},
 	leerTodos: async (req, res) => {
 		try {
-			const datosParaLeerTodos = await modelo.find();
+			const datosParaLeerTodos = await esquemaTrabajos.find();
 			res.json({ mensaje: 'Datos en la coleccion:', datosParaLeerTodos });
 		} catch (error) {
 			res.json({ error });
@@ -22,7 +21,7 @@ const controladorTrabajos = {
 	},
 	escribir: async (req, res) => {
 		try {
-			const datosEsquema = modelo(req.body);
+			const datosEsquema = esquemaTrabajos(req.body);
 			const datosParaGuardar = await datosEsquema.save();
 			if (datosParaGuardar._id) {
 				res.json({ mensaje: 'Datos Guardados:', datosParaGuardar });
@@ -32,18 +31,18 @@ const controladorTrabajos = {
 			res.json({ error });
 		}
 	},
-
 	actualizar: async (req, res) => {
 		try {
-			const datosParaActualizar = await modelo.findByIdAndUpdate(
+			const datosParaActualizar = await esquemaTrabajos.findByIdAndUpdate(
 				req.params.id,
 				req.body
 			);
 			if (datosParaActualizar._id) {
-				const datosRefrescados = await modelo.findByIdAndUpdate(
-					req.params.id,
-					req.body
-				);
+				const datosRefrescados =
+					await esquemaTrabajos.findByIdAndUpdate(
+						req.params.id,
+						req.body
+					);
 				res.json({ mensaje: 'Datos actualizados:', datosRefrescados });
 			}
 		} catch (error) {
@@ -52,7 +51,7 @@ const controladorTrabajos = {
 	},
 	eliminar: async (req, res) => {
 		try {
-			const datosParaEliminar = await modelo.findOneAndDelete(
+			const datosParaEliminar = await esquemaTrabajos.findOneAndDelete(
 				req.params._id
 			);
 			if (datosParaEliminar) {
@@ -67,7 +66,7 @@ const controladorTrabajos = {
 	},
 	eliminarTodos: async (req, res) => {
 		try {
-			const datosParaEliminarTodos = await modelo.deleteMany({});
+			const datosParaEliminarTodos = await esquemaTrabajos.deleteMany({});
 			if (datosParaEliminarTodos) {
 				res.json({
 					mensaje: 'Datos eliminados:',
@@ -79,4 +78,4 @@ const controladorTrabajos = {
 		}
 	},
 };
-export default controladorTrabajos;
+export default ControladorTrabajos;

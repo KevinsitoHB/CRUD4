@@ -4,7 +4,6 @@ import cors from 'cors';
 import rutaUsuarios from '../routes/rutaUsuarios.js';
 import rutaTrabajos from '../routes/rutaTrabajos.js';
 import rutaInicioSesion from '../routes/rutaInicioSesion.js';
-import rutaTrabajos from '../routes/rutaTrabajos.js';
 
 const app = express();
 

@@ -1,12 +1,45 @@
-<div class="container ">
-    <div class="jumbotron">
-        <h1 class="display-4 ">Hello, {{nombre}}!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-            featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
+<div class="container">
+    <div class="card">
+        <h1 class="display-3 ">Hello, {{nombre}}! Add a new Job:</h1>
+        <form>
+            <div class="myInput d-flex form-group">
+                <p class="display-6 ">Nombre del Trabajo:</p>
+                <input type="text" class="myInputBarMain myInputBarJobs form-control" placeholder="Enter"
+                    formControlName="nombreTrabajo">
+            </div>
+            <div class="myInput  d-flex  form-group">
+                <p class="display-6">Tipo de Trabajo:</p>
+                <input type="text" name="" class="myInputBarMain form-control" placeholder="Enter "
+                    formControlName="tipoTrabajo">
+            </div>
+            <div class="myInput d-flex form-group">
+                <p class="display-6">Fecha de Inicio:</p>
+                <input type="text" name="" class="myInputBarMain form-control" placeholder="Enter "
+                    formControlName="fechaInicioTrabajo">
+            </div>
+            <div class="myInput d-flex form-group">
+                <p class="display-6">Fecha de Terminación:</p>
+                <input type="text" name="" class="myInputBarMain form-control" placeholder="Enter "
+                    formControlName="fechaFinalizacionTrabajo">
+            </div>
+            <div class="myInput d-flex form-group">
+                <p class="display-6">Availability:</p>
+                <input type="text" name="" class="myInputBarMain form-control" placeholder="Enter "
+                    formControlName="disponibilidadTrabajo">
+            </div>
+            <div class="myInput d-flex form-group">
+                <p class="display-6">Salary:</p>
+                <input type="text" name="" class="myInputBarMain myInputBarJobs form-control" placeholder="0"
+                    formControlName="salarioTrabajo">
+            </div>
+            <div class="myInput d-flex form-group">
+                <p class="display-6">Comisión:</p>
+                <input type="text" name="" class="myInputBarMain myInputBarJobs form-control" placeholder="0"
+                    formControlName="comisionTrabajo">
+            </div>
+            <div class="col-md-12 text-center ">
+                <button type="submit" class=" mybtn btn btn-outline-primary ">Add job</button>
+            </div>
+        </form>
     </div>
 </div>

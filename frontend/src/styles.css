@@ -8,3 +8,24 @@
 body {
     color: #000;
 }
+
+a {
+    text-decoration: none !important;
+}
+
+p {
+    margin: 0;
+}
+
+.mybtn {
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+}
+
+.myInputBarMain {
+    height: 50px;
+    border-radius: 15px;
+    width: auto;
+}

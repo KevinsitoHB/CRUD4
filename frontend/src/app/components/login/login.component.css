@@ -2,6 +2,24 @@
          text-decoration: none !important;
      }
 
+     p {
+         margin: 0;
+     }
+
+     .containerLogin {
+         margin-top: 100px;
+     }
+
+     .myInput {
+         margin-bottom: 20px !important;
+     }
+
+     .myInputBar {
+         height: 50px;
+         border-radius: 15px;
+         ;
+     }
+
      .myform {
          position: relative;
          display: -ms-flexbox;
@@ -21,6 +39,9 @@
 
      .mybtn {
          border-radius: 10px;
+         width: 100%;
+         margin: 20px 0 20px 0;
+         padding: 10px;
      }
 
      .login-or {

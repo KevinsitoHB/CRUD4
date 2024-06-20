@@ -1,12 +1,15 @@
 .myInputBarJobs {
     font-size: 2.5rem;
     color: #454343;
-    border-color: #FFF;
-    outline: none;
+    /* border-color: #FFF;
+    outline: none; */
     width: auto;
     height: 45px;
     margin-left: 10px;
-    border-bottom: 1px solid #000;
+}
+
+.myInputBarJobs:focus {
+    box-shadow: none;
 }
 
 .mainContainer,

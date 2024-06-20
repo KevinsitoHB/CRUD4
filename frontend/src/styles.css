@@ -27,5 +27,5 @@ p {
 .myInputBarMain {
     height: 50px;
     border-radius: 15px;
-    width: auto;
+    width: 100%;
 }

@@ -3,4 +3,15 @@
     color: #454343;
     border-color: #FFF;
     outline: none;
+    width: auto;
+    height: 45px;
+    margin-left: 10px;
+    border-bottom: 1px solid #000;
 }
+
+.mainContainer,
+.card {
+    padding: 30px;
+}
+
+@media (max-width:991px) {}

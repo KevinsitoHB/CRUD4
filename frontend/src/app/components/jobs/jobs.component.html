@@ -1,51 +1,72 @@
 <div class=" mainContainer container-flex">
     <h1 class="display-3 ">Hello, {{nombre}}! Add a new Job:</h1>
     <div class="row">
-        <div class="col">
+        <div class="col-md-5">
             <div class="card">
                 <form>
-                    <div class="d-flex form-group row">
-                        <p class="display-6 col-4">Job's title:</p>
-                        <input type="text" class="myInputBarJobs form-control col-8" placeholder="Job's title"
-                            formControlName="nombreTrabajo">
+
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <p class="display-6 p-0">Job's title:</p>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="myInputBarJobs form-control" placeholder="Job's title"
+                                formControlName="nombreTrabajo">
+                        </div>
                     </div>
-                    <div class="d-flex form-group row">
-                        <p class="display-6 col-4">Type of Job:</p>
-                        <input type="text" class="myInputBarJobs form-control  col-8" placeholder="Type of Job"
-                            formControlName="tipoTrabajo">
+
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <p class="display-6 p-0">Type of Job:</p>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="myInputBarJobs form-control" placeholder="Type of Job"
+                                formControlName="tipoTrabajo">
+                        </div>
                     </div>
-                    <div class="d-flex form-group row">
-                        <p class="display-6 col-4">Start Date:</p>
-                        <input type="text" class="myInputBarJobs form-control col-8" placeholder="Start Date"
-                            formControlName="fechaInicioTrabajo">
+
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <p class="display-6 p-0">Start Date:</p>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="myInputBarJobs form-control" placeholder="Start Date"
+                                formControlName="fechaInicioTrabajo">
+                        </div>
                     </div>
-                    <div class=" d-flex form-group row">
-                        <p class="display-6 col-4">End Date:</p>
-                        <input type="text" class="myInputBarJobs form-control col-8" placeholder="End Date"
-                            formControlName="fechaFinalizacionTrabajo">
+
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <p class="display-6 p-0">End Date:</p>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" class="myInputBarJobs form-control" placeholder="End Date"
+                                formControlName="fechaFinalizacionTrabajo">
+                        </div>
                     </div>
-                    <div class=" d-flex form-group row">
-                        <p class="display-6 col-4">Availability:</p>
-                        <input type="text" class="myInputBarJobs form-control col-8" placeholder="Availability"
+
+                    <div class="form-group row">
+                        <p class="display-6 p-0">Availability:</p>
+                        <input type="text" class="myInputBarJobs form-control" placeholder="Availability"
                             formControlName="disponibilidadTrabajo">
                     </div>
-                    <div class=" d-flex form-group row">
-                        <p class="display-6 col-4">Salary:</p>
-                        <input type="text" class="myInputBarJobs form-control col-8" placeholder="0.00"
+                    <div class="form-group row">
+                        <p class="display-6 p-0">Salary:</p>
+                        <input type="text" class="myInputBarJobs form-control" placeholder="0.00"
                             formControlName="salarioTrabajo">
                     </div>
-                    <div class=" d-flex form-group row">
-                        <p class="display-6 col-4">Comission:</p>
-                        <input type="text" class="myInputBarJobs form-control col-8" placeholder="0.00"
+                    <div class="form-group row">
+                        <p class="display-6 p-0">Comission:</p>
+                        <input type="text" class="myInputBarJobs form-control" placeholder="0.00"
                             formControlName="comisionTrabajo">
                     </div>
                     <div class="col-md-12 text-center ">
-                        <button type="submit" class=" mybtn btn btn-outline-primary ">Add Job</button>
+                        <button type="submit" class=" mybtn btn btn-outline-primary">Add Job</button>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="col">
+        <div class="col-md-7">
             <div class="card">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste rerum beatae ex? Debitis reprehenderit, a
                 quam nisi distinctio quaerat praesentium laborum voluptatibus dolorem deserunt eos nesciunt modi vitae

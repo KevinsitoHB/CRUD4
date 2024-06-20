@@ -1,11 +1,11 @@
 .myInputBarJobs {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #454343;
     /* border-color: #FFF;
     outline: none; */
-    width: auto;
+    width: 100%;
     height: 45px;
-    margin-left: 10px;
+
 }
 
 .myInputBarJobs:focus {

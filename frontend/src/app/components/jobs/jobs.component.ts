@@ -2,50 +2,40 @@ import { Component, inject } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
-import {
-  ReactiveFormsModule,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
+import { TrabajosService } from '../../services/trabajos.service';
 const jwtHelperService = new JwtHelperService();
 
 @Component({
   selector: 'app-jobs',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [FormsModule],
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.css',
 })
 export class JobsComponent {
   loginService = inject(LoginService);
-  nombre: String = '';
   toastrService = inject(ToastrService);
-  addJobForm = new FormGroup({
-    nombreTrabajo: new FormControl('', Validators.required),
-    tipoTrabajo: new FormControl('', Validators.required),
-    fechaInicioTrabajo: new FormControl('', Validators.required),
-    fechaFinalizacionTrabajo: new FormControl('', Validators.required),
-    inicioInmediatoTrabajo: new FormControl('', Validators.required),
-    salarioTrabajo: new FormControl('', Validators.required),
-    comisionTrabajo: new FormControl('', Validators.required),
-  });
+  trabajosService = inject(TrabajosService);
+  nombre: string = '';
+  nombreTrabajo: string = '';
+  tipoTrabajo: string = '';
+  fechaInicioTrabajo: string = '';
+  fechaFinTrabajo: string = '';
+  inicioInmediatoTrabajo: Boolean = false;
+  salarioTrabajo: Number = 0;
+  comisionTrabajo: Number = 0;
+
   handleSubmitAddJob() {
-    if (this.addJobForm.valid) {
-      const nombreTrabajoSubmit = this.addJobForm.value.nombreTrabajo;
-      const tipoTrabajoSubmit = this.addJobForm.value.nombreTrabajo;
-      const fechaInicioSubmit = this.addJobForm.value.nombreTrabajo;
-      const fechaFinTrabajoSubmit = this.addJobForm.value.nombreTrabajo;
-      const disponibilidadTrabajoSubmit = this.addJobForm.value.nombreTrabajo;
-      const salarioTrabajoSubmit = this.addJobForm.value.nombreTrabajo;
-      const comisionTrabajoSubmit = this.addJobForm.value.nombreTrabajo;
-      if (typeof nombreTrabajoSubmit === 'string') {
-      } else {
-      }
-    } else {
-      console.log('Invalid form :>> ');
-    }
+    this.trabajosService.AddJob(
+      this.nombreTrabajo,
+      this.tipoTrabajo,
+      this.fechaInicioTrabajo,
+      this.fechaFinTrabajo,
+      this.inicioInmediatoTrabajo,
+      this.salarioTrabajo,
+      this.comisionTrabajo
+    );
   }
   ngOnInit() {
     const token: any = localStorage.getItem('token');

@@ -3,14 +3,14 @@
     <div class="row">
         <div class="col-md-5">
             <div class="card">
-                <form [formGroup]="addJobForm" (ngSubmit)="handleSubmitAddJob()">
+                <form>
                     <div class="form-group row align-items-center mb-3">
                         <div class="col-xl-4">
                             <p class=" p-0">Job's title:</p>
                         </div>
                         <div class="col-xl-8">
                             <input type="text" class="myInputBarJobs form-control" placeholder="Job's title"
-                                name="nombreTrabajo">
+                                name="nombreTrabajo" [(ngModel)]="nombreTrabajo">
                         </div>
                     </div>
 
@@ -21,7 +21,7 @@
                         <div class="col-xl-8">
 
                             <input type="text" class="myInputBarJobs form-control" placeholder="Type of Job"
-                                name="tipoTrabajo">
+                                name="tipoTrabajo" [(ngModel)]="tipoTrabajo">
                         </div>
                     </div>
 
@@ -32,7 +32,7 @@
                         <div class="col-xl-8">
 
                             <input type="date" class="myInputBarJobs form-control" placeholder="Start Date"
-                                name="fechaInicioTrabajo">
+                                name="fechaInicioTrabajo" [(ngModel)]="fechaInicioTrabajo">
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@
                         <div class="col-xl-8">
 
                             <input type="date" class="myInputBarJobs form-control" placeholder="End Date"
-                                name="fechaFinalizacionTrabajo">
+                                name="fechaFinalizacionTrabajo" [(ngModel)]="fechaFinTrabajo">
                         </div>
                     </div>
 
@@ -54,7 +54,7 @@
                         <div class="col-xl-8">
 
                             <input type="checkbox" class="myInputBarJobs form-control" placeholder="Availability"
-                                name="inicioInmediatoTrabajo">
+                                name="inicioInmediatoTrabajo" [(ngModel)]="inicioInmediatoTrabajo">
                         </div>
                     </div>
 
@@ -65,7 +65,7 @@
                         <div class="col-xl-8">
 
                             <input type="number" class="myInputBarJobs form-control" placeholder="0.00"
-                                name="salarioTrabajo">
+                                name="salarioTrabajo" [(ngModel)]="salarioTrabajo">
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
                         <div class="col-xl-8">
 
                             <input type="number" class="myInputBarJobs form-control" placeholder="0.00"
-                                name="comisionTrabajo">
+                                name="comisionTrabajo" [(ngModel)]="comisionTrabajo">
                         </div>
                     </div>
 

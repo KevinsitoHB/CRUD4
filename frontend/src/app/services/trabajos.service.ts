@@ -14,7 +14,7 @@ export class TrabajosService {
     tipoTrabajoSubmit: any,
     fechaInicioSubmit: any,
     fechaFinTrabajoSubmit: any,
-    disponibilidadTrabajoSubmit: any,
+    inicioInmediatoTrabajoSubmit: any,
     salarioTrabajoSubmit: any,
     comisionTrabajoSubmit: any
   ) {
@@ -23,7 +23,10 @@ export class TrabajosService {
     formData.append('tipoTrabajoSubmit', tipoTrabajoSubmit);
     formData.append('fechaInicioSubmit', fechaInicioSubmit);
     formData.append('fechaFinTrabajoSubmit', fechaFinTrabajoSubmit);
-    formData.append('disponibilidadTrabajoSubmit', disponibilidadTrabajoSubmit);
+    formData.append(
+      'inicioInmediatoTrabajoSubmit',
+      inicioInmediatoTrabajoSubmit
+    );
     formData.append('salarioTrabajoSubmit', salarioTrabajoSubmit);
     formData.append('comisionTrabajoSubmit', comisionTrabajoSubmit);
     return this.httpClient.post(this.API_URL, formData);

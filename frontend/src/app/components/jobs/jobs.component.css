@@ -12,9 +12,18 @@
     box-shadow: none;
 }
 
-.mainContainer,
+.mainContainer {
+    padding: 30px;
+}
+
 .card {
     padding: 30px;
+    width: 100%;
+
+}
+
+.jobsCard {
+    margin: 20px 0 20px 0;
 }
 
 @media (max-width:991px) {}

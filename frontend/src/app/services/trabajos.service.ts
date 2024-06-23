@@ -14,21 +14,29 @@ export class TrabajosService {
     tipoTrabajoSubmit: any,
     fechaInicioSubmit: any,
     fechaFinTrabajoSubmit: any,
-    inicioInmediatoTrabajoSubmit: any,
+    inmediatoTrabajoSubmit: any,
     salarioTrabajoSubmit: any,
     comisionTrabajoSubmit: any
   ) {
-    const formData = new FormData(); //CREAR INSTANCIA DE LA CLASE
-    formData.append('nombreTrabajoSubmit', nombreTrabajoSubmit); //NOMBRE QUE LE DARE Y DATO QUE SE PASA
+    //CREAR INSTANCIA DE LA CLASE
+    const formData = new FormData();
+    //NOMBRE QUE LE DARE Y DATO QUE SE PASA
+    formData.append('nombreTrabajoSubmit', nombreTrabajoSubmit);
     formData.append('tipoTrabajoSubmit', tipoTrabajoSubmit);
     formData.append('fechaInicioSubmit', fechaInicioSubmit);
     formData.append('fechaFinTrabajoSubmit', fechaFinTrabajoSubmit);
-    formData.append(
-      'inicioInmediatoTrabajoSubmit',
-      inicioInmediatoTrabajoSubmit
-    );
+    formData.append('inmediatoTrabajoSubmit', inmediatoTrabajoSubmit);
     formData.append('salarioTrabajoSubmit', salarioTrabajoSubmit);
     formData.append('comisionTrabajoSubmit', comisionTrabajoSubmit);
     return this.httpClient.post(this.API_URL, formData);
   }
 }
+
+/**  getCaps() {
+    return this.httpClient.get(this.API_URL);
+  }
+
+  deleteCap(id: string) {
+    return this.httpClient.delete(`${this.API_URL}/${id}`);
+  }
+} */

@@ -2,14 +2,13 @@ import { Schema, model } from 'mongoose';
 
 const esquemaTrabajos = new Schema(
 	{
-		nombreTrabajo: { type: String, required: true },
-		tipoTrabajo: { type: String, required: true },
-		inicioInmediatoTrabajo: { type: String, required: true },
-		fechaInicioTrabajo: { type: Date, required: true },
-		fechaFinalizacionTrabajo: { type: Date, required: false },
-		salarioTrabajo: { type: Number, required: true },
-		comisionTrabajo: { type: Boolean, required: true },
-		imagen: { type: Buffer, contentType: String, required: false },
+		nombreTrabajoSubmit: { type: String, required: false },
+		tipoTrabajoSubmit: { type: String, required: false },
+		fechaInicioSubmit: { type: String, required: false },
+		fechaFinTrabajoSubmit: { type: String, required: false },
+		inmediatoTrabajoSubmit: { type: Boolean, required: false },
+		salarioTrabajoSubmit: { type: Number, required: false },
+		comisionTrabajoSubmit: { type: Number, required: false },
 	},
 	{ strict: false, versionKey: false, timestamps: true }
 );

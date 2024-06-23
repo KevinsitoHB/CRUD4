@@ -18,25 +18,32 @@ export class JobsComponent {
   toastrService = inject(ToastrService);
   trabajosService = inject(TrabajosService);
   nombre: string = '';
-  nombreTrabajo: string = '';
+  /*console.log('miDate: ', miDate.getDate());
+console.log('miDate: ', miDate.getFullYear());
+console.log('miDate: ', miDate.getMonth());
+console.log('miDate: ', miDate.getDay());
+console.log('miDate: ', miDate.getHours());
+console.log('miDate: ', miDate.getMinutes());
+console.log('miDate: ', miDate.getSeconds());
+console.log('miDate: ', miDate.getMilliseconds());
+console.log('miDate: ', miDate.getTime());
+console.log('2024-06-19T01:30:43.046Z');
+miDate = new Date('2024-06-19T01:30:43.046Z');
+console.log('miDate: ', miDate);
+console.log('miDate: ', miDate.toString());
+console.log('miDate: ', miDate.toDateString());
+console.log('miDate: ', miDate.toLocaleString());
+console.log('miDate: ', miDate.toLocaleDateString());
+console.log('miDate: ', miDate.toLocaleTimeString());
+console.log(Date.now()); */
+  nombreTrabajoSubmit: string = '';
   tipoTrabajo: string = '';
-  fechaInicioTrabajo: string = '';
-  fechaFinTrabajo: string = '';
+  fechaInicioTrabajo: Date = new Date();
+  fechaFinTrabajo: Date = new Date();
   inicioInmediatoTrabajo: Boolean = false;
-  salarioTrabajo: Number = 0;
-  comisionTrabajo: Number = 0;
+  salarioTrabajo: any;
+  comisionTrabajo: any;
 
-  handleSubmitAddJob() {
-    this.trabajosService.AddJob(
-      this.nombreTrabajo,
-      this.tipoTrabajo,
-      this.fechaInicioTrabajo,
-      this.fechaFinTrabajo,
-      this.inicioInmediatoTrabajo,
-      this.salarioTrabajo,
-      this.comisionTrabajo
-    );
-  }
   ngOnInit() {
     const token: any = localStorage.getItem('token');
     const decoded = jwtHelperService.decodeToken(token);
@@ -54,4 +61,39 @@ export class JobsComponent {
       console.log('Token no encontrado :>>');
     }
   }
+
+  handleSubmitAddJob() {
+    this.trabajosService
+      .AddJob(
+        this.nombreTrabajoSubmit,
+        this.tipoTrabajo,
+        this.fechaInicioTrabajo,
+        this.fechaFinTrabajo,
+        this.inicioInmediatoTrabajo,
+        this.salarioTrabajo,
+        this.comisionTrabajo
+      )
+      .subscribe((response: any) => {
+        console.log('response :>> ', response);
+      });
+  }
+
+  // handleInfo() {
+  //   console.log('...handleInfo...');
+  // }
+  // handleUpdate() {
+  //   console.log('...handleUpdate...');
+  // }
+  // handleDelete(id: string) {
+  //   this.trabajosService.deleteCap(id).subscribe((res: any) => {
+  //     if (res.resultado === 'bien') {
+  //       this.toastrService.success(res.mensaje);
+  //       this.trabajosService.getCaps().subscribe((res: any) => {
+
+  //       });
+  //     } else {
+  //       this.toastrService.error('An error ocurred');
+  //     }
+  //   });
+  // }
 }

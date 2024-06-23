@@ -24,7 +24,10 @@ const ControladorTrabajos = {
 			const datosEsquema = esquemaTrabajos(req.body);
 			const datosParaGuardar = await datosEsquema.save();
 			if (datosParaGuardar._id) {
-				res.json({ mensaje: 'Datos Guardados:', datosParaGuardar });
+				res.json({
+					mensaje: 'Datos Guardados Trabajos:',
+					datosParaGuardar,
+				});
 			}
 		} catch (error) {
 			console.log('No guardados');

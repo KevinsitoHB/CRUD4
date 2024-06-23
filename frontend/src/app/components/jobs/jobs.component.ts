@@ -18,31 +18,6 @@ export class JobsComponent {
   toastrService = inject(ToastrService);
   trabajosService = inject(TrabajosService);
   nombre: string = '';
-  /*console.log('miDate: ', miDate.getDate());
-console.log('miDate: ', miDate.getFullYear());
-console.log('miDate: ', miDate.getMonth());
-console.log('miDate: ', miDate.getDay());
-console.log('miDate: ', miDate.getHours());
-console.log('miDate: ', miDate.getMinutes());
-console.log('miDate: ', miDate.getSeconds());
-console.log('miDate: ', miDate.getMilliseconds());
-console.log('miDate: ', miDate.getTime());
-console.log('2024-06-19T01:30:43.046Z');
-miDate = new Date('2024-06-19T01:30:43.046Z');
-console.log('miDate: ', miDate);
-console.log('miDate: ', miDate.toString());
-console.log('miDate: ', miDate.toDateString());
-console.log('miDate: ', miDate.toLocaleString());
-console.log('miDate: ', miDate.toLocaleDateString());
-console.log('miDate: ', miDate.toLocaleTimeString());
-console.log(Date.now()); */
-  nombreTrabajoSubmit: string = '';
-  tipoTrabajo: string = '';
-  fechaInicioTrabajo: Date = new Date();
-  fechaFinTrabajo: Date = new Date();
-  inicioInmediatoTrabajo: Boolean = false;
-  salarioTrabajo: any;
-  comisionTrabajo: any;
 
   ngOnInit() {
     const token: any = localStorage.getItem('token');
@@ -62,16 +37,42 @@ console.log(Date.now()); */
     }
   }
 
+  /*console.log('miDate: ', miDate.getDate());
+console.log('miDate: ', miDate.getFullYear());
+console.log('miDate: ', miDate.getMonth());
+console.log('miDate: ', miDate.getDay());
+console.log('miDate: ', miDate.getHours());
+console.log('miDate: ', miDate.getMinutes());
+console.log('miDate: ', miDate.getSeconds());
+console.log('miDate: ', miDate.getMilliseconds());
+console.log('miDate: ', miDate.getTime());
+console.log('2024-06-19T01:30:43.046Z');
+miDate = new Date('2024-06-19T01:30:43.046Z');
+console.log('miDate: ', miDate);
+console.log('miDate: ', miDate.toString());
+console.log('miDate: ', miDate.toDateString());
+console.log('miDate: ', miDate.toLocaleString());
+console.log('miDate: ', miDate.toLocaleDateString());
+console.log('miDate: ', miDate.toLocaleTimeString());
+console.log(Date.now()); */
+  nombreTrabajoSubmit: string = '';
+  tipoTrabajoSubmit: string = '';
+  fechaInicioSubmit: string = '';
+  fechaFinTrabajoSubmit: string = '';
+  inmediatoTrabajoSubmit: Boolean = false;
+  salarioTrabajoSubmit: any;
+  comisionTrabajoSubmit: any;
+
   handleSubmitAddJob() {
     this.trabajosService
       .AddJob(
         this.nombreTrabajoSubmit,
-        this.tipoTrabajo,
-        this.fechaInicioTrabajo,
-        this.fechaFinTrabajo,
-        this.inicioInmediatoTrabajo,
-        this.salarioTrabajo,
-        this.comisionTrabajo
+        this.tipoTrabajoSubmit,
+        this.fechaInicioSubmit,
+        this.fechaFinTrabajoSubmit,
+        this.inmediatoTrabajoSubmit,
+        this.salarioTrabajoSubmit,
+        this.comisionTrabajoSubmit
       )
       .subscribe((response: any) => {
         console.log('response :>> ', response);

@@ -28,6 +28,7 @@ export class TrabajosService {
     formData.append('inmediatoTrabajoSubmit', inmediatoTrabajoSubmit);
     formData.append('salarioTrabajoSubmit', salarioTrabajoSubmit);
     formData.append('comisionTrabajoSubmit', comisionTrabajoSubmit);
+    console.log('formData :>> ', formData);
     return this.httpClient.post(this.API_URL, formData);
   }
 }

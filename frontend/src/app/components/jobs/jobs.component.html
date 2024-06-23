@@ -10,7 +10,7 @@
                         </div>
                         <div class="col-xl-8">
                             <input type="text" class="myInputBarJobs form-control" placeholder="Job's title"
-                                name="nombreTrabajoSubmit" [(ngModel)]="nombreTrabajoSubmit">
+                                name="nombreTrabajoSubmit" [(ngModel)]="nombreTrabajoSubmit" id="nombreTrabajoSubmit">
                         </div>
                     </div>
                     <div class=" row align-items-center mb-3">
@@ -20,7 +20,7 @@
                         <div class="col-xl-8">
 
                             <input type="text" class="myInputBarJobs form-control" placeholder="Type of Job"
-                                name="tipoTrabajoSubmit" [(ngModel)]="tipoTrabajoSubmit">
+                                name="tipoTrabajoSubmit" [(ngModel)]="tipoTrabajoSubmit" id="tipoTrabajoSubmit">
                         </div>
                     </div>
 
@@ -30,7 +30,7 @@
                         </div>
                         <div class="col-xl-8">
                             <input type="text" class="myInputBarJobs form-control" name="fechaInicioSubmit"
-                                [(ngModel)]="fechaInicioSubmit">
+                                [(ngModel)]="fechaInicioSubmit" id="fechaInicioSubmit">
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-xl-8">
                             <input type="text" class="myInputBarJobs form-control" name="fechaFinalizacionTrabajo"
-                                [(ngModel)]="fechaFinTrabajoSubmit">
+                                [(ngModel)]="fechaFinTrabajoSubmit" id="fechaFinalizacionTrabajo">
                         </div>
                     </div>
 
@@ -51,11 +51,12 @@
                         <div class="col-xl-8">
                             <input class="form-check-input" type="checkbox" value="true" id="inputAvailable"
                                 aria-describedby="availableHelp" name="inmediatoTrabajoSubmit"
-                                [(ngModel)]="inmediatoTrabajoSubmit" />
+                                [(ngModel)]="inmediatoTrabajoSubmit" id="inmediatoTrabajoSubmit">
                             <!-- <select name="inmediatoTrabajoSubmit" [(ngModel)]="inmediatoTrabajoSubmit">
                                 <option [value]="true">Yes</option>
                                 <option [value]="false">No</option>
                             </select> -->
+
                         </div>
                     </div>
 
@@ -64,33 +65,32 @@
                             <p class=" p-0">Salary:</p>
                         </div>
                         <div class="col-xl-8">
-
                             <input type="number" class="myInputBarJobs form-control" placeholder="0.00"
-                                name="salarioTrabajoSubmit" [(ngModel)]="salarioTrabajoSubmit">
+                                name="salarioTrabajoSubmit" [(ngModel)]="salarioTrabajoSubmit"
+                                id="salarioTrabajoSubmit">
                         </div>
                     </div>
-
                     <div class=" row align-items-center mb-3">
                         <div class="col-xl-4">
                             <p class=" p-0">Comission:</p>
                         </div>
                         <div class="col-xl-8">
-
                             <input type="number" class="myInputBarJobs form-control" placeholder="0.00"
-                                name="comisionTrabajoSubmit" [(ngModel)]="comisionTrabajoSubmit">
+                                name="comisionTrabajoSubmit" [(ngModel)]="comisionTrabajoSubmit"
+                                id="comisionTrabajoSubmit">
                         </div>
                     </div>
-
                     <div class="col-md-12 text-center ">
                         <button type="submit" class="mybtn btn btn-outline-primary">Add Job</button>
                     </div>
                 </form>
             </div>
         </div>
+        <!-- SIDE -->
         <div class="col-md-7">
             <div class="card container-flex">
                 <div class="row">
-                    <div class="container col-md-6">
+                    <div class="container col-sm-12 col-lg-6 col-lg-6">
                         <div class="card jobsCard">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container col-md-6">
+                    <div class="container col-sm-12 col-lg-6 col-lg-6">
                         <div class="card jobsCard">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
@@ -118,7 +118,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container col-md-6">
+                    <div class="container col-sm-12 col-lg-6 col-lg-6">
                         <div class="card jobsCard">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container col-md-6">
+                    <div class="container col-sm-12 col-lg-6 col-lg-6">
                         <div class="card jobsCard">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
@@ -146,7 +146,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container col-md-6">
+                    <div class="container col-sm-12 col-lg-6 col-lg-6">
                         <div class="card jobsCard">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">
@@ -160,7 +160,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container col-md-6">
+                    <div class="container col-sm-12 col-lg-6 col-lg-6">
                         <div class="card jobsCard">
                             <img class="card-img-top" src="..." alt="Card image cap">
                             <div class="card-body">

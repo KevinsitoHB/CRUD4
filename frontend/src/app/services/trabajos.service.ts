@@ -9,7 +9,8 @@ export class TrabajosService {
   httpClient = inject(HttpClient);
 
   API_URL = 'http://localhost:3000/jobs';
-  AddJob(
+
+  addJob(
     nombreTrabajoSubmit: any,
     tipoTrabajoSubmit: any,
     fechaInicioSubmit: any,

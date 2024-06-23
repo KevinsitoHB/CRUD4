@@ -65,7 +65,7 @@ console.log(Date.now()); */
 
   handleSubmitAddJob() {
     this.trabajosService
-      .AddJob(
+      .addJob(
         this.nombreTrabajoSubmit,
         this.tipoTrabajoSubmit,
         this.fechaInicioSubmit,

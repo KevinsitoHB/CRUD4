@@ -1,10 +1,9 @@
 .myInputBarJobs {
-
     color: #454343;
     border-color: #aaa;
-    /* outline: none;   */
     width: 100%;
     height: 45px;
+    cursor: pointer;
 
 }
 

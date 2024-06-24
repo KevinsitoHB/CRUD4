@@ -31,7 +31,6 @@ export class JobsComponent {
           this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
             if (res.mensaje === 'Datos en la coleccion:') {
               this.listadoTrabajos = res.datosParaLeerTodos;
-              this.toastrService.success('Success login!');
             } else {
               this.toastrService.error('Error loading');
             }
@@ -98,7 +97,14 @@ console.log(Date.now()); */
   handleDeleteJob(id: string) {
     this.trabajosService.eliminarListadoTrabajos(id).subscribe((res: any) => {
       this.toastrService.success(res.mensaje);
-      //     this.trabajosService.getCaps().subscribe((res: any) => { });
+      this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
+        if (res.mensaje === 'Datos en la coleccion:') {
+          this.listadoTrabajos = res.datosParaLeerTodos;
+          this.toastrService.success('Success login!');
+        } else {
+          this.toastrService.error('Error loading');
+        }
+      });
     });
   }
 }

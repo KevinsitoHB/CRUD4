@@ -52,13 +52,11 @@
                             <p class="p-0">Immediate Start:</p>
                         </div>
                         <div class="col-xl-8">
-                            <input autocomplete="off" class="form-check-input" type="checkbox" value=""
-                                id="inmediatoTrabajoSubmit" name="inmediatoTrabajoSubmit"
-                                [(ngModel)]="inmediatoTrabajoSubmit" id="inmediatoTrabajoSubmitID" />
-                            <!-- <select name="inmediatoTrabajoSubmit" [(ngModel)]="inmediatoTrabajoSubmit">
-<option [value]="true">Yes</option>
-<option [value]="false">No</option>
-</select> -->
+                            <select class="form-control myInputBarJobs" name="inmediatoTrabajoSubmit"
+                                [(ngModel)]="inmediatoTrabajoSubmit" id="inmediatoTrabajoSubmitID">
+                                <option [value]="true">Yes</option>
+                                <option [value]="false">No</option>
+                            </select>
 
                         </div>
                     </div>
@@ -148,7 +146,7 @@
                                         <p class="p-0">Immediate Start:</p>
                                     </div>
                                     <div class="col-xl-8">
-                                        <select class="form-control">
+                                        <select class="form-control myInputBarJobs">
                                             @if (listadoTrabajo.inmediatoTrabajoSubmit) {
                                             <option>Yes</option>
                                             <option>No</option>
@@ -182,14 +180,15 @@
                                     </div>
                                 </div>
 
-                                <a href="#" class="btn btn-danger upNdelButtons">Delete</a>
-                                <a href="#" class="btn btn-warning upNdelButtons">Update</a>
+                                <button (click)="handleDeleteJob(listadoTrabajo._id)"
+                                    class="btn btn-danger upNdelButtons">Delete</button>
+                                <button href="#" class="btn btn-warning upNdelButtons">Update</button>
 
                             </div>
                         </div>
                     </div>
                     } }@else{
-                    <p>No Jobs available</p>
+                    <p>No Jobs available.</p>
                     }
 
                     <!-- <div class="container col-sm-12 col-lg-6 col-lg-6">

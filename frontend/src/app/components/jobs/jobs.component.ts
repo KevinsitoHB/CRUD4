@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { LoginService } from '../../services/login.service';
-import { ToastrService } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { LoginService } from '../../services/login.service';
 import { TrabajosService } from '../../services/trabajos.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 const jwtHelperService = new JwtHelperService();
 
 @Component({
@@ -14,8 +15,8 @@ const jwtHelperService = new JwtHelperService();
   styleUrl: './jobs.component.css',
 })
 export class JobsComponent {
-  loginService = inject(LoginService);
   toastrService = inject(ToastrService);
+  loginService = inject(LoginService);
   trabajosService = inject(TrabajosService);
   nombre: string = '';
 
@@ -55,11 +56,12 @@ console.log('miDate: ', miDate.toLocaleString());
 console.log('miDate: ', miDate.toLocaleDateString());
 console.log('miDate: ', miDate.toLocaleTimeString());
 console.log(Date.now()); */
-  nombreTrabajoSubmit: string = '';
-  tipoTrabajoSubmit: string = '';
-  fechaInicioSubmit: string = '';
-  fechaFinTrabajoSubmit: string = '';
-  inmediatoTrabajoSubmit: Boolean = false;
+
+  nombreTrabajoSubmit: any;
+  tipoTrabajoSubmit: any;
+  fechaInicioSubmit: any;
+  fechaFinTrabajoSubmit: any;
+  inmediatoTrabajoSubmit: any;
   salarioTrabajoSubmit: any;
   comisionTrabajoSubmit: any;
 

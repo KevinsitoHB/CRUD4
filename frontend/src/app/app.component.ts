@@ -10,10 +10,6 @@ import { toast, NgxSonnerToaster } from 'ngx-sonner';
   imports: [CommonModule, RouterOutlet, NavigationComponent, NgxSonnerToaster],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  template: `
-    <ngx-sonner-toaster />
-    <button (click)="toast('My first toast')">Give me a toast</button>
-  `,
 })
 export class AppComponent {
   protected readonly toast = toast;

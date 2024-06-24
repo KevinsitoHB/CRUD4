@@ -30,6 +30,7 @@ const ControladorTrabajos = {
 				salarioTrabajoSubmit: req.body.salarioTrabajoSubmit,
 				comisionTrabajoSubmit: req.body.comisionTrabajoSubmit,
 			});
+			console.log('AQUI :>> ', datosEsquema.nombreTrabajoSubmit);
 			const datosParaGuardar = await datosEsquema.save();
 			if (datosParaGuardar._id) {
 				res.json({

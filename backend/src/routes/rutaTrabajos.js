@@ -5,7 +5,7 @@ const rutaTrabajos = Router();
 
 rutaTrabajos.get('/:id', ControladorTrabajos.leer);
 rutaTrabajos.get('/', ControladorTrabajos.leerTodos);
-rutaTrabajos.post('/', ControladorTrabajos.escribir);
+rutaTrabajos.post('/', ControladorTrabajos.escribirTrabajo);
 rutaTrabajos.put('/:id', ControladorTrabajos.actualizar);
 rutaTrabajos.delete('/:id', ControladorTrabajos.eliminar);
 rutaTrabajos.delete('/', ControladorTrabajos.eliminarTodos);

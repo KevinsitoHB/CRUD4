@@ -19,10 +19,10 @@ const ControladorTrabajos = {
 			res.json({ error });
 		}
 	},
-	escribir: async (req, res) => {
+	escribirTrabajo: async (req, res) => {
 		try {
 			const datosEsquema = new esquemaTrabajos({
-				nombreTrabajoSubmit: req.body.nombreTrabajoSubmit,
+				nombreTrabajoSubmit1: req.body.nombreTrabajoSubmit,
 				tipoTrabajoSubmit: req.body.tipoTrabajoSubmit,
 				fechaInicioSubmit: req.body.fechaInicioSubmit,
 				fechaFinTrabajoSubmit: req.body.fechaFinTrabajoSubmit,
@@ -30,7 +30,7 @@ const ControladorTrabajos = {
 				salarioTrabajoSubmit: req.body.salarioTrabajoSubmit,
 				comisionTrabajoSubmit: req.body.comisionTrabajoSubmit,
 			});
-			console.log('AQUI :>> ', datosEsquema.nombreTrabajoSubmit);
+			console.log('AQUI :>> ', datosEsquema);
 			const datosParaGuardar = await datosEsquema.save();
 			if (datosParaGuardar._id) {
 				res.json({

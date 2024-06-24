@@ -22,15 +22,13 @@ export class TrabajosService {
     //CREAR INSTANCIA DE LA CLASE
     const formData = new FormData();
     //NOMBRE QUE LE DARÉ Y DATO QUE SE PASA
-    formData.append('nombreTrabajoSubmit', nombreTrabajoSubmit),
-      formData.append('tipoTrabajoSubmit', tipoTrabajoSubmit);
+    formData.append('nombreTrabajoSubmit', nombreTrabajoSubmit);
+    formData.append('tipoTrabajoSubmit', tipoTrabajoSubmit);
     formData.append('fechaInicioSubmit', fechaInicioSubmit);
     formData.append('fechaFinTrabajoSubmit', fechaFinTrabajoSubmit);
     formData.append('inmediatoTrabajoSubmit', inmediatoTrabajoSubmit);
     formData.append('salarioTrabajoSubmit', salarioTrabajoSubmit);
     formData.append('comisionTrabajoSubmit', comisionTrabajoSubmit);
-    const formDataString = JSON.stringify(formData);
-    console.log(formDataString);
     return this.httpClient.post(this.API_URL, formData);
   }
 }

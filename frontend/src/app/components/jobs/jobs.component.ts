@@ -57,13 +57,13 @@ console.log('miDate: ', miDate.toLocaleDateString());
 console.log('miDate: ', miDate.toLocaleTimeString());
 console.log(Date.now()); */
 
-  nombreTrabajoSubmit: any;
-  tipoTrabajoSubmit: any;
-  fechaInicioSubmit: any;
-  fechaFinTrabajoSubmit: any;
-  inmediatoTrabajoSubmit: any;
-  salarioTrabajoSubmit: any;
-  comisionTrabajoSubmit: any;
+  nombreTrabajoSubmit: string = '';
+  tipoTrabajoSubmit: string = '';
+  fechaInicioSubmit: string = '';
+  fechaFinTrabajoSubmit: string = '';
+  inmediatoTrabajoSubmit: boolean = false;
+  salarioTrabajoSubmit: number = 0;
+  comisionTrabajoSubmit: number = 0;
 
   handleSubmitAddJob() {
     this.trabajosService

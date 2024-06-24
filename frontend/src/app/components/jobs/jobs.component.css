@@ -9,8 +9,8 @@
 }
 
 .card {
-    padding: 30px;
-    border: 1px solid blue;
+    padding: 30px !important;
+    border: 1px solid blue !important;
 }
 
 .upNdelButtons {

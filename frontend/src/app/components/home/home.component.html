@@ -34,88 +34,77 @@
                 @if (listadoTrabajos.length > 0) {
                 @for(listadoTrabajo of listadoTrabajos; track $index){
                 <div class="container col-sm-12 col-lg-6 col-lg-6">
-                    <div class="card jobsCard">
+                    <div class="card myCard jobsCard">
                         <i class="bi bi-cpu"></i>
                         <div class="card-body">
-                            <h5 class="card-title">
-                                {{listadoTrabajo.nombreTrabajoSubmit}}</h5>
-
-                            <div class=" row align-items-center mb-3">
+                            <h4 class="card-title">
+                                {{listadoTrabajo.nombreTrabajoSubmit}}</h4>
+                            <br>
+                            <div class="row align-items-center mb-3">
                                 <div class="col-xl-4">
-                                    <p class=" p-0">Job's title:</p>
+                                    <h6 class=" p-0">Job's title:</h6>
                                 </div>
                                 <div class="col-xl-8">
-                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                        placeholder="Job's title:" value="{{listadoTrabajo.nombreTrabajoSubmit}}" />
+                                    <p>{{listadoTrabajo.nombreTrabajoSubmit}}
+                                    </p>
                                 </div>
                             </div>
 
-                            <div class=" row align-items-center mb-3">
+                            <div class="row align-items-center mb-3">
                                 <div class="col-xl-4">
-                                    <p class=" p-0">Job type:</p>
+                                    <h6 class=" p-0">Job type:</h6>
                                 </div>
                                 <div class="col-xl-8">
-                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                        placeholder="Type of Job" value="{{listadoTrabajo.tipoTrabajoSubmit}}" />
+                                    <p>{{listadoTrabajo.tipoTrabajoSubmit}}</p>
                                 </div>
                             </div>
 
-                            <div class=" row align-items-center mb-3">
+                            <div class="row align-items-center mb-3">
                                 <div class="col-xl-4">
-                                    <p class=" p-0">Start Date:</p>
+                                    <h6 class=" p-0">Start Date:</h6>
                                 </div>
                                 <div class="col-xl-8">
-                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                        value="{{listadoTrabajo.fechaInicioSubmit}}" />
+                                    <p>{{listadoTrabajo.fechaInicioSubmit}}</p>
                                 </div>
                             </div>
 
-                            <div class=" row align-items-center mb-3">
+                            <div class="row align-items-center mb-3">
                                 <div class="col-xl-4">
-                                    <p class=" p-0">End Date:</p>
+                                    <h6 class=" p-0">End Date:</h6>
                                 </div>
                                 <div class="col-xl-8">
-                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                        value="{{listadoTrabajo.fechaFinTrabajoSubmit}}" />
+                                    <p>{{listadoTrabajo.fechaFinTrabajoSubmit}}</p>
                                 </div>
                             </div>
 
-                            <div class=" row align-items-center mb-3">
+                            <div class="row align-items-center mb-3">
                                 <div class="col-xl-4">
-                                    <p class="p-0">Immediate Start:</p>
+                                    <h6 class="p-0">Immediate Start:</h6>
                                 </div>
                                 <div class="col-xl-8">
-                                    <select class="form-control">
-                                        @if (listadoTrabajo.inmediatoTrabajoSubmit) {
-                                        <option>Yes</option>
-                                        <option>No</option>
-
-                                        }@else{
-                                        <option>No</option>
-                                        <option>Yes</option>
-
-                                        }
-                                    </select>
+                                    @if (listadoTrabajo.inmediatoTrabajoSubmit) {
+                                    <p>Yes</p>
+                                    }@else{
+                                    <p>No</p>
+                                    }
                                 </div>
                             </div>
 
-                            <div class=" row align-items-center mb-3">
+                            <div class="row align-items-center mb-3">
                                 <div class="col-xl-4">
-                                    <p class=" p-0">Salary:</p>
+                                    <h6 class=" p-0">Salary:</h6>
                                 </div>
                                 <div class="col-xl-8">
-                                    <input type="number" class="myInputBarJobs form-control"
-                                        value="{{listadoTrabajo.salarioTrabajoSubmit}}" />
+                                    <p>{{listadoTrabajo.salarioTrabajoSubmit}}</p>
                                 </div>
                             </div>
 
-                            <div class=" row align-items-center mb-3">
+                            <div class="row align-items-center mb-3">
                                 <div class="col-xl-4">
-                                    <p class=" p-0">Comission:</p>
+                                    <h6 class="p-0">Comission:</h6>
                                 </div>
                                 <div class="col-xl-8">
-                                    <input autocomplete="off" type="number" class="myInputBarJobs form-control"
-                                        placeholder="0.00" value="{{listadoTrabajo.comisionTrabajoSubmit}}" />
+                                    <p>{{listadoTrabajo.comisionTrabajoSubmit}}</p>
                                 </div>
                             </div>
 

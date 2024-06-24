@@ -1,5 +1,6 @@
 .myLinks {
     color: #FFF !important;
+    font-size: 1rem;
 }
 
 .myLinks:hover {
@@ -32,7 +33,3 @@
         backdrop-filter: blur(10px);
     }
 }
-
-/* .sidebar {
-    backdrop-filter: blur(1px);
-} */

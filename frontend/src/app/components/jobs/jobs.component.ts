@@ -18,6 +18,7 @@ export class JobsComponent {
   toastrService = inject(ToastrService);
   loginService = inject(LoginService);
   trabajosService = inject(TrabajosService);
+  listadoTrabajos: any[] = [];
   nombre: string = '';
 
   ngOnInit() {
@@ -27,6 +28,9 @@ export class JobsComponent {
       this.loginService.validateToken(token).subscribe((response: any) => {
         if (response.resultado === 'Working') {
           this.nombre = decoded.nombreDeUsuario;
+          this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
+            this.listadoTrabajos = res.datosParaLeerTodos;
+          });
           // this.toastrService.success(`Welcome back ${this.nombre}!`);
         } else {
           console.log('Token no válido :>>');

@@ -31,12 +31,11 @@ export class TrabajosService {
     formData.append('comisionTrabajoSubmit', comisionTrabajoSubmit);
     return this.httpClient.post(this.API_URL, formData);
   }
-}
-
-/**  getCaps() {
+  leerListadoTrabajos() {
     return this.httpClient.get(this.API_URL);
   }
-
+}
+/*
   deleteCap(id: string) {
     return this.httpClient.delete(`${this.API_URL}/${id}`);
   }

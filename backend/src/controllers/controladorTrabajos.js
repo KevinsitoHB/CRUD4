@@ -21,16 +21,24 @@ const ControladorTrabajos = {
 	},
 	escribir: async (req, res) => {
 		try {
-			const datosEsquema = esquemaTrabajos(req.body);
+			const datosEsquema = new esquemaTrabajos({
+				nombreTrabajoSubmit: req.body.nombreTrabajoSubmit,
+				tipoTrabajoSubmit: req.body.tipoTrabajoSubmit,
+				fechaInicioSubmit: req.body.fechaInicioSubmit,
+				fechaFinTrabajoSubmit: req.body.fechaFinTrabajoSubmit,
+				inmediatoTrabajoSubmit: req.body.inmediatoTrabajoSubmit,
+				salarioTrabajoSubmit: req.body.salarioTrabajoSubmit,
+				comisionTrabajoSubmit: req.body.comisionTrabajoSubmit,
+			});
 			const datosParaGuardar = await datosEsquema.save();
 			if (datosParaGuardar._id) {
 				res.json({
 					mensaje: 'Datos Guardados Trabajos:',
-					datosParaGuardar,
+					Datos: datosParaGuardar,
 				});
 			}
 		} catch (error) {
-			console.log('No guardados');
+			console.log('No guardados :>> ' + error);
 			res.json({ error });
 		}
 	},

@@ -21,7 +21,7 @@ export class TrabajosService {
   ) {
     //CREAR INSTANCIA DE LA CLASE
     const formData = new FormData();
-    //NOMBRE QUE LE DARE Y DATO QUE SE PASA
+    //NOMBRE QUE LE DARÉ Y DATO QUE SE PASA
     formData.append('nombreTrabajoSubmit', nombreTrabajoSubmit);
     formData.append('tipoTrabajoSubmit', tipoTrabajoSubmit);
     formData.append('fechaInicioSubmit', fechaInicioSubmit);

@@ -10,7 +10,7 @@
                         </div>
                         <div class="col-xl-8">
                             <input type="text" class="myInputBarJobs form-control" placeholder="Job's title"
-                                name="nombreTrabajoSubmit" [(ngModel)]="nombreTrabajoSubmit" id="nombreTrabajoSubmit">
+                                name="nombreTrabajoSubmit" [(ngModel)]="nombreTrabajoSubmit" id="nombreTrabajoSubmit" />
                         </div>
                     </div>
                     <div class=" row align-items-center mb-3">
@@ -18,9 +18,8 @@
                             <p class=" p-0">Job type:</p>
                         </div>
                         <div class="col-xl-8">
-
                             <input type="text" class="myInputBarJobs form-control" placeholder="Type of Job"
-                                name="tipoTrabajoSubmit" [(ngModel)]="tipoTrabajoSubmit" id="tipoTrabajoSubmit">
+                                name="tipoTrabajoSubmit" [(ngModel)]="tipoTrabajoSubmit" id="tipoTrabajoSubmit" />
                         </div>
                     </div>
 
@@ -30,7 +29,7 @@
                         </div>
                         <div class="col-xl-8">
                             <input type="text" class="myInputBarJobs form-control" name="fechaInicioSubmit"
-                                [(ngModel)]="fechaInicioSubmit" id="fechaInicioSubmit">
+                                [(ngModel)]="fechaInicioSubmit" id="fechaInicioSubmit" />
                         </div>
                     </div>
 
@@ -40,7 +39,7 @@
                         </div>
                         <div class="col-xl-8">
                             <input type="text" class="myInputBarJobs form-control" name="fechaFinalizacionTrabajo"
-                                [(ngModel)]="fechaFinTrabajoSubmit" id="fechaFinalizacionTrabajo">
+                                [(ngModel)]="fechaFinTrabajoSubmit" id="fechaFinalizacionTrabajo" />
                         </div>
                     </div>
 
@@ -49,9 +48,9 @@
                             <p class="p-0">Immediate Start:</p>
                         </div>
                         <div class="col-xl-8">
-                            <input class="form-check-input" type="checkbox" value="true" id="inputAvailable"
-                                aria-describedby="availableHelp" name="inmediatoTrabajoSubmit"
-                                [(ngModel)]="inmediatoTrabajoSubmit" id="inmediatoTrabajoSubmit">
+                            <input class="form-check-input" type="checkbox" value="true" id="inmediatoTrabajoSubmit"
+                                name="inmediatoTrabajoSubmit" [(ngModel)]="inmediatoTrabajoSubmit"
+                                id="inmediatoTrabajoSubmit" />
                             <!-- <select name="inmediatoTrabajoSubmit" [(ngModel)]="inmediatoTrabajoSubmit">
                                 <option [value]="true">Yes</option>
                                 <option [value]="false">No</option>
@@ -67,7 +66,7 @@
                         <div class="col-xl-8">
                             <input type="number" class="myInputBarJobs form-control" placeholder="0.00"
                                 name="salarioTrabajoSubmit" [(ngModel)]="salarioTrabajoSubmit"
-                                id="salarioTrabajoSubmit">
+                                id="salarioTrabajoSubmit" />
                         </div>
                     </div>
                     <div class=" row align-items-center mb-3">
@@ -77,7 +76,7 @@
                         <div class="col-xl-8">
                             <input type="number" class="myInputBarJobs form-control" placeholder="0.00"
                                 name="comisionTrabajoSubmit" [(ngModel)]="comisionTrabajoSubmit"
-                                id="comisionTrabajoSubmit">
+                                id="comisionTrabajoSubmit" />
                         </div>
                     </div>
                     <div class="col-md-12 text-center ">
@@ -100,7 +99,9 @@
                                     of the
                                     card's
                                     content.</p>
-                                <a href="#" class="btn btn-primary">Apply</a>
+                                <a href="#" class="btn btn-warning">Update</a>
+                                <a href="#" class="btn btn-danger">Delete</a>
+
                             </div>
                         </div>
                     </div>

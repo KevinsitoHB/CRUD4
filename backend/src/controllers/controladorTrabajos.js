@@ -22,7 +22,7 @@ const ControladorTrabajos = {
 	escribirTrabajo: async (req, res) => {
 		try {
 			const datosEsquema = new esquemaTrabajos({
-				nombreTrabajoSubmit1: req.body.nombreTrabajoSubmit,
+				nombreTrabajoSubmit: req.body.nombreTrabajoSubmit,
 				tipoTrabajoSubmit: req.body.tipoTrabajoSubmit,
 				fechaInicioSubmit: req.body.fechaInicioSubmit,
 				fechaFinTrabajoSubmit: req.body.fechaFinTrabajoSubmit,

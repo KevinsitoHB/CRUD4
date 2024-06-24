@@ -8,6 +8,11 @@
 
 }
 
+.upNdelButtons {
+    padding: 10px;
+    margin: 10px;
+}
+
 .myInputBarJobs:focus {
     box-shadow: none;
 }

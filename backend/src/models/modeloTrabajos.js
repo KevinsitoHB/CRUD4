@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose';
 
 const esquemaTrabajos = new Schema(
 	{
-		nombreTrabajoSubmit1: { type: String, required: true },
+		nombreTrabajoSubmit: { type: String, required: true },
 		tipoTrabajoSubmit: { type: String, required: true },
 		fechaInicioSubmit: { type: String, required: true },
 		fechaFinTrabajoSubmit: { type: String, required: true },

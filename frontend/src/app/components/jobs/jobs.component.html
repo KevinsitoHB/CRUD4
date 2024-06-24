@@ -90,24 +90,37 @@
         <div class="col-md-7">
             <div class="card container-flex">
                 <div class="row">
-                    @if (true) { <p>Mostrar gorras</p> }@else{<p>no Mostrar gorras</p>}
-
+                    @if (listadoTrabajos.length > 0) {
+                    @for(listadoTrabajo of listadoTrabajos; track $index){
                     <div class="container col-sm-12 col-lg-6 col-lg-6">
                         <div class="card jobsCard">
-                            <img class="card-img-top" src="..." alt="Card image cap">
+                            <i class="bi bi-cpu"></i>
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of the
-                                    card's
-                                    content.</p>
-                                <a href="#" class="btn btn-warning">Update</a>
+                                <h5 class="card-title">
+                                    {{listadoTrabajo.nombreTrabajoSubmit}}</h5>
+                                <p class="card-text">
+                                    {{listadoTrabajo.tipoTrabajoSubmit}}</p>
+                                <p class="card-text">
+                                    {{listadoTrabajo.fechaInicioSubmit}}</p>
+                                <p class="card-text">
+                                    {{listadoTrabajo.fechaFinTrabajoSubmit}}</p>
+                                <p class="card-text">
+                                    {{listadoTrabajo.inmediatoTrabajoSubmit}}
+                                </p>
+                                <p class="card-text">
+                                    {{listadoTrabajo.salarioTrabajoSubmit}}</p>
+                                <p class="card-text">
+                                    {{listadoTrabajo.comisionTrabajoSubmit}}</p>
+                                <a href="#" class="btn btn-warning upNdelButtons">Update</a>
                                 <a href="#" class="btn btn-danger">Delete</a>
 
                             </div>
                         </div>
                     </div>
+                    } }@else{
+                    <p>no Mostrar gorras</p>
+                    }
+
                     <!-- <div class="container col-sm-12 col-lg-6 col-lg-6">
                         <div class="card jobsCard">
                             <img class="card-img-top" src="..." alt="Card image cap">

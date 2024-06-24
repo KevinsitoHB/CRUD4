@@ -28,60 +28,60 @@
     </section>
 </div>
 <section>
-    <div class="  container-flex m-3 p-4 ">
+    <div class="container-flex m-3">
         <div class="container">
             <div class="row">
                 @if (listadoTrabajos.length > 0) {
                 @for(listadoTrabajo of listadoTrabajos; track $index){
-                <div class="container col-sm-12 col-lg-6 col-lg-6">
-                    <div class="card myCard jobsCard">
-                        <i class="bi bi-cpu"></i>
+                <div class="container col-sm-12 col-md-6 col-lg-4">
+                    <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">
-                                {{listadoTrabajo.nombreTrabajoSubmit}}</h4>
+                                <i class="bi bi-cpu"></i> {{listadoTrabajo.nombreTrabajoSubmit}}
+                            </h4>
                             <br>
-                            <div class="row align-items-center mb-3">
-                                <div class="col-xl-4">
-                                    <h6 class=" p-0">Job's title:</h6>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4 col-md-12 ">
+                                    <h6 class="m-0 p-0">Job's title:</h6>
                                 </div>
-                                <div class="col-xl-8">
+                                <div class="mb-2 col-sm-8 col-md-12">
                                     <p>{{listadoTrabajo.nombreTrabajoSubmit}}
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="row align-items-center mb-3">
-                                <div class="col-xl-4">
-                                    <h6 class=" p-0">Job type:</h6>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4 col-md-12">
+                                    <h6 class="m-0 p-0">Job type:</h6>
                                 </div>
-                                <div class="col-xl-8">
+                                <div class="mb-2 col-sm-8 col-md-12">
                                     <p>{{listadoTrabajo.tipoTrabajoSubmit}}</p>
                                 </div>
                             </div>
 
-                            <div class="row align-items-center mb-3">
-                                <div class="col-xl-4">
-                                    <h6 class=" p-0">Start Date:</h6>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4 col-md-12">
+                                    <h6 class=" m-0 p-0">Start Date:</h6>
                                 </div>
-                                <div class="col-xl-8">
+                                <div class="mb-2 col-sm-8 col-md-12">
                                     <p>{{listadoTrabajo.fechaInicioSubmit}}</p>
                                 </div>
                             </div>
 
-                            <div class="row align-items-center mb-3">
-                                <div class="col-xl-4">
-                                    <h6 class=" p-0">End Date:</h6>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4 col-md-12">
+                                    <h6 class=" m-0 p-0">End Date:</h6>
                                 </div>
-                                <div class="col-xl-8">
+                                <div class="mb-2 col-sm-8 col-md-12">
                                     <p>{{listadoTrabajo.fechaFinTrabajoSubmit}}</p>
                                 </div>
                             </div>
 
-                            <div class="row align-items-center mb-3">
-                                <div class="col-xl-4">
-                                    <h6 class="p-0">Immediate Start:</h6>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4 col-md-12">
+                                    <h6 class="m-0 p-0">Immediate Start:</h6>
                                 </div>
-                                <div class="col-xl-8">
+                                <div class="mb-2 col-sm-8 col-md-12">
                                     @if (listadoTrabajo.inmediatoTrabajoSubmit) {
                                     <p>Yes</p>
                                     }@else{
@@ -90,20 +90,20 @@
                                 </div>
                             </div>
 
-                            <div class="row align-items-center mb-3">
-                                <div class="col-xl-4">
-                                    <h6 class=" p-0">Salary:</h6>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4 col-md-12">
+                                    <h6 class=" m-0 p-0">Salary:</h6>
                                 </div>
-                                <div class="col-xl-8">
+                                <div class="mb-2 col-sm-8 col-md-12">
                                     <p>{{listadoTrabajo.salarioTrabajoSubmit}}</p>
                                 </div>
                             </div>
 
-                            <div class="row align-items-center mb-3">
-                                <div class="col-xl-4">
-                                    <h6 class="p-0">Comission:</h6>
+                            <div class="row align-items-center">
+                                <div class="col-sm-4 col-md-12">
+                                    <h6 class="m-0 p-0">Comission:</h6>
                                 </div>
-                                <div class="col-xl-8">
+                                <div class="mb-2 col-sm-8 col-md-12">
                                     <p>{{listadoTrabajo.comisionTrabajoSubmit}}</p>
                                 </div>
                             </div>

@@ -71,7 +71,7 @@ console.log(Date.now()); */
 
   handleSubmitAddJob() {
     this.trabajosService
-      .addJob(
+      .escribirListadoTrabajos(
         this.nombreTrabajoSubmit,
         this.tipoTrabajoSubmit,
         this.fechaInicioSubmit,
@@ -91,16 +91,10 @@ console.log(Date.now()); */
   // handleUpdate() {
   //   console.log('...handleUpdate...');
   // }
-  // handleDelete(id: string) {
-  //   this.trabajosService.deleteCap(id).subscribe((res: any) => {
-  //     if (res.resultado === 'bien') {
-  //       this.toastrService.success(res.mensaje);
-  //       this.trabajosService.getCaps().subscribe((res: any) => {
-
-  //       });
-  //     } else {
-  //       this.toastrService.error('An error ocurred');
-  //     }
-  //   });
-  // }
+  handleDeleteJob(id: string) {
+    this.trabajosService.eliminarListadoTrabajos(id).subscribe((res: any) => {
+      this.toastrService.success(res.mensaje);
+      //     this.trabajosService.getCaps().subscribe((res: any) => { });
+    });
+  }
 }

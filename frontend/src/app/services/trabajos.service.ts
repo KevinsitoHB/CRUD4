@@ -10,7 +10,7 @@ export class TrabajosService {
 
   API_URL = 'http://localhost:3000/jobs';
 
-  addJob(
+  escribirListadoTrabajos(
     nombreTrabajoSubmit: any,
     tipoTrabajoSubmit: any,
     fechaInicioSubmit: any,
@@ -34,9 +34,9 @@ export class TrabajosService {
   leerListadoTrabajos() {
     return this.httpClient.get(this.API_URL);
   }
-}
-/*
-  deleteCap(id: string) {
+  actualizarListadoTrabajos() {}
+
+  eliminarListadoTrabajos(id: string) {
     return this.httpClient.delete(`${this.API_URL}/${id}`);
   }
-} */
+}

@@ -2,7 +2,7 @@
 
 
     <section>
-        <div class="container padding-50">
+        <div class="container padding70">
             <div class="jumbotron text-center">
                 <h1 class="mainText display-3 text-center">FIND LOCAL</h1>
                 <h1 class="mainText display-3 text-center">OR REMOTE JOBS</h1>
@@ -26,96 +26,108 @@
             </div>
         </div>
     </section>
-
-    <section>
-        <div class="card container-flex padding-50">
+</div>
+<section>
+    <div class="  container-flex m-3 p-4 ">
+        <div class="container">
             <div class="row">
-                <div class="container col-md-6">
+                @if (listadoTrabajos.length > 0) {
+                @for(listadoTrabajo of listadoTrabajos; track $index){
+                <div class="container col-sm-12 col-lg-6 col-lg-6">
                     <div class="card jobsCard">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <i class="bi bi-cpu"></i>
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of the
-                                card's
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Apply</a>
+                            <h5 class="card-title">
+                                {{listadoTrabajo.nombreTrabajoSubmit}}</h5>
+
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">Job's title:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                        placeholder="Job's title:" value="{{listadoTrabajo.nombreTrabajoSubmit}}" />
+                                </div>
+                            </div>
+
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">Job type:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                        placeholder="Type of Job" value="{{listadoTrabajo.tipoTrabajoSubmit}}" />
+                                </div>
+                            </div>
+
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">Start Date:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                        value="{{listadoTrabajo.fechaInicioSubmit}}" />
+                                </div>
+                            </div>
+
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">End Date:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                        value="{{listadoTrabajo.fechaFinTrabajoSubmit}}" />
+                                </div>
+                            </div>
+
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class="p-0">Immediate Start:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <select class="form-control">
+                                        @if (listadoTrabajo.inmediatoTrabajoSubmit) {
+                                        <option>Yes</option>
+                                        <option>No</option>
+
+                                        }@else{
+                                        <option>No</option>
+                                        <option>Yes</option>
+
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">Salary:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input type="number" class="myInputBarJobs form-control"
+                                        value="{{listadoTrabajo.salarioTrabajoSubmit}}" />
+                                </div>
+                            </div>
+
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">Comission:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="number" class="myInputBarJobs form-control"
+                                        placeholder="0.00" value="{{listadoTrabajo.comisionTrabajoSubmit}}" />
+                                </div>
+                            </div>
+
+                            <a href="#" class="btn btn-primary upNdelButtons">Apply</a>
+
                         </div>
                     </div>
                 </div>
-                <div class="container col-md-6">
-                    <div class="card jobsCard">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of the
-                                card's
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Apply</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container col-md-6">
-                    <div class="card jobsCard">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of the
-                                card's
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Apply</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container col-md-6">
-                    <div class="card jobsCard">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of the
-                                card's
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Apply</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container col-md-6">
-                    <div class="card jobsCard">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of the
-                                card's
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Apply</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container col-md-6">
-                    <div class="card jobsCard">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                                of the
-                                card's
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Apply</a>
-                        </div>
-                    </div>
-                </div>
+                } }@else{
+                <p>No Jobs available</p>
+                }
             </div>
         </div>
-    </section>
-
-</div>
+    </div>
+</section>

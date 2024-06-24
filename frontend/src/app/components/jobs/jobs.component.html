@@ -129,7 +129,7 @@
                                     </div>
                                     <div class="col-xl-8">
                                         <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                            value="  {{listadoTrabajo.fechaInicioSubmit}}" />
+                                            value="{{listadoTrabajo.fechaInicioSubmit}}" />
                                     </div>
                                 </div>
 
@@ -151,8 +151,12 @@
                                         <select class="form-control">
                                             @if (listadoTrabajo.inmediatoTrabajoSubmit) {
                                             <option>Yes</option>
+                                            <option>No</option>
+
                                             }@else{
                                             <option>No</option>
+                                            <option>Yes</option>
+
                                             }
                                         </select>
                                     </div>
@@ -185,7 +189,7 @@
                         </div>
                     </div>
                     } }@else{
-                    <p>no Mostrar gorras</p>
+                    <p>No Jobs available</p>
                     }
 
                     <!-- <div class="container col-sm-12 col-lg-6 col-lg-6">

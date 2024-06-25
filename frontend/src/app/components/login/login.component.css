@@ -8,3 +8,17 @@
     padding: 1rem;
     /* max-width: 50%; */
 }
+
+.mybtn {
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+    background-color: blue;
+    color: #FFF;
+}
+
+.mybtn:hover {
+    background-color: #FFF;
+    color: blue;
+}

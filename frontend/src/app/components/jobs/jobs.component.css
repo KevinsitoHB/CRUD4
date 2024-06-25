@@ -3,8 +3,6 @@
     border-color: #aaa;
     width: 100%;
     height: 45px;
-    cursor: pointer;
-
 }
 
 .paddingContainer {
@@ -31,13 +29,20 @@
     border: 1px solid blue;
 }
 
+.upNdelButtons {
+
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+}
+
 .seccion2 {
     background-color: blue;
 }
 
-.upNdelButtons {
-    padding: 10px;
-    margin: 10px;
+.myInputSelect:hover {
+    cursor: pointer;
 }
 
 .myInputBarJobs:focus {

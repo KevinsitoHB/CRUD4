@@ -51,8 +51,9 @@
                                     <p class="p-0">Immediate Start:</p>
                                 </div>
                                 <div class="col-xl-8">
-                                    <select class="form-control myInputBarJobs" name="inmediatoTrabajoSubmit"
-                                        [(ngModel)]="inmediatoTrabajoSubmit" id="inmediatoTrabajoSubmitID">
+                                    <select class="form-control myInputBarJobs myInputSelect"
+                                        name="inmediatoTrabajoSubmit" [(ngModel)]="inmediatoTrabajoSubmit"
+                                        id="inmediatoTrabajoSubmitID">
                                         <option [value]="true">Yes</option>
                                         <option [value]="false">No</option>
                                     </select>
@@ -90,8 +91,8 @@
 </section>
 <!-- SIDE -->
 <section class="seccion2">
-    <div class="card seccion2 container-flex">
-        <div class="container paddingContainer">
+    <div class="card seccion2 container-flex seccion2">
+        <div class="container paddingContainer ">
             <div class="col-sm-12">
                 <div class="row">
                     @if (listadoTrabajos.length > 0) {
@@ -143,7 +144,7 @@
                                         <p class="p-0">Immediate Start:</p>
                                     </div>
                                     <div class="col-xl-8">
-                                        <select class="form-control myInputBarJobs">
+                                        <select class="form-control myInputBarJobs myInputSelect">
                                             @if (listadoTrabajo.inmediatoTrabajoSubmit) {
                                             <option>Yes</option>
                                             <option>No</option>
@@ -172,14 +173,22 @@
                                             placeholder="0.00" value="{{listadoTrabajo.comisionTrabajoSubmit}}" />
                                     </div>
                                 </div>
-                                <button (click)="handleDeleteJob(listadoTrabajo._id)"
-                                    class="btn btn-danger upNdelButtons">Delete</button>
-                                <button href="#" class="btn btn-warning upNdelButtons">Update</button>
+                                <div class="container">
+                                    <div class="row d-flex">
+                                        <div class="col-sm-6">
+                                            <button (click)="handleDeleteJob(listadoTrabajo._id)"
+                                                class="btn btn-danger upNdelButtons">Delete</button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <button class="btn btn-warning upNdelButtons">Update</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     } }@else{
-                    <p>No Jobs available.</p>
+                    <h1 class="text-white">No Jobs available</h1>
                     }
                 </div>
             </div>

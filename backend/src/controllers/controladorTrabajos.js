@@ -68,7 +68,7 @@ const ControladorTrabajos = {
 			);
 			if (datosParaEliminar) {
 				res.json({
-					mensaje: 'Successfully deleted:',
+					mensaje: 'Successfully deleted',
 					datosParaEliminar,
 				});
 			}

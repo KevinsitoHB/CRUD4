@@ -100,7 +100,6 @@ console.log(Date.now()); */
       this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
         if (res.mensaje === 'Datos en la coleccion:') {
           this.listadoTrabajos = res.datosParaLeerTodos;
-          this.toastrService.success('Success login!');
         } else {
           this.toastrService.error('Error loading');
         }

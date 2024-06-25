@@ -1,96 +1,98 @@
-<div class=" mainContainer container-flex">
-    <h1 class="display-1 text-center p-5">Hello, {{nombre}}! Add a new Job:</h1>
-    <div class="row">
-        <div class="col-md-5">
-            <div class="card">
-                <form (ngSubmit)="handleSubmitAddJob()">
-                    <div class=" row align-items-center mb-3">
-                        <div class="col-xl-4">
-                            <p class=" p-0">Job's title:</p>
-                        </div>
-                        <div class="col-xl-8">
-                            <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                placeholder="Job's title" name="nombreTrabajoSubmit" [(ngModel)]="nombreTrabajoSubmit"
-                                id="nombreTrabajoSubmitID" />
-                        </div>
+<section>
+    <div class="mainContainer container-flex d-flex">
+        <div class="container">
+            <h1 class="display-1 text-center p-5">Hello, {{nombre}}! Add a new Job:</h1>
+            <div class="row">
+                <div class="col-sm-12 align-items-center justify-content-center d-flex  ">
+                    <div class="card cardEscribir">
+                        <form (ngSubmit)="handleSubmitAddJob()">
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">Job's title:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                        placeholder="Job's title" name="nombreTrabajoSubmit"
+                                        [(ngModel)]="nombreTrabajoSubmit" id="nombreTrabajoSubmitID" />
+                                </div>
+                            </div>
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">Job type:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                        placeholder="Type of Job" name="tipoTrabajoSubmit"
+                                        [(ngModel)]="tipoTrabajoSubmit" id="tipoTrabajoSubmitID" />
+                                </div>
+                            </div>
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">Start Date:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                        name="fechaInicioSubmit" [(ngModel)]="fechaInicioSubmit"
+                                        id="fechaInicioSubmitID" placeholder="MM/DD/YYYY" />
+                                </div>
+                            </div>
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">End Date:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                        name="fechaFinalizacionTrabajo" [(ngModel)]="fechaFinTrabajoSubmit"
+                                        id="fechaFinalizacionTrabajoID" placeholder="MM/DD/YYYY" />
+                                </div>
+                            </div>
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class="p-0">Immediate Start:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <select class="form-control myInputBarJobs" name="inmediatoTrabajoSubmit"
+                                        [(ngModel)]="inmediatoTrabajoSubmit" id="inmediatoTrabajoSubmitID">
+                                        <option [value]="true">Yes</option>
+                                        <option [value]="false">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">Salary:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="number" class="myInputBarJobs form-control"
+                                        placeholder="0.00" name="salarioTrabajoSubmit"
+                                        [(ngModel)]="salarioTrabajoSubmit" id="salarioTrabajoSubmitID" />
+                                </div>
+                            </div>
+                            <div class=" row align-items-center mb-3">
+                                <div class="col-xl-4">
+                                    <p class=" p-0">Comission:</p>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input autocomplete="off" type="number" class="myInputBarJobs form-control"
+                                        placeholder="0.00" name="comisionTrabajoSubmit"
+                                        [(ngModel)]="comisionTrabajoSubmit" id="comisionTrabajoSubmitID" />
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-center ">
+                                <button type="submit" class="mybtnAdd btn btn-primary">Add Job</button>
+                            </div>
+                        </form>
                     </div>
-
-                    <div class=" row align-items-center mb-3">
-                        <div class="col-xl-4">
-                            <p class=" p-0">Job type:</p>
-                        </div>
-                        <div class="col-xl-8">
-                            <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                placeholder="Type of Job" name="tipoTrabajoSubmit" [(ngModel)]="tipoTrabajoSubmit"
-                                id="tipoTrabajoSubmitID" />
-                        </div>
-                    </div>
-
-                    <div class=" row align-items-center mb-3">
-                        <div class="col-xl-4">
-                            <p class=" p-0">Start Date:</p>
-                        </div>
-                        <div class="col-xl-8">
-                            <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                name="fechaInicioSubmit" [(ngModel)]="fechaInicioSubmit" id="fechaInicioSubmitID" />
-                        </div>
-                    </div>
-
-                    <div class=" row align-items-center mb-3">
-                        <div class="col-xl-4">
-                            <p class=" p-0">End Date:</p>
-                        </div>
-                        <div class="col-xl-8">
-                            <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                name="fechaFinalizacionTrabajo" [(ngModel)]="fechaFinTrabajoSubmit"
-                                id="fechaFinalizacionTrabajoID" />
-                        </div>
-                    </div>
-
-                    <div class=" row align-items-center mb-3">
-                        <div class="col-xl-4">
-                            <p class="p-0">Immediate Start:</p>
-                        </div>
-                        <div class="col-xl-8">
-                            <select class="form-control myInputBarJobs" name="inmediatoTrabajoSubmit"
-                                [(ngModel)]="inmediatoTrabajoSubmit" id="inmediatoTrabajoSubmitID">
-                                <option [value]="true">Yes</option>
-                                <option [value]="false">No</option>
-                            </select>
-
-                        </div>
-                    </div>
-
-                    <div class=" row align-items-center mb-3">
-                        <div class="col-xl-4">
-                            <p class=" p-0">Salary:</p>
-                        </div>
-                        <div class="col-xl-8">
-                            <input autocomplete="off" type="number" class="myInputBarJobs form-control"
-                                placeholder="0.00" name="salarioTrabajoSubmit" [(ngModel)]="salarioTrabajoSubmit"
-                                id="salarioTrabajoSubmitID" />
-                        </div>
-                    </div>
-
-                    <div class=" row align-items-center mb-3">
-                        <div class="col-xl-4">
-                            <p class=" p-0">Comission:</p>
-                        </div>
-                        <div class="col-xl-8">
-                            <input autocomplete="off" type="number" class="myInputBarJobs form-control"
-                                placeholder="0.00" name="comisionTrabajoSubmit" [(ngModel)]="comisionTrabajoSubmit"
-                                id="comisionTrabajoSubmitID" />
-                        </div>
-                    </div>
-                    <div class="col-md-12 text-center ">
-                        <button type="submit" class="mybtn btn btn-outline-primary">Add Job</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
-        <!-- SIDE -->
-        <div class="col-md-7">
-            <div class="card container-flex">
+    </div>
+</section>
+<!-- SIDE -->
+<section class="seccion2">
+    <div class="card seccion2 container-flex">
+        <div class="container paddingContainer">
+            <div class="col-sm-12">
                 <div class="row">
                     @if (listadoTrabajos.length > 0) {
                     @for(listadoTrabajo of listadoTrabajos; track $index){
@@ -100,7 +102,6 @@
                             <div class="card-body">
                                 <h5 class="card-title">
                                     {{listadoTrabajo.nombreTrabajoSubmit}}</h5>
-
                                 <div class=" row align-items-center mb-3">
                                     <div class="col-xl-4">
                                         <p class=" p-0">Job's title:</p>
@@ -110,7 +111,6 @@
                                             placeholder="Job's title:" value="{{listadoTrabajo.nombreTrabajoSubmit}}" />
                                     </div>
                                 </div>
-
                                 <div class=" row align-items-center mb-3">
                                     <div class="col-xl-4">
                                         <p class=" p-0">Job type:</p>
@@ -120,7 +120,6 @@
                                             placeholder="Type of Job" value="{{listadoTrabajo.tipoTrabajoSubmit}}" />
                                     </div>
                                 </div>
-
                                 <div class=" row align-items-center mb-3">
                                     <div class="col-xl-4">
                                         <p class=" p-0">Start Date:</p>
@@ -130,7 +129,6 @@
                                             value="{{listadoTrabajo.fechaInicioSubmit}}" />
                                     </div>
                                 </div>
-
                                 <div class=" row align-items-center mb-3">
                                     <div class="col-xl-4">
                                         <p class=" p-0">End Date:</p>
@@ -140,7 +138,6 @@
                                             value="{{listadoTrabajo.fechaFinTrabajoSubmit}}" />
                                     </div>
                                 </div>
-
                                 <div class=" row align-items-center mb-3">
                                     <div class="col-xl-4">
                                         <p class="p-0">Immediate Start:</p>
@@ -150,16 +147,13 @@
                                             @if (listadoTrabajo.inmediatoTrabajoSubmit) {
                                             <option>Yes</option>
                                             <option>No</option>
-
                                             }@else{
                                             <option>No</option>
                                             <option>Yes</option>
-
                                             }
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class=" row align-items-center mb-3">
                                     <div class="col-xl-4">
                                         <p class=" p-0">Salary:</p>
@@ -169,7 +163,6 @@
                                             value="{{listadoTrabajo.salarioTrabajoSubmit}}" />
                                     </div>
                                 </div>
-
                                 <div class=" row align-items-center mb-3">
                                     <div class="col-xl-4">
                                         <p class=" p-0">Comission:</p>
@@ -179,90 +172,17 @@
                                             placeholder="0.00" value="{{listadoTrabajo.comisionTrabajoSubmit}}" />
                                     </div>
                                 </div>
-
                                 <button (click)="handleDeleteJob(listadoTrabajo._id)"
                                     class="btn btn-danger upNdelButtons">Delete</button>
                                 <button href="#" class="btn btn-warning upNdelButtons">Update</button>
-
                             </div>
                         </div>
                     </div>
                     } }@else{
                     <p>No Jobs available.</p>
                     }
-
-                    <!-- <div class="container col-sm-12 col-lg-6 col-lg-6">
-<div class="card jobsCard">
-<img class="card-img-top" src="..." alt="Card image cap">
-<div class="card-body">
-<h5 class="card-title">Card title</h5>
-<p class="card-text">Some quick example text to build on the card title and make up the
-bulk
-of the
-card's
-content.</p>
-<a href="#" class="btn btn-primary">Apply</a>
-</div>
-</div>
-</div>
-<div class="container col-sm-12 col-lg-6 col-lg-6">
-<div class="card jobsCard">
-<img class="card-img-top" src="..." alt="Card image cap">
-<div class="card-body">
-<h5 class="card-title">Card title</h5>
-<p class="card-text">Some quick example text to build on the card title and make up the
-bulk
-of the
-card's
-content.</p>
-<a href="#" class="btn btn-primary">Apply</a>
-</div>
-</div>
-</div>
-<div class="container col-sm-12 col-lg-6 col-lg-6">
-<div class="card jobsCard">
-<img class="card-img-top" src="..." alt="Card image cap">
-<div class="card-body">
-<h5 class="card-title">Card title</h5>
-<p class="card-text">Some quick example text to build on the card title and make up the
-bulk
-of the
-card's
-content.</p>
-<a href="#" class="btn btn-primary">Apply</a>
-</div>
-</div>
-</div>
-<div class="container col-sm-12 col-lg-6 col-lg-6">
-<div class="card jobsCard">
-<img class="card-img-top" src="..." alt="Card image cap">
-<div class="card-body">
-<h5 class="card-title">Card title</h5>
-<p class="card-text">Some quick example text to build on the card title and make up the
-bulk
-of the
-card's
-content.</p>
-<a href="#" class="btn btn-primary">Apply</a>
-</div>
-</div>
-</div>
-<div class="container col-sm-12 col-lg-6 col-lg-6">
-<div class="card jobsCard">
-<img class="card-img-top" src="..." alt="Card image cap">
-<div class="card-body">
-<h5 class="card-title">Card title</h5>
-<p class="card-text">Some quick example text to build on the card title and make up the
-bulk
-of the
-card's
-content.</p>
-<a href="#" class="btn btn-primary">Apply</a>
-</div>
-</div>
-</div> -->
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>

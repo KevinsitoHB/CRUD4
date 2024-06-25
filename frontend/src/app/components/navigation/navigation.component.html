@@ -4,27 +4,28 @@
         <a class="mainLogo navbar-brand fs-4" routerLink="home">JobsForWebDevs <i class="bi bi-cpu"></i></a>
         <button class="myLinks navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-            <span class="navbar-toggler-icon"></span></button>
+            <span class="navbar-toggler-icon "></span></button>
         <!-- Sidebar -->
         <div class="sidebar offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
             aria-labelledby="offcanvasDarkNavbarLabel">
             <!-- Sidebar Header -->
             <div class="offcanvas-header  border-bottom">
                 <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Main menu</h5>
-                <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white shadow-none text-white"
+                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <!-- Sidebar Body -->
             <div class="offcanvas-body d-flex flex-column  flex-lg-row">
                 <ul class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3">
                     <li class="nav-item mx-2">
-                        <a class="myLinks nav-link" aria-current="page" routerLink="home">Home</a>
+                        <a class="myLinks nav-link" aria-current="page" routerLink="home"
+                            data-bs-dismiss="offcanvas">Home</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="myLinks nav-link" routerLink="jobs">Add Jobs</a>
+                        <a class="myLinks nav-link" routerLink="jobs" data-bs-dismiss="offcanvas">Add Jobs</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="myLinks nav-link" routerLink="jobs">Contact manager</a>
+                        <a class="myLinks nav-link" routerLink="jobs" data-bs-dismiss="offcanvas">Contact manager</a>
                     </li>
                 </ul>
                 <div class="d-flex justify-content-center align-items-center gap-3">

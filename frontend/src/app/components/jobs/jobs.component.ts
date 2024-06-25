@@ -1,5 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  FormControl,
+  FormGroup,
+  Validator,
+  Validators,
+} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from '../../services/login.service';
 import { TrabajosService } from '../../services/trabajos.service';
@@ -10,7 +17,7 @@ const jwtHelperService = new JwtHelperService();
 @Component({
   selector: 'app-jobs',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './jobs.component.html',
   styleUrl: './jobs.component.css',
 })
@@ -18,8 +25,17 @@ export class JobsComponent {
   toastrService = inject(ToastrService);
   loginService = inject(LoginService);
   trabajosService = inject(TrabajosService);
-  listadoTrabajos: any[] = [];
   nombre: string = '';
+
+  nombreTrabajoSubmit: string = '';
+  tipoTrabajoSubmit: string = '';
+  fechaInicioSubmit: string = '';
+  fechaFinTrabajoSubmit: string = '';
+  inmediatoTrabajoSubmit: boolean = false;
+  salarioTrabajoSubmit: number = 0;
+  comisionTrabajoSubmit: number = 0;
+  listadoTrabajos: any[] = [];
+  arrayBusqueda: any[] = [];
 
   ngOnInit() {
     const token: any = localStorage.getItem('token');
@@ -45,6 +61,24 @@ export class JobsComponent {
     }
   }
 
+  searchForm = new FormGroup({
+    nombreJob: new FormControl('', Validators.required),
+  });
+
+  handleSubmitSearch() {
+    const filtered = this.arrayBusqueda.filter((data) => {
+      return data.nombreTrabajoSubmit === this.searchForm.value.nombreJob;
+    });
+    if (filtered.length > 0) {
+      this.arrayBusqueda = filtered;
+      this.toastrService.info('Coincidences found: ' + filtered.length);
+    } else {
+      this.arrayBusqueda = this.listadoTrabajos;
+      this.toastrService.info(
+        'Jobs ' + this.searchForm.value.nombreJob + ' not found'
+      );
+    }
+  }
   /*console.log('miDate: ', miDate.getDate());
 console.log('miDate: ', miDate.getFullYear());
 console.log('miDate: ', miDate.getMonth());
@@ -63,14 +97,6 @@ console.log('miDate: ', miDate.toLocaleString());
 console.log('miDate: ', miDate.toLocaleDateString());
 console.log('miDate: ', miDate.toLocaleTimeString());
 console.log(Date.now()); */
-
-  nombreTrabajoSubmit: string = '';
-  tipoTrabajoSubmit: string = '';
-  fechaInicioSubmit: string = '';
-  fechaFinTrabajoSubmit: string = '';
-  inmediatoTrabajoSubmit: boolean = false;
-  salarioTrabajoSubmit: number = 0;
-  comisionTrabajoSubmit: number = 0;
 
   handleSubmitAddJob() {
     this.trabajosService

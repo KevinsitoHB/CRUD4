@@ -86,6 +86,21 @@
                     </div>
                 </div>
             </div>
+            <div class="container ">
+                <div class="row height d-flex justify-content-center align-items-center">
+                    <div class="col-md-6">
+                        <form [formGroup]="searchForm" (ngSubmit)="handleSubmitSearch()" role="search">
+                            <div class="form form-floating searchbar">
+                                <i class="bi bi-search"></i>
+                                <input type="search" class="form-input form-control" id="floatingInput"
+                                    placeholder="Search Jobs" formControlName="busqueda">
+                                <label for="floatingInput">Search Jobs</label>
+                            </div>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

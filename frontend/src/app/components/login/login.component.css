@@ -1,5 +1,6 @@
 .containerLogin {
     margin-top: 100px;
+    padding: 30px;
 }
 
 .myforma {
@@ -21,4 +22,28 @@
 .mybtn:hover {
     background-color: #FFF;
     color: blue;
+}
+
+@media screen and (max-width: 768px) {
+    .cardLogin {
+        width: auto;
+    }
+
+    .containerLogin {
+        margin-top: 50px;
+        padding: 0px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .cardLogin {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cardLogin {
+        min-width: 700px;
+    }
 }

@@ -1,10 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { TrabajosService } from '../../services/trabajos.service';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  FormControl,
+  FormGroup,
+  Validator,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -18,4 +26,19 @@ export class HomeComponent {
       this.listadoTrabajos = res.datosParaLeerTodos;
     });
   }
+
+  // handleSubmitSearch() {
+  //   const filtered = this.listadoTrabajos.filter((search) => {
+  //     return search.nombreb === this.searchForm.value.term;
+  //   });
+  //   if (filtered.length > 0) {
+  //     this.caps = filtered;
+  //     this.toastrService.info('Caps found: ' + filtered.length);
+  //   } else {
+  //     this.caps = this.allCaps;
+  //     this.toastrService.info(
+  //       'Caps ' + this.searchForm.value.term + ' not found'
+  //     );
+  //   }
+  // }
 }

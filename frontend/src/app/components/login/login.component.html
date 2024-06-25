@@ -1,85 +1,89 @@
-<div class="container-flex d-flex containerLogin ">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="myforma form ">
-                    <div class=" text-center">
-                        <h1 class="mainText display-3 text-center">Manager Login</h1>
-                    </div>
-                    <form [formGroup]="credentialsForm" (ngSubmit)="handleSubmit()">
-                        <div class="myInput form-group">
-                            <p class="display-6">Username</p>
-                            <input type="text" class="myInputBarMain form-control" aria-describedby="emailHelp"
-                                placeholder="Enter Username" formControlName="username">
+<section>
+    <div class="containerLogin container-flex d-flex">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 align-items-center justify-content-center d-flex  ">
+                    <div class="myforma cardLogin ">
+                        <div class=" text-center">
+                            <h1 class="mainText display-3 text-center">Manager Login</h1>
                         </div>
-                        <div class="myInput form-group">
-                            <p class="display-6">Password</p>
-                            <input type="password" name="password" id="password" class="myInputBarMain form-control"
-                                aria-describedby="emailHelp" placeholder="Enter Password" formControlName="password">
-                        </div>
-                        <div class="col-md-12 text-center ">
-                            <button type="submit" class=" mybtn btn btn-outline-primary">Login</button>
-                        </div>
-                        <!-- SIGN UP -->
-                        <!-- <button type="button" class="myNavButtons mybtn btn btn-outline-primary" routerLink="login">Sign
-                                Up
-                            </button> -->
-                        <!-- <div class="form-group">
-                                <p class="text-center ">By signing up you accept our <a>Terms Of Use</a></p>
-                            </div> -->
-                        <!--  -->
-                        <!-- <div class="col-md-12 ">
-                                <div class="login-or">
-                                    <hr class="hr-or">
-                                    <span class="span-or">or</span>
+                        <form [formGroup]="credentialsForm" (ngSubmit)="handleSubmit()">
+                            <div class="myInput form-group">
+                                <p class="display-6">Username</p>
+                                <input type="text" class="myInputBarMain form-control" aria-describedby="emailHelp"
+                                    placeholder="Enter Username" formControlName="username">
+                            </div>
+                            <div class="myInput form-group">
+                                <p class="display-6">Password</p>
+                                <input type="password" name="password" id="password" class="myInputBarMain form-control"
+                                    aria-describedby="emailHelp" placeholder="Enter Password"
+                                    formControlName="password">
+                            </div>
+                            <div class="col-md-12 text-center ">
+                                <button type="submit" class=" mybtn btn btn-outline-primary">Login</button>
+                            </div>
+                            <!-- SIGN UP -->
+                            <!-- <button type="button" class="myNavButtons mybtn btn btn-outline-primary" routerLink="login">Sign
+                                    Up
+                                </button> -->
+                            <!-- <div class="form-group">
+                                    <p class="text-center ">By signing up you accept our <a>Terms Of Use</a></p>
+                                </div> -->
+                            <!--  -->
+                            <!-- <div class="col-md-12 ">
+                                    <div class="login-or">
+                                        <hr class="hr-or">
+                                        <span class="span-or">or</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <p class="text-center">Don't have an account? <a href="#" id="signup">Register here</a>
-                                </p>
-                            </div> -->
-                    </form>
-                </div>
-                <!-- <div id="second">
-                    <div class="myform form ">
-                        <div class="logo mb-3">
-                            <div class="col-md-12 text-center">
-                                <h1>Signup</h1>
-                            </div>
-                        </div>
-                        <form action="" name="registration">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">First Name</label>
-                                <input type="text" name="firstname" class="form-control" id="firstname"
-                                    aria-describedby="emailHelp" placeholder="Enter Firstname">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Last Name</label>
-                                <input type="text" name="lastname" class="form-control" id="lastname"
-                                    aria-describedby="emailHelp" placeholder="Enter Lastname">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" name="email" class="form-control" id="email"
-                                    aria-describedby="emailHelp" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Password</label>
-                                <input type="password" name="password" id="password" class="form-control"
-                                    aria-describedby="emailHelp" placeholder="Enter Password">
-                            </div>
-                            <div class="col-md-12 text-center mb-3">
-                                <button type="submit" class=" btn btn-block mybtn btn-primary ">Get Started For
-                                    Free</button>
-                            </div>
-                            <div class="col-md-12 ">
                                 <div class="form-group">
-                                    <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
-                                </div>
-                            </div>
+                                    <p class="text-center">Don't have an account? <a href="#" id="signup">Register here</a>
+                                    </p>
+                                </div> -->
                         </form>
                     </div>
-                </div> -->
+                    <!-- <div id="second">
+                        <div class="myform form ">
+                            <div class="logo mb-3">
+                                <div class="col-md-12 text-center">
+                                    <h1>Signup</h1>
+                                </div>
+                            </div>
+                            <form action="" name="registration">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">First Name</label>
+                                    <input type="text" name="firstname" class="form-control" id="firstname"
+                                        aria-describedby="emailHelp" placeholder="Enter Firstname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Last Name</label>
+                                    <input type="text" name="lastname" class="form-control" id="lastname"
+                                        aria-describedby="emailHelp" placeholder="Enter Lastname">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" name="email" class="form-control" id="email"
+                                        aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Password</label>
+                                    <input type="password" name="password" id="password" class="form-control"
+                                        aria-describedby="emailHelp" placeholder="Enter Password">
+                                </div>
+                                <div class="col-md-12 text-center mb-3">
+                                    <button type="submit" class=" btn btn-block mybtn btn-primary ">Get Started For
+                                        Free</button>
+                                </div>
+                                <div class="col-md-12 ">
+                                    <div class="form-group">
+                                        <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div> -->
+                </div>
             </div>
         </div>
     </div>
+</section>

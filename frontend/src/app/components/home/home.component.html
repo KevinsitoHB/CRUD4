@@ -27,9 +27,9 @@
         </div>
     </section>
 </div>
-<section>
+<section class="seccion2">
     <div class="container-flex m-3">
-        <div class="container">
+        <div class="container paddingContainer">
             <div class="row">
                 @if (listadoTrabajos.length > 0) {
                 @for(listadoTrabajo of listadoTrabajos; track $index){
@@ -95,7 +95,7 @@
                                     <h6 class=" m-0 p-0">Salary:</h6>
                                 </div>
                                 <div class="mb-2 col-sm-8 col-md-12">
-                                    <p>{{listadoTrabajo.salarioTrabajoSubmit}}</p>
+                                    <p>{{listadoTrabajo.salarioTrabajoSubmit}} COP</p>
                                 </div>
                             </div>
 
@@ -104,7 +104,7 @@
                                     <h6 class="m-0 p-0">Comission:</h6>
                                 </div>
                                 <div class="mb-2 col-sm-8 col-md-12">
-                                    <p>{{listadoTrabajo.comisionTrabajoSubmit}}</p>
+                                    <p>{{listadoTrabajo.comisionTrabajoSubmit}} COP</p>
                                 </div>
                             </div>
 

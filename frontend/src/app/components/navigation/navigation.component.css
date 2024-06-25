@@ -13,12 +13,12 @@
 }
 
 .myColor {
-    background-color: #3c00ff;
+    background-color: blue;
 }
 
 .myNavButtons:hover {
     background-color: #FFF;
-    color: #3c00ff;
+    color: blue;
 }
 
 .myNavButtons {

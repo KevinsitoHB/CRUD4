@@ -10,12 +10,21 @@
     padding-top: 70px;
 }
 
+.paddingContainer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
 .underline {
     text-decoration: underline;
 }
 
 .myCity {
     padding-left: 15px;
+}
+
+.seccion2 {
+    background-color: blue;
 }
 
 .card {

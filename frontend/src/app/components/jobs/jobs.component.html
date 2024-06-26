@@ -51,11 +51,15 @@
                                     <p class="p-0">Immediate Start:</p>
                                 </div>
                                 <div class="col-xl-8">
-                                    <select class="form-control myInputBarJobs myInputSelect"
-                                        name="inmediatoTrabajoSubmit" [(ngModel)]="inmediatoTrabajoSubmit"
-                                        id="inmediatoTrabajoSubmitID">
+                                    <!-- <select class="form-control myInputBarJobs myInputSelect"
+                                        name="inmediatoTrabajoSubmit" [(ngModel)]="inmediatoTrabajoSubmit">
                                         <option [value]="true">Yes</option>
-                                        <option [value]="false">No</option>
+                                        <option selected [value]="false">No</option>
+                                    </select> -->
+                                    <select class="form-control myInputBarJobs myInputSelect"
+                                        name="inmediatoTrabajoSubmit">
+                                        <option [selected]='inmediatoTrabajoSubmit === true' value="true">Yes</option>
+                                        <option [selected]='inmediatoTrabajoSubmit === false' value="false">No</option>
                                     </select>
                                 </div>
                             </div>
@@ -169,16 +173,26 @@
                                             <p class="p-0">Immediate Start:</p>
                                         </div>
                                         <div class="col-xl-8">
-                                            <select class="form-control myInputBarJobs myInputSelect"
+                                            <!-- <select class="form-control myInputBarJobs myInputSelect"
                                                 name="inmediatoTrabajoSubmitUpdate"
                                                 [(ngModel)]="inmediatoTrabajoSubmitUpdate">
                                                 @if (listadoTrabajo.inmediatoTrabajoSubmit) {
-                                                <option>Yes</option>
+                                                <option selected>Yes</option>
                                                 <option>No</option>
                                                 }@else{
-                                                <option>No</option>
+                                                <option selected>No</option>
                                                 <option>Yes</option>
                                                 }
+                                            </select> -->
+                                            <select class="form-control myInputBarJobs myInputSelect"
+                                                name="inmediatoTrabajoSubmitUpdate"
+                                                [(ngModel)]="inmediatoTrabajoSubmitUpdate">
+                                                <option value="true"
+                                                    [selected]="listadoTrabajo.inmediatoTrabajoSubmit === true">Yes
+                                                </option>
+                                                <option value="false"
+                                                    [selected]="listadoTrabajo.inmediatoTrabajoSubmit === false">No
+                                                </option>
                                             </select>
                                         </div>
                                     </div>

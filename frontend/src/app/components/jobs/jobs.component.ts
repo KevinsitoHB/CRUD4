@@ -102,9 +102,8 @@ console.log(Date.now()); */
     console.log('payload :>> ', payload);
     this.trabajosService
       .escribirListadoTrabajos(payload)
-      .subscribe((response: any) => {
-        console.log('response :>> ', response);
-        if (response.mensaje === 'Datos Guardados Trabajos:') {
+      .subscribe((res: any) => {
+        if (res.mensaje === 'Datos Guardados Trabajos:') {
           this.toastrService.success('Data Saved!');
           function reload() {
             location.reload();
@@ -116,8 +115,6 @@ console.log(Date.now()); */
       });
   }
 
-  // handleInfo() {
-  //   console.log('...handleInfo...');
   nombreTrabajoSubmitUpdate: any;
   tipoTrabajoSubmitUpdate: any;
   fechaInicioSubmitUpdate: any;
@@ -125,7 +122,6 @@ console.log(Date.now()); */
   inmediatoTrabajoSubmitUpdate: any;
   salarioTrabajoSubmitUpdate: any;
   comisionTrabajoSubmitUpdate: any;
-  // }
 
   handleUpdateJob(id: string) {
     const payload = {
@@ -133,15 +129,22 @@ console.log(Date.now()); */
       tipoTrabajoSubmit: this.tipoTrabajoSubmitUpdate,
       fechaInicioSubmit: this.fechaInicioSubmitUpdate,
       fechaFinTrabajoSubmit: this.fechaFinTrabajoSubmitUpdate,
-      inmediatoTrabajoSubmit: false,
+      inmediatoTrabajoSubmit: this.inmediatoTrabajoSubmitUpdate,
       salarioTrabajoSubmit: this.salarioTrabajoSubmitUpdate,
       comisionTrabajoSubmit: this.comisionTrabajoSubmitUpdate,
     };
-    console.log('AQUI PAYLOAD :>> ', payload);
     this.trabajosService
       .actualizarListadoTrabajos(id, payload)
       .subscribe((res: any) => {
-        console.log('AQUI :>> ', res);
+        if (res.mensaje === 'Successfully updated') {
+          this.toastrService.success('Data Updated!');
+          function reload() {
+            location.reload();
+          }
+          setTimeout(reload, 1000);
+        } else {
+          this.toastrService.error('Data Not Saved, all fields are required.');
+        }
       });
   }
 

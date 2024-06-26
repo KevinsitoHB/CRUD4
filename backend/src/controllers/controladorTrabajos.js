@@ -53,6 +53,7 @@ const ControladorTrabajos = {
 			if (datosParaActualizar._id) {
 				res.json({
 					datosParaActualizar,
+					mensaje: 'Successfully updated',
 				});
 			} else {
 			}

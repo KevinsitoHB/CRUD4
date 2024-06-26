@@ -113,97 +113,109 @@
                 <div class="row">
                     @if (listadoTrabajosArray.length > 0) {
                     @for(listadoTrabajo of listadoTrabajosArray; track $index){
-                    <div class="container col-sm-12 col-lg-6 col-lg-6">
-                        <div class="card jobsCard">
-                            <i class="bi bi-cpu"></i>
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    {{listadoTrabajo.nombreTrabajoSubmit}}</h5>
-                                <div class=" row align-items-center mb-1">
-                                    <div class="col-xl-4">
-                                        <p class=" p-0">Job's title:</p>
-                                    </div>
-                                    <div class="col-xl-8">
-                                        <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                            placeholder="Job's title:" value="{{listadoTrabajo.nombreTrabajoSubmit}}" />
-                                    </div>
-                                </div>
-                                <div class=" row align-items-center mb-1">
-                                    <div class="col-xl-4">
-                                        <p class=" p-0">Job type:</p>
-                                    </div>
-                                    <div class="col-xl-8">
-                                        <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                            placeholder="Type of Job" value="{{listadoTrabajo.tipoTrabajoSubmit}}" />
-                                    </div>
-                                </div>
-                                <div class=" row align-items-center mb-1">
-                                    <div class="col-xl-4">
-                                        <p class=" p-0">Start Date:</p>
-                                    </div>
-                                    <div class="col-xl-8">
-                                        <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                            value="{{listadoTrabajo.fechaInicioSubmit}}" />
-                                    </div>
-                                </div>
-                                <div class=" row align-items-center mb-1">
-                                    <div class="col-xl-4">
-                                        <p class=" p-0">End Date:</p>
-                                    </div>
-                                    <div class="col-xl-8">
-                                        <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                            value="{{listadoTrabajo.fechaFinTrabajoSubmit}}" />
-                                    </div>
-                                </div>
-                                <div class=" row align-items-center mb-1">
-                                    <div class="col-xl-4">
-                                        <p class="p-0">Immediate Start:</p>
-                                    </div>
-                                    <div class="col-xl-8">
-                                        <select class="form-control myInputBarJobs myInputSelect">
-                                            @if (listadoTrabajo.inmediatoTrabajoSubmit) {
-                                            <option>Yes</option>
-                                            <option>No</option>
-                                            }@else{
-                                            <option>No</option>
-                                            <option>Yes</option>
-                                            }
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class=" row align-items-center mb-1">
-                                    <div class="col-xl-4">
-                                        <p class=" p-0">Salary:</p>
-                                    </div>
-                                    <div class="col-xl-8">
-                                        <input type="number" class="myInputBarJobs form-control"
-                                            value="{{listadoTrabajo.salarioTrabajoSubmit}}" />
-                                    </div>
-                                </div>
-                                <div class=" row align-items-center mb-1">
-                                    <div class="col-xl-4">
-                                        <p class=" p-0">Comission:</p>
-                                    </div>
-                                    <div class="col-xl-8">
-                                        <input autocomplete="off" type="number" class="myInputBarJobs form-control"
-                                            placeholder="0.00" value="{{listadoTrabajo.comisionTrabajoSubmit}}" />
-                                    </div>
-                                </div>
-                                <div class="container">
-                                    <div class="row d-flex">
-                                        <div class="col-sm-6">
-                                            <button (click)="handleDeleteJob(listadoTrabajo._id)"
-                                                class="btn btn-danger upNdelButtons">Delete</button>
+                    <form (ngSubmit)="handleUpdateJob(listadoTrabajo._id)">
+                        <div class="container col-sm-12 col-lg-6 col-lg-6">
+                            <div class="card jobsCard">
+                                <i class="bi bi-cpu"></i>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        {{listadoTrabajo.nombreTrabajoSubmit}}</h5>
+                                    <div class=" row align-items-center mb-1">
+                                        <div class="col-xl-4">
+                                            <p class=" p-0">Job's title:</p>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <button class="btn btn-warning upNdelButtons">Update</button>
+                                        <div class="col-xl-8">
+
+                                            <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                                placeholder="Job's title:"
+                                                value='{{listadoTrabajo.nombreTrabajoSubmit}}'
+                                                name="nombreTrabajoSubmitUpdate" />
+                                        </div>
+                                    </div>
+                                    <div class=" row align-items-center mb-1">
+                                        <div class="col-xl-4">
+                                            <p class=" p-0">Job type:</p>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                                placeholder="Type of Job" value="{{listadoTrabajo.tipoTrabajoSubmit}}"
+                                                name="tipoTrabajoSubmitUpdate" />
+                                        </div>
+                                    </div>
+                                    <div class=" row align-items-center mb-1">
+                                        <div class="col-xl-4">
+                                            <p class=" p-0">Start Date:</p>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                                value="{{listadoTrabajo.fechaInicioSubmit}}"
+                                                name="fechaInicioSubmitUpdate" />
+                                        </div>
+                                    </div>
+                                    <div class=" row align-items-center mb-1">
+                                        <div class="col-xl-4">
+                                            <p class=" p-0">End Date:</p>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <input autocomplete="off" type="text" class="myInputBarJobs form-control"
+                                                value="{{listadoTrabajo.fechaFinTrabajoSubmit}}"
+                                                name="fechaFinTrabajoSubmitUpdate" />
+                                        </div>
+                                    </div>
+                                    <div class=" row align-items-center mb-1">
+                                        <div class="col-xl-4">
+                                            <p class="p-0">Immediate Start:</p>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <select class="form-control myInputBarJobs myInputSelect"
+                                                name="inmediatoTrabajoSubmitUpdate">
+                                                @if (listadoTrabajo.inmediatoTrabajoSubmit) {
+                                                <option>Yes</option>
+                                                <option>No</option>
+                                                }@else{
+                                                <option>No</option>
+                                                <option>Yes</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class=" row align-items-center mb-1">
+                                        <div class="col-xl-4">
+                                            <p class=" p-0">Salary:</p>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <input type="number" class="myInputBarJobs form-control"
+                                                value="{{listadoTrabajo.salarioTrabajoSubmit}}"
+                                                name="salarioTrabajoSubmitUpdate" />
+                                        </div>
+                                    </div>
+                                    <div class=" row align-items-center mb-1">
+                                        <div class="col-xl-4">
+                                            <p class=" p-0">Comission:</p>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <input autocomplete="off" type="number" class="myInputBarJobs form-control"
+                                                placeholder="0.00" value="{{listadoTrabajo.comisionTrabajoSubmit}}"
+                                                name="comisionTrabajoSubmitUpdate" />
+                                        </div>
+                                    </div>
+                                    <div class="container">
+                                        <div class="row d-flex">
+                                            <div class="col-sm-6">
+                                                <button (click)="handleDeleteJob(listadoTrabajo._id)"
+                                                    class="btn btn-danger upNdelButtons">Delete</button>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <button type="submit"
+                                                    class="btn btn-warning upNdelButtons">Update</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    } }@else{
+                    </form>
+                    } } @else {
                     <h1 class="text-white">No Jobs available</h1>
                     }
                 </div>

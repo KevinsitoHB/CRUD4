@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { DatePipe } from '@angular/common';
-
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -36,6 +35,15 @@ export class JobsComponent {
   inmediatoTrabajoSubmit: boolean = false;
   salarioTrabajoSubmit: number = 0;
   comisionTrabajoSubmit: number = 0;
+
+  nombreTrabajoSubmitUpdate: string = '';
+  tipoTrabajoSubmitUpdate: string = '';
+  fechaInicioSubmitUpdate: string = '';
+  fechaFinTrabajoSubmitUpdate: string = '';
+  inmediatoTrabajoSubmitUpdate: boolean = false;
+  salarioTrabajoSubmitUpdate: number = 0;
+  comisionTrabajoSubmitUpdate: number = 0;
+
   listadoTrabajosArray: any[] = [];
   arrayBusqueda: any[] = [];
 
@@ -49,6 +57,7 @@ export class JobsComponent {
           this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
             if (res.mensaje === 'Datos en la coleccion:') {
               this.listadoTrabajosArray = res.datosParaLeerTodos;
+              console.log('res.datos :>> ', res.datosParaLeerTodos);
             } else {
               this.toastrService.error('Error loading');
             }
@@ -81,19 +90,7 @@ export class JobsComponent {
       );
     }
   }
-  /*console.log('miDate: ', miDate.getDate());
-console.log('miDate: ', miDate.getFullYear());
-console.log('miDate: ', miDate.getMonth());
-console.log('miDate: ', miDate.getDay());
-console.log('miDate: ', miDate.getHours());
-console.log('miDate: ', miDate.getMinutes());
-console.log('miDate: ', miDate.getSeconds());
-console.log('miDate: ', miDate.getMilliseconds());
-console.log('miDate: ', miDate.getTime());
-console.log('2024-06-19T01:30:43.046Z');
-miDate = new Date('2024-06-19T01:30:43.046Z');
-console.log('miDate: ', miDate);
-console.log('miDate: ', miDate.toString());
+  /*
 console.log('miDate: ', miDate.toDateString());
 console.log('miDate: ', miDate.toLocaleString());
 console.log('miDate: ', miDate.toLocaleDateString());
@@ -130,9 +127,24 @@ console.log(Date.now()); */
   // handleInfo() {
   //   console.log('...handleInfo...');
   // }
-  // handleUpdate() {
-  //   console.log('...handleUpdate...');
-  // }
+  handleUpdateJob(id: string) {
+    const payload = {
+      nombreTrabajoSubmitUpdate: this.nombreTrabajoSubmitUpdate,
+      tipoTrabajoSubmitUpdate: this.tipoTrabajoSubmitUpdate,
+      fechaInicioSubmitUpdate: this.fechaInicioSubmitUpdate,
+      fechaFinTrabajoSubmitUpdate: this.fechaFinTrabajoSubmitUpdate,
+      inmediatoTrabajoSubmitUpdate: this.inmediatoTrabajoSubmitUpdate,
+      salarioTrabajoSubmitUpdate: this.salarioTrabajoSubmitUpdate,
+      comisionTrabajoSubmitUpdate: this.comisionTrabajoSubmitUpdate,
+    };
+    console.log('AQUI PAYLOAD :>> ', payload);
+    this.trabajosService
+      .actualizarListadoTrabajos(id, payload)
+      .subscribe((res: any) => {
+        console.log('AQUI :>> ');
+      });
+  }
+
   handleDeleteJob(id: string) {
     this.trabajosService.eliminarListadoTrabajos(id).subscribe((res: any) => {
       this.toastrService.success(res.mensaje);

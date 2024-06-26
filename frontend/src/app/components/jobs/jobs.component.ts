@@ -99,16 +99,18 @@ console.log('miDate: ', miDate.toLocaleTimeString());
 console.log(Date.now()); */
 
   handleSubmitAddJob() {
+    const payload = {
+      nombreTrabajoSubmit: this.nombreTrabajoSubmit,
+      tipoTrabajoSubmit: this.tipoTrabajoSubmit,
+      fechaInicioSubmit: this.fechaInicioSubmit,
+      fechaFinTrabajoSubmit: this.fechaFinTrabajoSubmit,
+      inmediatoTrabajoSubmit: this.inmediatoTrabajoSubmit,
+      salarioTrabajoSubmit: this.salarioTrabajoSubmit,
+      comisionTrabajoSubmit: this.comisionTrabajoSubmit,
+    };
+    console.log('payload :>> ', payload);
     this.trabajosService
-      .escribirListadoTrabajos(
-        this.nombreTrabajoSubmit,
-        this.tipoTrabajoSubmit,
-        this.fechaInicioSubmit,
-        this.fechaFinTrabajoSubmit,
-        this.inmediatoTrabajoSubmit,
-        this.salarioTrabajoSubmit,
-        this.comisionTrabajoSubmit
-      )
+      .escribirListadoTrabajos(payload)
       .subscribe((response: any) => {
         console.log('response :>> ', response);
       });

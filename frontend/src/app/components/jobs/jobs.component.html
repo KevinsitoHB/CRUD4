@@ -6,7 +6,7 @@
                 <div class="col-sm-12 align-items-center justify-content-center d-flex  ">
                     <div class="card cardEscribir">
                         <form (ngSubmit)="handleSubmitAddJob()">
-                            <div class=" row align-items-center mb-3">
+                            <div class=" row align-items-center mb-1">
                                 <div class="col-xl-4">
                                     <p class=" p-0">Job's title:</p>
                                 </div>
@@ -16,7 +16,7 @@
                                         [(ngModel)]="nombreTrabajoSubmit" id="nombreTrabajoSubmitID" />
                                 </div>
                             </div>
-                            <div class=" row align-items-center mb-3">
+                            <div class=" row align-items-center mb-1">
                                 <div class="col-xl-4">
                                     <p class=" p-0">Job type:</p>
                                 </div>
@@ -26,7 +26,7 @@
                                         [(ngModel)]="tipoTrabajoSubmit" id="tipoTrabajoSubmitID" />
                                 </div>
                             </div>
-                            <div class=" row align-items-center mb-3">
+                            <div class=" row align-items-center mb-1">
                                 <div class="col-xl-4">
                                     <p class=" p-0">Start Date:</p>
                                 </div>
@@ -36,7 +36,7 @@
                                         id="fechaInicioSubmitID" placeholder="MM/DD/YYYY" />
                                 </div>
                             </div>
-                            <div class=" row align-items-center mb-3">
+                            <div class=" row align-items-center mb-1">
                                 <div class="col-xl-4">
                                     <p class=" p-0">End Date:</p>
                                 </div>
@@ -46,7 +46,7 @@
                                         id="fechaFinalizacionTrabajoID" placeholder="MM/DD/YYYY" />
                                 </div>
                             </div>
-                            <div class=" row align-items-center mb-3">
+                            <div class=" row align-items-center mb-1">
                                 <div class="col-xl-4">
                                     <p class="p-0">Immediate Start:</p>
                                 </div>
@@ -59,7 +59,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class=" row align-items-center mb-3">
+                            <div class=" row align-items-center mb-1">
                                 <div class="col-xl-4">
                                     <p class=" p-0">Salary:</p>
                                 </div>
@@ -69,7 +69,7 @@
                                         [(ngModel)]="salarioTrabajoSubmit" id="salarioTrabajoSubmitID" />
                                 </div>
                             </div>
-                            <div class=" row align-items-center mb-3">
+                            <div class=" row align-items-center mb-1">
                                 <div class="col-xl-4">
                                     <p class=" p-0">Comission:</p>
                                 </div>
@@ -86,21 +86,22 @@
                     </div>
                 </div>
             </div>
-            <div class="container ">
+            <!-- Searchbar -->
+            <!-- <div class="container ">
                 <div class="row height d-flex justify-content-center align-items-center">
                     <div class="col-md-6">
                         <form [formGroup]="searchForm" (ngSubmit)="handleSubmitSearch()" role="search">
                             <div class="form form-floating searchbar">
                                 <i class="bi bi-search"></i>
                                 <input type="search" class="form-input form-control" id="floatingInput"
-                                    placeholder="Search Jobs" formControlName="busqueda">
+                                    placeholder="Search Jobs" formControlName="searchForm">
                                 <label for="floatingInput">Search Jobs</label>
                             </div>
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -118,7 +119,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">
                                     {{listadoTrabajo.nombreTrabajoSubmit}}</h5>
-                                <div class=" row align-items-center mb-3">
+                                <div class=" row align-items-center mb-1">
                                     <div class="col-xl-4">
                                         <p class=" p-0">Job's title:</p>
                                     </div>
@@ -127,7 +128,7 @@
                                             placeholder="Job's title:" value="{{listadoTrabajo.nombreTrabajoSubmit}}" />
                                     </div>
                                 </div>
-                                <div class=" row align-items-center mb-3">
+                                <div class=" row align-items-center mb-1">
                                     <div class="col-xl-4">
                                         <p class=" p-0">Job type:</p>
                                     </div>
@@ -136,7 +137,7 @@
                                             placeholder="Type of Job" value="{{listadoTrabajo.tipoTrabajoSubmit}}" />
                                     </div>
                                 </div>
-                                <div class=" row align-items-center mb-3">
+                                <div class=" row align-items-center mb-1">
                                     <div class="col-xl-4">
                                         <p class=" p-0">Start Date:</p>
                                     </div>
@@ -145,7 +146,7 @@
                                             value="{{listadoTrabajo.fechaInicioSubmit}}" />
                                     </div>
                                 </div>
-                                <div class=" row align-items-center mb-3">
+                                <div class=" row align-items-center mb-1">
                                     <div class="col-xl-4">
                                         <p class=" p-0">End Date:</p>
                                     </div>
@@ -154,7 +155,7 @@
                                             value="{{listadoTrabajo.fechaFinTrabajoSubmit}}" />
                                     </div>
                                 </div>
-                                <div class=" row align-items-center mb-3">
+                                <div class=" row align-items-center mb-1">
                                     <div class="col-xl-4">
                                         <p class="p-0">Immediate Start:</p>
                                     </div>
@@ -170,7 +171,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class=" row align-items-center mb-3">
+                                <div class=" row align-items-center mb-1">
                                     <div class="col-xl-4">
                                         <p class=" p-0">Salary:</p>
                                     </div>
@@ -179,7 +180,7 @@
                                             value="{{listadoTrabajo.salarioTrabajoSubmit}}" />
                                     </div>
                                 </div>
-                                <div class=" row align-items-center mb-3">
+                                <div class=" row align-items-center mb-1">
                                     <div class="col-xl-4">
                                         <p class=" p-0">Comission:</p>
                                     </div>

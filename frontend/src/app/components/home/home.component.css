@@ -1,75 +1,55 @@
-.container-flexx {
-    padding: 50px 0px 50px 0px;
-}
+ .mainText {
+     padding: 0px 80px 0px 80px;
+ }
 
-.mainText {
-    padding: 0px 80px 0px 80px;
-}
+ .padding100 {
+     padding-top: 100px;
+     padding-bottom: 100px;
+ }
 
-.padding70 {
-    padding-top: 70px;
-}
+ .paddingContainer {
+     padding-top: 60px;
+     padding-bottom: 60px;
+ }
 
-.paddingContainer {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
+ .underline {
+     text-decoration: underline;
+ }
 
-.underline {
-    text-decoration: underline;
-}
+ .myCity {
+     padding-left: 15px;
+ }
 
-.myCity {
-    padding-left: 15px;
-}
+ .seccion2 {
+     background-color: blue;
+ }
 
-.seccion2 {
-    background-color: blue;
-}
+ .upNdelButtons {
+     background-color: blue;
+     border-radius: 10px;
+     width: 100%;
+     margin: 20px 0 20px 0;
+     padding: 10px;
+ }
 
-.upNdelButtons {
-    background-color: blue;
-    border-radius: 10px;
-    width: 100%;
-    margin: 20px 0 20px 0;
-    padding: 10px;
-}
+ .upNdelButtons:hover {
+     background-color: #FFF;
+     color: blue;
+ }
 
-.upNdelButtons:hover {
-    background-color: #FFF;
-    color: blue;
-}
+ .card {
+     padding: 30px !important;
+     border: 1px solid blue !important;
+ }
 
-.card {
-    padding: 30px !important;
-    border: 1px solid blue !important;
-}
+ body {
+     background: #d1d5db;
+ }
 
-/* Searchbar */
-body {
-    background: #d1d5db;
-}
+ .form i {
+     position: absolute;
+     right: 17px;
+     top: 13px;
+     padding: 2px 0 10px 2px;
 
-.form i {
-    position: absolute;
-    right: 17px;
-    top: 13px;
-    padding: 2px 0 10px 2px;
-
-}
-
-
-.form-input {
-    height: 55px;
-    text-indent: 15px;
-    border-radius: 15px;
-}
-
-.form-input:focus {
-    border: none;
-
-}
-
-.searchbar {
-    margin: 50px 0 80px 0;
-}
+ }

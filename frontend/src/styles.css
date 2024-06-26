@@ -21,10 +21,27 @@ p {
     margin: 0;
 }
 
-
-
 .myInputBarMain {
     height: 50px;
     border-radius: 15px;
     width: 100%;
 }
+
+/* Searchbar */
+
+.form-input {
+    height: 55px;
+    text-indent: 15px;
+    border-radius: 15px;
+}
+
+.form-input:focus {
+    border: none;
+
+}
+
+.searchbar {
+    margin: 50px 0 80px 0;
+}
+
+/*  */

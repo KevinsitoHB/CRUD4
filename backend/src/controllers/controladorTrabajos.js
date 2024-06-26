@@ -30,7 +30,7 @@ const ControladorTrabajos = {
 				salarioTrabajoSubmit: req.body.salarioTrabajoSubmit,
 				comisionTrabajoSubmit: req.body.comisionTrabajoSubmit,
 			});
-			console.log('AQUI :>> ', datosEsquema);
+
 			const datosParaGuardar = await datosEsquema.save();
 			if (datosParaGuardar._id) {
 				res.json({
@@ -50,30 +50,31 @@ const ControladorTrabajos = {
 				req.body
 			);
 			if (datosParaActualizar._id) {
-				const datosRefrescados =
+				const datosParaActualizarNuevos =
 					await esquemaTrabajos.findByIdAndUpdate(
 						req.params.id,
 						req.body
 					);
-				res.json({ mensaje: 'Datos actualizados:', datosRefrescados });
+				res.json({ mensaje: 'Exitoso', datosParaActualizarNuevos });
 			}
 		} catch (error) {
-			res.json({ error });
+			res.json({ mensaje: 'Error al actualizar' });
 		}
 	},
 	eliminar: async (req, res) => {
 		try {
-			const datosParaEliminar = await esquemaTrabajos.findOneAndDelete(
-				req.params._id
+			const datosParaEliminar = await esquemaTrabajos.findByIdAndDelete(
+				req.params.id
 			);
-			if (datosParaEliminar) {
+			console.log(datosParaEliminar.id);
+			if (datosParaEliminar.id) {
 				res.json({
 					mensaje: 'Successfully deleted',
 					datosParaEliminar,
 				});
 			}
 		} catch (error) {
-			res.json({ error });
+			res.json({ error: error });
 		}
 	},
 	eliminarTodos: async (req, res) => {

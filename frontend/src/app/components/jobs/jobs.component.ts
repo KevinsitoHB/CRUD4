@@ -1,4 +1,6 @@
 import { Component, inject } from '@angular/core';
+import { DatePipe } from '@angular/common';
+
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -34,7 +36,7 @@ export class JobsComponent {
   inmediatoTrabajoSubmit: boolean = false;
   salarioTrabajoSubmit: number = 0;
   comisionTrabajoSubmit: number = 0;
-  listadoTrabajos: any[] = [];
+  listadoTrabajosArray: any[] = [];
   arrayBusqueda: any[] = [];
 
   ngOnInit() {
@@ -46,7 +48,7 @@ export class JobsComponent {
           this.nombre = decoded.nombreDeUsuario;
           this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
             if (res.mensaje === 'Datos en la coleccion:') {
-              this.listadoTrabajos = res.datosParaLeerTodos;
+              this.listadoTrabajosArray = res.datosParaLeerTodos;
             } else {
               this.toastrService.error('Error loading');
             }
@@ -73,7 +75,7 @@ export class JobsComponent {
       this.arrayBusqueda = filtered;
       this.toastrService.info('Coincidences found: ' + filtered.length);
     } else {
-      this.arrayBusqueda = this.listadoTrabajos;
+      this.arrayBusqueda = this.listadoTrabajosArray;
       this.toastrService.info(
         'Jobs ' + this.searchForm.value.nombreJob + ' not found'
       );
@@ -136,7 +138,7 @@ console.log(Date.now()); */
       this.toastrService.success(res.mensaje);
       this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
         if (res.mensaje === 'Datos en la coleccion:') {
-          this.listadoTrabajos = res.datosParaLeerTodos;
+          this.listadoTrabajosArray = res.datosParaLeerTodos;
         } else {
           this.toastrService.error('Error loading');
         }

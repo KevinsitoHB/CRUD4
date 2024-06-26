@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TrabajosService } from '../../services/trabajos.service';
+import { DatePipe } from '@angular/common';
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -19,16 +20,16 @@ import {
 export class HomeComponent {
   trabajosService = inject(TrabajosService);
 
-  listadoTrabajos: any[] = [];
+  listadoTrabajosArray: any[] = [];
 
   ngOnInit() {
     this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
-      this.listadoTrabajos = res.datosParaLeerTodos;
+      this.listadoTrabajosArray = res.datosParaLeerTodos;
     });
   }
 
   // handleSubmitSearch() {
-  //   const filtered = this.listadoTrabajos.filter((search) => {
+  //   const filtered = this.listadoTrabajosArray.filter((search) => {
   //     return search.nombreb === this.searchForm.value.term;
   //   });
   //   if (filtered.length > 0) {

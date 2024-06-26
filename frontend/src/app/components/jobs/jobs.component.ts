@@ -113,6 +113,15 @@ console.log(Date.now()); */
       .escribirListadoTrabajos(payload)
       .subscribe((response: any) => {
         console.log('response :>> ', response);
+        if (response.mensaje === 'Datos Guardados Trabajos:') {
+          this.toastrService.success('Data Saved!');
+          function reload() {
+            location.reload();
+          }
+          setTimeout(reload, 1000);
+        } else {
+          this.toastrService.error('Data Not Saved, all fields are required.');
+        }
       });
   }
 

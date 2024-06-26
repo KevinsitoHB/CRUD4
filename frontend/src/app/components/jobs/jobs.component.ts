@@ -36,14 +36,6 @@ export class JobsComponent {
   salarioTrabajoSubmit: number = 0;
   comisionTrabajoSubmit: number = 0;
 
-  nombreTrabajoSubmitUpdate: string = '';
-  tipoTrabajoSubmitUpdate: string = '';
-  fechaInicioSubmitUpdate: string = '';
-  fechaFinTrabajoSubmitUpdate: string = '';
-  inmediatoTrabajoSubmitUpdate: boolean = false;
-  salarioTrabajoSubmitUpdate: number = 0;
-  comisionTrabajoSubmitUpdate: number = 0;
-
   listadoTrabajosArray: any[] = [];
   arrayBusqueda: any[] = [];
 
@@ -126,22 +118,30 @@ console.log(Date.now()); */
 
   // handleInfo() {
   //   console.log('...handleInfo...');
+  nombreTrabajoSubmitUpdate: any;
+  tipoTrabajoSubmitUpdate: any;
+  fechaInicioSubmitUpdate: any;
+  fechaFinTrabajoSubmitUpdate: any;
+  inmediatoTrabajoSubmitUpdate: any;
+  salarioTrabajoSubmitUpdate: any;
+  comisionTrabajoSubmitUpdate: any;
   // }
+
   handleUpdateJob(id: string) {
     const payload = {
-      nombreTrabajoSubmitUpdate: this.nombreTrabajoSubmitUpdate,
-      tipoTrabajoSubmitUpdate: this.tipoTrabajoSubmitUpdate,
-      fechaInicioSubmitUpdate: this.fechaInicioSubmitUpdate,
-      fechaFinTrabajoSubmitUpdate: this.fechaFinTrabajoSubmitUpdate,
-      inmediatoTrabajoSubmitUpdate: this.inmediatoTrabajoSubmitUpdate,
-      salarioTrabajoSubmitUpdate: this.salarioTrabajoSubmitUpdate,
-      comisionTrabajoSubmitUpdate: this.comisionTrabajoSubmitUpdate,
+      nombreTrabajoSubmit: this.nombreTrabajoSubmitUpdate,
+      tipoTrabajoSubmit: this.tipoTrabajoSubmitUpdate,
+      fechaInicioSubmit: this.fechaInicioSubmitUpdate,
+      fechaFinTrabajoSubmit: this.fechaFinTrabajoSubmitUpdate,
+      inmediatoTrabajoSubmit: false,
+      salarioTrabajoSubmit: this.salarioTrabajoSubmitUpdate,
+      comisionTrabajoSubmit: this.comisionTrabajoSubmitUpdate,
     };
     console.log('AQUI PAYLOAD :>> ', payload);
     this.trabajosService
       .actualizarListadoTrabajos(id, payload)
       .subscribe((res: any) => {
-        console.log('AQUI :>> ');
+        console.log('AQUI :>> ', res);
       });
   }
 

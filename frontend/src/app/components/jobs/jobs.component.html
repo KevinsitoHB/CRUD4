@@ -114,6 +114,7 @@
                     @if (listadoTrabajosArray.length > 0) {
                     @for(listadoTrabajo of listadoTrabajosArray; track $index){
                     <form (ngSubmit)="handleUpdateJob(listadoTrabajo._id)">
+                        <!-- <form> -->
                         <div class="container col-sm-12 col-lg-6 col-lg-6">
                             <div class="card jobsCard">
                                 <i class="bi bi-cpu"></i>
@@ -125,12 +126,12 @@
                                             <p class=" p-0">Job's title:</p>
                                         </div>
                                         <div class="col-xl-8">
-
                                             <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                                placeholder="Job's title:"
-                                                value='{{listadoTrabajo.nombreTrabajoSubmit}}'
-                                                name="nombreTrabajoSubmitUpdate" />
+                                                placeholder="{{listadoTrabajo.nombreTrabajoSubmit}}"
+                                                name="nombreTrabajoSubmitUpdate"
+                                                [(ngModel)]="nombreTrabajoSubmitUpdate" />
                                         </div>
+                                        <!--  value='{{listadoTrabajo.nombreTrabajoSubmit}}' -->
                                     </div>
                                     <div class=" row align-items-center mb-1">
                                         <div class="col-xl-4">
@@ -138,8 +139,8 @@
                                         </div>
                                         <div class="col-xl-8">
                                             <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                                placeholder="Type of Job" value="{{listadoTrabajo.tipoTrabajoSubmit}}"
-                                                name="tipoTrabajoSubmitUpdate" />
+                                                placeholder="{{listadoTrabajo.tipoTrabajoSubmit}}"
+                                                name="tipoTrabajoSubmitUpdate" [(ngModel)]="tipoTrabajoSubmitUpdate" />
                                         </div>
                                     </div>
                                     <div class=" row align-items-center mb-1">
@@ -148,8 +149,8 @@
                                         </div>
                                         <div class="col-xl-8">
                                             <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                                value="{{listadoTrabajo.fechaInicioSubmit}}"
-                                                name="fechaInicioSubmitUpdate" />
+                                                placeholder="{{listadoTrabajo.fechaInicioSubmit}}"
+                                                name="fechaInicioSubmitUpdate" [(ngModel)]="fechaInicioSubmitUpdate" />
                                         </div>
                                     </div>
                                     <div class=" row align-items-center mb-1">
@@ -158,8 +159,9 @@
                                         </div>
                                         <div class="col-xl-8">
                                             <input autocomplete="off" type="text" class="myInputBarJobs form-control"
-                                                value="{{listadoTrabajo.fechaFinTrabajoSubmit}}"
-                                                name="fechaFinTrabajoSubmitUpdate" />
+                                                placeholder="{{listadoTrabajo.fechaFinTrabajoSubmit}}"
+                                                name="fechaFinTrabajoSubmitUpdate"
+                                                [(ngModel)]="fechaFinTrabajoSubmitUpdate" />
                                         </div>
                                     </div>
                                     <div class=" row align-items-center mb-1">
@@ -168,7 +170,8 @@
                                         </div>
                                         <div class="col-xl-8">
                                             <select class="form-control myInputBarJobs myInputSelect"
-                                                name="inmediatoTrabajoSubmitUpdate">
+                                                name="inmediatoTrabajoSubmitUpdate"
+                                                [(ngModel)]="inmediatoTrabajoSubmitUpdate">
                                                 @if (listadoTrabajo.inmediatoTrabajoSubmit) {
                                                 <option>Yes</option>
                                                 <option>No</option>
@@ -185,8 +188,9 @@
                                         </div>
                                         <div class="col-xl-8">
                                             <input type="number" class="myInputBarJobs form-control"
-                                                value="{{listadoTrabajo.salarioTrabajoSubmit}}"
-                                                name="salarioTrabajoSubmitUpdate" />
+                                                placeholder="{{listadoTrabajo.salarioTrabajoSubmit}}"
+                                                name="salarioTrabajoSubmitUpdate"
+                                                [(ngModel)]="salarioTrabajoSubmitUpdate" />
                                         </div>
                                     </div>
                                     <div class=" row align-items-center mb-1">
@@ -195,8 +199,9 @@
                                         </div>
                                         <div class="col-xl-8">
                                             <input autocomplete="off" type="number" class="myInputBarJobs form-control"
-                                                placeholder="0.00" value="{{listadoTrabajo.comisionTrabajoSubmit}}"
-                                                name="comisionTrabajoSubmitUpdate" />
+                                                placeholder="{{listadoTrabajo.comisionTrabajoSubmit}}"
+                                                name="comisionTrabajoSubmitUpdate"
+                                                [(ngModel)]="comisionTrabajoSubmitUpdate" />
                                         </div>
                                     </div>
                                     <div class="container">

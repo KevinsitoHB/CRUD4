@@ -17,7 +17,7 @@ export class TrabajosService {
     return this.httpClient.get(this.API_URL);
   }
   actualizarListadoTrabajos(id: string, payload: any) {
-    return this.httpClient.put(`${this.API_URL}/${id}`, { payload });
+    return this.httpClient.put(`${this.API_URL}/${id}`, payload);
   }
 
   eliminarListadoTrabajos(id: string) {

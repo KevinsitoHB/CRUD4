@@ -47,16 +47,16 @@ const ControladorTrabajos = {
 		try {
 			const datosParaActualizar = await esquemaTrabajos.findByIdAndUpdate(
 				req.params.id,
-				req.body
+				req.body,
+				{ new: true }
 			);
 			if (datosParaActualizar._id) {
-				const datosParaActualizarNuevos =
-					await esquemaTrabajos.findByIdAndUpdate(
-						req.params.id,
-						req.body
-					);
-				res.json({ mensaje: 'Exitoso', datosParaActualizarNuevos });
+				res.json({
+					datosParaActualizar,
+				});
+			} else {
 			}
+			console.log('datosPara :>> ', req.body);
 		} catch (error) {
 			res.json({ mensaje: 'Error al actualizar' });
 		}
@@ -66,7 +66,6 @@ const ControladorTrabajos = {
 			const datosParaEliminar = await esquemaTrabajos.findByIdAndDelete(
 				req.params.id
 			);
-			console.log(datosParaEliminar.id);
 			if (datosParaEliminar.id) {
 				res.json({
 					mensaje: 'Successfully deleted',

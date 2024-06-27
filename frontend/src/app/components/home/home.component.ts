@@ -38,7 +38,6 @@ export class HomeComponent {
     this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
       this.listadoTrabajosArray = res.datosParaLeerTodos;
       // this.listadoTrabajosFiltro = this.listadoTrabajosArray;
-      console.log('listadoTrabajosArray :>> ', this.listadoTrabajosArray);
     });
   }
   applyBtn() {

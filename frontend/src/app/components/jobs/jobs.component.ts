@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { DatePipe, NgIf } from '@angular/common';
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -27,6 +27,8 @@ export class JobsComponent {
   loginService = inject(LoginService);
   trabajosService = inject(TrabajosService);
   nombre: string = '';
+  listadoTrabajosArray: any[] = [];
+  arrayBusqueda: any[] = [];
 
   nombreTrabajoSubmit: string = '';
   tipoTrabajoSubmit: string = '';
@@ -36,8 +38,13 @@ export class JobsComponent {
   salarioTrabajoSubmit: number = 0;
   comisionTrabajoSubmit: number = 0;
 
-  listadoTrabajosArray: any[] = [];
-  arrayBusqueda: any[] = [];
+  nombreTrabajoSubmitUpdate: any;
+  tipoTrabajoSubmitUpdate: any;
+  fechaInicioSubmitUpdate: any;
+  fechaFinTrabajoSubmitUpdate: any;
+  inmediatoTrabajoSubmitUpdate: any;
+  salarioTrabajoSubmitUpdate: any;
+  comisionTrabajoSubmitUpdate: any;
 
   ngOnInit() {
     const token: any = localStorage.getItem('token');
@@ -115,14 +122,6 @@ console.log(Date.now()); */
       });
   }
 
-  nombreTrabajoSubmitUpdate: any;
-  tipoTrabajoSubmitUpdate: any;
-  fechaInicioSubmitUpdate: any;
-  fechaFinTrabajoSubmitUpdate: any;
-  inmediatoTrabajoSubmitUpdate: any;
-  salarioTrabajoSubmitUpdate: any;
-  comisionTrabajoSubmitUpdate: any;
-
   handleUpdateJob(id: string) {
     const payload = {
       nombreTrabajoSubmit: this.nombreTrabajoSubmitUpdate,
@@ -133,13 +132,14 @@ console.log(Date.now()); */
       salarioTrabajoSubmit: this.salarioTrabajoSubmitUpdate,
       comisionTrabajoSubmit: this.comisionTrabajoSubmitUpdate,
     };
+    console.log('payload :>> ', payload);
     this.trabajosService
       .actualizarListadoTrabajos(id, payload)
       .subscribe((res: any) => {
         if (res.mensaje === 'Successfully updated') {
           this.toastrService.success('Data Updated!');
           function reload() {
-            location.reload();
+            // location.reload();
           }
           setTimeout(reload, 1000);
         } else {

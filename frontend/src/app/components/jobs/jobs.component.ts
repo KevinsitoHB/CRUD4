@@ -24,16 +24,6 @@ const jwtHelperService = new JwtHelperService();
   styleUrl: './jobs.component.css',
 })
 export class JobsComponent {
-  // @ViewChild('myJobName') myJobNameRef: ElementRef;
-
-  // ngAfterViewInit() {
-  //   if (this.myJobNameRef) {
-  //     console.log(
-  //       'Accessing input element:',
-  //       this.myJobNameRef.nativeElement.value
-  //     );
-  //   }
-  // }
   toastrService = inject(ToastrService);
   loginService = inject(LoginService);
   trabajosService = inject(TrabajosService);
@@ -133,15 +123,41 @@ console.log(Date.now()); */
       });
   }
 
+  credentialsForm = new FormGroup({
+    nombreTrabajoSubmit2: new FormControl('', Validators.required),
+    tipoTrabajoSubmitUpdate2: new FormControl('', Validators.required),
+    fechaInicioSubmitUpdate2: new FormControl('', Validators.required),
+    fechaFinTrabajoSubmitUpdate2: new FormControl('', Validators.required),
+    inmediatoTrabajoSubmitUpdate2: new FormControl('', Validators.required),
+    salarioTrabajoSubmitUpdate2: new FormControl('', Validators.required),
+    comisionTrabajoSubmitUpdate2: new FormControl('', Validators.required),
+  });
+
   handleUpdateJob(id: string) {
+    const nombreTrabajoSubmitUpdate2 =
+      this.credentialsForm.value.nombreTrabajoSubmit2;
+    const tipoTrabajoSubmitUpdate2 =
+      this.credentialsForm.value.tipoTrabajoSubmitUpdate2;
+    const fechaInicioSubmitUpdate2 =
+      this.credentialsForm.value.fechaInicioSubmitUpdate2;
+    const fechaFinTrabajoSubmitUpdate2 =
+      this.credentialsForm.value.fechaFinTrabajoSubmitUpdate2;
+    const inmediatoTrabajoSubmitUpdate2 =
+      this.credentialsForm.value.inmediatoTrabajoSubmitUpdate2;
+    const salarioTrabajoSubmitUpdate2 =
+      this.credentialsForm.value.salarioTrabajoSubmitUpdate2;
+    const comisionTrabajoSubmitUpdate2 =
+      this.credentialsForm.value.comisionTrabajoSubmitUpdate2;
+
+    console.log('nombreTrabajoSubmit2 :>> ', nombreTrabajoSubmitUpdate2);
     const payload = {
-      nombreTrabajoSubmit: this.nombreTrabajoSubmitUpdate,
-      tipoTrabajoSubmit: this.tipoTrabajoSubmitUpdate,
-      fechaInicioSubmit: this.fechaInicioSubmitUpdate,
-      fechaFinTrabajoSubmit: this.fechaFinTrabajoSubmitUpdate,
-      inmediatoTrabajoSubmit: this.inmediatoTrabajoSubmitUpdate,
-      salarioTrabajoSubmit: this.salarioTrabajoSubmitUpdate,
-      comisionTrabajoSubmit: this.comisionTrabajoSubmitUpdate,
+      nombreTrabajoSubmit: nombreTrabajoSubmitUpdate2,
+      tipoTrabajoSubmit: tipoTrabajoSubmitUpdate2,
+      fechaInicioSubmit: fechaInicioSubmitUpdate2,
+      fechaFinTrabajoSubmit: fechaFinTrabajoSubmitUpdate2,
+      inmediatoTrabajoSubmit: inmediatoTrabajoSubmitUpdate2,
+      salarioTrabajoSubmit: salarioTrabajoSubmitUpdate2,
+      comisionTrabajoSubmit: comisionTrabajoSubmitUpdate2,
     };
     console.log('payload :>> ', payload);
     this.trabajosService

@@ -108,14 +108,12 @@
 <!-- SIDE -->
 <section class="seccion2">
     <div class="container-flex seccion2">
-        <div class="container paddingContainer ">
+        <div class="container paddingContainer">
             <div class="row">
-
                 @if (listadoTrabajosArray.length > 0) {
                 @for(listadoTrabajo of listadoTrabajosArray; track $index){
-                <!-- <form (ngSubmit)="handleUpdateJob(listadoTrabajo._id)"> -->
                 <div class="container col-sm-12 col-md-6 col-lg-4 mb-4">
-                    <form>
+                    <form (ngSubmit)="handleUpdateJob(listadoTrabajo._id)">
                         <div class="card jobsCard">
                             <i class="bi bi-cpu"></i>
                             <div class="card-body">
@@ -167,52 +165,11 @@
                                         <p class="p-0">Immediate Start:</p>
                                     </div>
                                     <div class="col-xl-8">
-                                        <!-- <select class="form-control myInputBarJobs myInputSelect"
-                                                name="inmediatoTrabajoSubmitUpdate"
-                                                [(ngModel)]="inmediatoTrabajoSubmitUpdate">
-                                                @if (listadoTrabajo.inmediatoTrabajoSubmit) {
-                                                <option selected [selected]='inmediatoTrabajoSubmitUpdate === true'
-                                                    value="true">
-                                                    Yes</option>
-                                                <option [selected]='inmediatoTrabajoSubmitUpdate === false'
-                                                    value="false">No</option>
-                                                }@else{
-                                                <option [selected]='inmediatoTrabajoSubmitUpdate === false'
-                                                    value="false">No</option>
-                                                <option [selected]='inmediatoTrabajoSubmitUpdate === true' value="true">
-                                                    Yes</option> }
-                                            </select> -->
-
-
                                         <input [(ngModel)]="inmediatoTrabajoSubmitUpdate" autocomplete="off" type="text"
                                             placeholder="{{listadoTrabajo.inmediatoTrabajoSubmit? 'Yes' : 'No'}}"
                                             class="myInputBarJobs form-control" name="inmediatoTrabajoSubmitUpdate"
                                             id="inmediatoTrabajoSubmitUpdate"
                                             [value]="listadoTrabajo.inmediatoTrabajoSubmit ? 'Yes' : 'No'">
-
-                                        <!--      [(ngModel)]="inmediatoTrabajoSubmitUpdate"  -->
-
-
-
-                                        <!-- <select class="form-control myInputBarJobs myInputSelect"
-                                                name="inmediatoTrabajoSubmitUpdate"
-                                                [(ngModel)]="inmediatoTrabajoSubmitUpdate">
-                                                @if (listadoTrabajo.inmediatoTrabajoSubmit) {
-                                                <option selected [value]="listadoTrabajo.inmediatoTrabajoSubmit">
-                                                    Yes
-                                                </option>
-                                                <option value="false">
-                                                    No
-                                                </option>
-                                                }@else {
-                                                <option selected [value]="listadoTrabajo.inmediatoTrabajoSubmit">
-                                                    No
-                                                </option>
-                                                <option value="true">
-                                                    Yes
-                                                </option>}
-                                            </select> -->
-                                        <p>{{listadoTrabajo.inmediatoTrabajoSubmit}}</p>
                                     </div>
                                 </div>
                                 <div class=" row align-items-center mb-1">
@@ -244,8 +201,7 @@
                                                 class="btn btn-danger upNdelButtons">Delete</button>
                                         </div>
                                         <div class="col-sm-6">
-                                            <button type="submit" (click)="handleUpdateJob(listadoTrabajo._id)"
-                                                class="btn btn-warning upNdelButtons">Update</button>
+                                            <button type="submit" class="btn btn-warning upNdelButtons">Update</button>
                                         </div>
                                     </div>
                                 </div>

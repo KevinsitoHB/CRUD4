@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ElementRef, ViewChild } from '@angular/core';
 import { DatePipe, NgIf } from '@angular/common';
 
 import {
@@ -24,6 +24,16 @@ const jwtHelperService = new JwtHelperService();
   styleUrl: './jobs.component.css',
 })
 export class JobsComponent {
+  // @ViewChild('myJobName') myJobNameRef: ElementRef;
+
+  // ngAfterViewInit() {
+  //   if (this.myJobNameRef) {
+  //     console.log(
+  //       'Accessing input element:',
+  //       this.myJobNameRef.nativeElement.value
+  //     );
+  //   }
+  // }
   toastrService = inject(ToastrService);
   loginService = inject(LoginService);
   trabajosService = inject(TrabajosService);
@@ -116,7 +126,7 @@ console.log(Date.now()); */
           function reload() {
             location.reload();
           }
-          setTimeout(reload, 1000);
+          setTimeout(reload, 500);
         } else {
           this.toastrService.error('Data Not Saved, all fields are required.');
         }
@@ -140,9 +150,9 @@ console.log(Date.now()); */
         if (res.mensaje === 'Successfully updated') {
           this.toastrService.success('Data Updated!');
           function reload() {
-            // location.reload();
+            location.reload();
           }
-          setTimeout(reload, 1000);
+          setTimeout(reload, 500);
         } else {
           this.toastrService.error('Data Not Saved, all fields are required.');
         }

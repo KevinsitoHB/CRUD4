@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { TrabajosService } from '../../services/trabajos.service';
 import { DatePipe } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
+
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -18,6 +20,7 @@ import {
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+  toastrService = inject(ToastrService);
   trabajosService = inject(TrabajosService);
 
   listadoTrabajosArray: any[] = [];
@@ -28,6 +31,9 @@ export class HomeComponent {
     });
   }
 
+  applyBtn() {
+    this.toastrService.success('Applied!');
+  }
   // handleSubmitSearch() {
   //   const filtered = this.listadoTrabajosArray.filter((search) => {
   //     return search.nombreb === this.searchForm.value.term;

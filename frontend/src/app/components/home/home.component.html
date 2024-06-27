@@ -9,21 +9,22 @@
                     <h1 class=" myCity display-3 text-center underline">CITY</h1>
                 </div>
                 <!-- Searchbar -->
-                <!-- <div class="container ">
+                <div class="container ">
                     <div class="row height d-flex justify-content-center align-items-center">
                         <div class="col-md-6">
-                            <form>
+                            <form [formGroup]="searchForm" role="search">
                                 <div class="form form-floating searchbar">
                                     <i class="bi bi-search"></i>
-                                    <input type="search" class=" form-input form-control" id="floatingInput"
-                                        placeholder="Search Jobs">
+                                    <input autocomplete="off" type="search" formControlName="term"
+                                        class="form-input form-control" id="floatingInput" placeholder="Search Jobs"
+                                        (input)="handleInputSearch()" />
                                     <label for="floatingInput">Search Jobs</label>
                                 </div>
-                                <button class="btn btn-outline-success" type="submit">Search</button>
+                                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
                             </form>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>

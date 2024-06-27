@@ -24,28 +24,39 @@ export class HomeComponent {
   trabajosService = inject(TrabajosService);
 
   listadoTrabajosArray: any[] = [];
+  listadoTrabajosFiltro: any[] = [];
+
+  searchForm = new FormGroup({
+    term: new FormControl('', Validators.required),
+  });
 
   ngOnInit() {
-    this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
-      this.listadoTrabajosArray = res.datosParaLeerTodos;
-    });
+    this.loadAllJobs();
   }
 
+  loadAllJobs() {
+    this.trabajosService.leerListadoTrabajos().subscribe((res: any) => {
+      this.listadoTrabajosArray = res.datosParaLeerTodos;
+      // this.listadoTrabajosFiltro = this.listadoTrabajosArray;
+      console.log('listadoTrabajosArray :>> ', this.listadoTrabajosArray);
+    });
+  }
   applyBtn() {
     this.toastrService.success('Applied!');
   }
-  // handleSubmitSearch() {
-  //   const filtered = this.listadoTrabajosArray.filter((search) => {
-  //     return search.nombreb === this.searchForm.value.term;
-  //   });
-  //   if (filtered.length > 0) {
-  //     this.caps = filtered;
-  //     this.toastrService.info('Caps found: ' + filtered.length);
-  //   } else {
-  //     this.caps = this.allCaps;
-  //     this.toastrService.info(
-  //       'Caps ' + this.searchForm.value.term + ' not found'
-  //     );
-  //   }
-  // }
+
+  handleInputSearch() {
+    const filtered = this.listadoTrabajosArray.filter((search) =>
+      search.nombreTrabajoSubmit.includes(this.searchForm.value.term)
+    );
+    console.log('filtered :>> ', filtered);
+    if (this.searchForm.value.term === '') {
+      this.loadAllJobs();
+    }
+    if (filtered.length > 0) {
+      this.listadoTrabajosArray = filtered;
+    } else {
+      this.loadAllJobs();
+    }
+  }
 }

@@ -113,7 +113,7 @@
                 @if (listadoTrabajosArray.length > 0) {
                 @for(listadoTrabajo of listadoTrabajosArray; track $index){
                 <div class="container col-sm-12 col-md-6 col-lg-4 mb-4">
-                    <form (ngSubmit)="handleUpdateJob(listadoTrabajo._id)" [formGroup]="credentialsForm">
+                    <form [formGroup]="credentialsForm">
                         <div class="card jobsCard">
                             <i class="bi bi-cpu"></i>
                             <div class="card-body">
@@ -126,7 +126,7 @@
                                     <div class="col-xl-8">
                                         <input autocomplete="off" type="text" class="myInputBarJobs form-control"
                                             placeholder="{{listadoTrabajo.nombreTrabajoSubmit}}"
-                                            name="nombreTrabajoSubmitUpdate" formControlName="nombreTrabajoSubmit2" />
+                                            formControlName="nombreTrabajoSubmit2" />
                                     </div>
 
                                 </div>
@@ -137,8 +137,7 @@
                                     <div class="col-xl-8">
                                         <input autocomplete="off" type="text" class="myInputBarJobs form-control"
                                             placeholder="{{listadoTrabajo.tipoTrabajoSubmit}}"
-                                            name="tipoTrabajoSubmitUpdate" formControlName="tipoTrabajoSubmitUpdate2" />
-                                        <!-- [(ngModel)]="tipoTrabajoSubmitUpdate" -->
+                                            formControlName="tipoTrabajoSubmitUpdate2" />
                                     </div>
                                 </div>
                                 <div class=" row align-items-center mb-1">
@@ -148,8 +147,7 @@
                                     <div class="col-xl-8">
                                         <input autocomplete="off" type="text" class="myInputBarJobs form-control"
                                             placeholder="{{listadoTrabajo.fechaInicioSubmit}}"
-                                            name="fechaInicioSubmitUpdate" formControlName="fechaInicioSubmitUpdate2" />
-                                        <!-- [(ngModel)]="fechaInicioSubmitUpdate" -->
+                                            formControlName="fechaInicioSubmitUpdate2" />
                                     </div>
                                 </div>
                                 <div class=" row align-items-center mb-1">
@@ -159,9 +157,7 @@
                                     <div class="col-xl-8">
                                         <input autocomplete="off" type="text" class="myInputBarJobs form-control"
                                             placeholder="{{listadoTrabajo.fechaFinTrabajoSubmit}}"
-                                            name="fechaFinTrabajoSubmitUpdate"
                                             formControlName="fechaFinTrabajoSubmitUpdate2" />
-                                        <!-- [(ngModel)]="fechaFinTrabajoSubmitUpdate" -->
                                     </div>
                                 </div>
                                 <div class=" row align-items-center mb-1">
@@ -171,11 +167,9 @@
                                     <div class="col-xl-8">
                                         <input autocomplete="off" type="text"
                                             placeholder="{{listadoTrabajo.inmediatoTrabajoSubmit? 'Yes' : 'No'}}"
-                                            class="myInputBarJobs form-control" name="inmediatoTrabajoSubmitUpdate"
-                                            id="inmediatoTrabajoSubmitUpdate"
+                                            class="myInputBarJobs form-control" id="inmediatoTrabajoSubmitUpdate"
                                             [value]="listadoTrabajo.inmediatoTrabajoSubmit ? 'Yes' : 'No'"
                                             formControlName="inmediatoTrabajoSubmitUpdate2">
-                                        <!-- [(ngModel)]="inmediatoTrabajoSubmitUpdate"  -->
                                     </div>
                                 </div>
                                 <div class=" row align-items-center mb-1">
@@ -185,9 +179,7 @@
                                     <div class="col-xl-8">
                                         <input type="number" class="myInputBarJobs form-control"
                                             placeholder="{{listadoTrabajo.salarioTrabajoSubmit}}"
-                                            name="salarioTrabajoSubmitUpdate"
                                             formControlName="salarioTrabajoSubmitUpdate2" />
-                                        <!--  [(ngModel)]="salarioTrabajoSubmitUpdate" -->
                                     </div>
                                 </div>
                                 <div class=" row align-items-center mb-1">
@@ -197,9 +189,7 @@
                                     <div class="col-xl-8">
                                         <input autocomplete="off" type="number" class="myInputBarJobs form-control"
                                             placeholder="{{listadoTrabajo.comisionTrabajoSubmit}}"
-                                            name="comisionTrabajoSubmitUpdate"
                                             formControlName="comisionTrabajoSubmitUpdate2" />
-                                        <!-- [(ngModel)]="comisionTrabajoSubmitUpdate" -->
                                     </div>
                                 </div>
                                 <div class="container">
@@ -209,7 +199,8 @@
                                                 class="btn btn-danger upNdelButtons">Delete</button>
                                         </div>
                                         <div class="col-sm-6">
-                                            <button type="submit" class="btn btn-warning upNdelButtons">Update</button>
+                                            <button type="submit" (click)="handleUpdateJob(listadoTrabajo._id)"
+                                                class="btn btn-warning upNdelButtons">Update</button>
                                         </div>
                                     </div>
                                 </div>

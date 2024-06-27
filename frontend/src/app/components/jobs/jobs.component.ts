@@ -31,6 +31,8 @@ export class JobsComponent {
   listadoTrabajosArray: any[] = [];
   arrayBusqueda: any[] = [];
 
+  /** CREATE JOB VARIABLES  **/
+
   nombreTrabajoSubmit: string = '';
   tipoTrabajoSubmit: string = '';
   fechaInicioSubmit: string = '';
@@ -38,14 +40,6 @@ export class JobsComponent {
   inmediatoTrabajoSubmit: boolean = false;
   salarioTrabajoSubmit: number = 0;
   comisionTrabajoSubmit: number = 0;
-
-  nombreTrabajoSubmitUpdate: any;
-  tipoTrabajoSubmitUpdate: any;
-  fechaInicioSubmitUpdate: any;
-  fechaFinTrabajoSubmitUpdate: any;
-  inmediatoTrabajoSubmitUpdate: any;
-  salarioTrabajoSubmitUpdate: any;
-  comisionTrabajoSubmitUpdate: any;
 
   ngOnInit() {
     const token: any = localStorage.getItem('token');
@@ -72,30 +66,32 @@ export class JobsComponent {
     }
   }
 
-  searchForm = new FormGroup({
-    nombreJob: new FormControl('', Validators.required),
-  });
+  // searchForm = new FormGroup({
+  //   nombreJob: new FormControl('', Validators.required),
+  // });
 
-  handleSubmitSearch() {
-    const filtered = this.arrayBusqueda.filter((data) => {
-      return data.nombreTrabajoSubmit === this.searchForm.value.nombreJob;
-    });
-    if (filtered.length > 0) {
-      this.arrayBusqueda = filtered;
-      this.toastrService.info('Coincidences found: ' + filtered.length);
-    } else {
-      this.arrayBusqueda = this.listadoTrabajosArray;
-      this.toastrService.info(
-        'Jobs ' + this.searchForm.value.nombreJob + ' not found'
-      );
-    }
-  }
+  // handleSubmitSearch() {
+  //   const filtered = this.arrayBusqueda.filter((data) => {
+  //     return data.nombreTrabajoSubmit === this.searchForm.value.nombreJob;
+  //   });
+  //   if (filtered.length > 0) {
+  //     this.arrayBusqueda = filtered;
+  //     this.toastrService.info('Coincidences found: ' + filtered.length);
+  //   } else {
+  //     this.arrayBusqueda = this.listadoTrabajosArray;
+  //     this.toastrService.info(
+  //       'Jobs ' + this.searchForm.value.nombreJob + ' not found'
+  //     );
+  //   }
+  // }
   /*
 console.log('miDate: ', miDate.toDateString());
 console.log('miDate: ', miDate.toLocaleString());
 console.log('miDate: ', miDate.toLocaleDateString());
 console.log('miDate: ', miDate.toLocaleTimeString());
 console.log(Date.now()); */
+
+  /** CREATE JOB **/
 
   handleSubmitAddJob() {
     const payload = {
@@ -123,6 +119,8 @@ console.log(Date.now()); */
       });
   }
 
+  /** UPDATE JOB **/
+
   credentialsForm = new FormGroup({
     nombreTrabajoSubmit2: new FormControl('', Validators.required),
     tipoTrabajoSubmitUpdate2: new FormControl('', Validators.required),
@@ -149,7 +147,6 @@ console.log(Date.now()); */
     const comisionTrabajoSubmitUpdate2 =
       this.credentialsForm.value.comisionTrabajoSubmitUpdate2;
 
-    console.log('nombreTrabajoSubmit2 :>> ', nombreTrabajoSubmitUpdate2);
     const payload = {
       nombreTrabajoSubmit: nombreTrabajoSubmitUpdate2,
       tipoTrabajoSubmit: tipoTrabajoSubmitUpdate2,
@@ -174,6 +171,7 @@ console.log(Date.now()); */
         }
       });
   }
+  /** DELETE JOB **/
 
   handleDeleteJob(id: string) {
     this.trabajosService.eliminarListadoTrabajos(id).subscribe((res: any) => {
